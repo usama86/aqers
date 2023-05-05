@@ -7,11 +7,15 @@ import Navbar from "../components/UseCase/Navbar";
 import Footer from "../components/UseCase/Footer";
 import SpacerComponent from "../components/ServiceComponents/SpacerComponent";
 import { styles } from "../styles/app-style";
-
+import LoginAppStyles from "./../components/UseCase/LoginPagesStyles";
+import MainAppStyles from "../components/UseCase/MainAppLayout";
 import { wrapper } from "../store/store";
+
+const LOGIN_ROUTES = ["login", "otp", "select-purpose"];
 
 function App({ Component, pageProps }) {
   const router = useRouter();
+  const path = router.asPath.split("/")[1];
   return (
     <>
       <Head>
@@ -21,17 +25,14 @@ function App({ Component, pageProps }) {
         />
       </Head>
       <Theme>
-        <Navbar path={router.asPath} />
-        <CssBaseline />
-        <SpacerComponent
-          sx={
-            router.asPath == "/"
-              ? styles.spacerStyleNavHome
-              : styles.spacerStyleNav
-          }
-        />
-        <Component {...pageProps} />
-        <Footer />
+        {LOGIN_ROUTES.includes(path) ? (
+          <LoginAppStyles
+            path={path}
+            Component={<Component {...pageProps} />}
+          />
+        ) : (
+          <MainAppStyles path={path} Component={<Component {...pageProps} />} />
+        )}
       </Theme>
     </>
   );
