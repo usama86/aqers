@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types'
-import React, { forwardRef } from 'react'
-import { CustomButton, TransButtons } from './style'
-import CircularProgressComponent from '../CircularProgressComponent'
-import { LoaderWrapper } from 'components/UseCase/Common/FormRoundedButton/style'
+import PropTypes from "prop-types";
+import React, { forwardRef } from "react";
+import { CustomButton, TransButtons } from "./style";
+import CircularProgressComponent from "../CircularProgressComponent";
+import BoxComponent from "../BoxComponent";
 
 // eslint-disable-next-line react/display-name
 const ButtonComponent = forwardRef((props, ref) => {
@@ -18,11 +18,11 @@ const ButtonComponent = forwardRef((props, ref) => {
     children,
     disabled,
     ...other
-  } = props
+  } = props;
 
   const handleClick = () => {
-    if (onClick) onClick()
-  }
+    if (onClick) onClick();
+  };
 
   if (typeB) {
     return (
@@ -39,7 +39,7 @@ const ButtonComponent = forwardRef((props, ref) => {
       >
         {children}
       </TransButtons>
-    )
+    );
   }
   return (
     <CustomButton
@@ -50,21 +50,28 @@ const ButtonComponent = forwardRef((props, ref) => {
       sx={{
         width: width,
         height: height,
-        pointerEvents: disabled ? 'none' : 'auto',
+        pointerEvents: disabled ? "none" : "auto",
       }}
       color={color}
       {...other}
       disabled={disabled}
     >
       {loading && (
-        <LoaderWrapper>
+        <BoxComponent
+          sx={{
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <CircularProgressComponent />
-        </LoaderWrapper>
+        </BoxComponent>
       )}
       {!loading && children}
     </CustomButton>
-  )
-})
+  );
+});
 
 // export default function ButtonComponent({
 //   children,
@@ -112,16 +119,16 @@ ButtonComponent.propTypes = {
   color: PropTypes.string,
   loading: PropTypes.bool,
   disabled: PropTypes.bool,
-}
+};
 ButtonComponent.defaultProps = {
   typeB: false,
   children: <></>,
   loading: false,
   disabled: false,
-  variant: 'contained',
+  variant: "contained",
   path: null,
-  color: 'secondary',
+  color: "secondary",
   onClick: () => {},
-}
+};
 
-export default ButtonComponent
+export default ButtonComponent;
