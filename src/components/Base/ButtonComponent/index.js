@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React, { forwardRef } from "react";
 import { CustomButton, TransButtons } from "./style";
 import CircularProgressComponent from "../CircularProgressComponent";
-import BoxComponent from "../BoxComponent";
+// import { LoaderWrapper } from 'components/UseCase/Common/FormRoundedButton/style'
 
 // eslint-disable-next-line react/display-name
 const ButtonComponent = forwardRef((props, ref) => {
@@ -56,18 +56,11 @@ const ButtonComponent = forwardRef((props, ref) => {
       {...other}
       disabled={disabled}
     >
-      {loading && (
-        <BoxComponent
-          sx={{
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+      {/* {loading && (
+        <LoaderWrapper>
           <CircularProgressComponent />
-        </BoxComponent>
-      )}
+        </LoaderWrapper>
+      )} */}
       {!loading && children}
     </CustomButton>
   );

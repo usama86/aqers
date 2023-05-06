@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 import {
   TextFieldCustom,
   TextFieldAuto,
   ErrorTypographyComponent,
   TextFieldStyled,
-} from './style'
-import FormControl from '@mui/material/FormControl'
+} from "./style";
+import FormControl from "@mui/material/FormControl";
 
 export default function TextFieldComponent({
   size,
@@ -25,8 +25,8 @@ export default function TextFieldComponent({
   ...otherProps
 }) {
   const handleChange = (event) => {
-    onInputChange(event.target.value)
-  }
+    onInputChange(event.target.value);
+  };
 
   if (isLabel || isAuto) {
     return (
@@ -44,19 +44,19 @@ export default function TextFieldComponent({
               placeholder={placeholder}
               onChange={handleChange}
               inputProps={{
-                autoComplete: 'new-password',
+                autoComplete: "new-password",
               }}
               {...otherProps}
             />
           ) : (
             <TextFieldAuto
-              sx={{ '& fieldset': { border: 'none' } }}
+              sx={{ "& fieldset": { border: "none" } }}
               focus={focused ? true : undefined}
               placeholder={placeholder}
               value={value}
               onChange={handleChange}
               inputProps={{
-                autoComplete: 'off',
+                autoComplete: "off",
               }}
               {...otherProps}
             />
@@ -68,19 +68,20 @@ export default function TextFieldComponent({
           </ErrorTypographyComponent>
         )}
       </>
-    )
+    );
   }
   return (
     <>
       <TextFieldCustom
-        sx={{ '& fieldset': { border: 'none' } }}
+        fullWidth={fullWidth}
+        sx={{ "& fieldset": { border: "none" } }}
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
         error={isError}
         color="secondary"
         inputProps={{
-          autoComplete: 'new-password',
+          autoComplete: "new-password",
         }}
         {...otherProps}
       />
@@ -90,19 +91,19 @@ export default function TextFieldComponent({
         </ErrorTypographyComponent>
       )}
     </>
-  )
+  );
 }
 
 TextFieldComponent.defaultProps = {
   fullWidth: true,
   select: false,
-  size: 'normal',
-  label: 'Hello World',
-  variant: 'standard',
-  message: '',
+  size: "normal",
+  label: "Hello World",
+  variant: "standard",
+  message: "",
   onInputChange: () => {},
-  value: '',
+  value: "",
   isLabel: false,
-  placeholder: '',
+  placeholder: "",
   isAuto: false,
-}
+};
