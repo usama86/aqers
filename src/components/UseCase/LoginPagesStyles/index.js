@@ -8,7 +8,6 @@ import {
 } from "@/component/utils/helpers";
 
 const LoginAppStyles = ({ Component }) => {
-  const imageWidth = relative_width_size_generator(727).value;
   return (
     <StackComponent
       alignItems="center"
@@ -17,7 +16,7 @@ const LoginAppStyles = ({ Component }) => {
     >
       {Component}
       <ImageComponent
-        width={imageWidth}
+        width={relative_width_size_generator(727)}
         position="relative"
         source={loginImage}
         alt="login-img"

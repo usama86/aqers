@@ -10,12 +10,11 @@ import GoogleLogo from "./../../../assets/common/Google-logo";
 
 const LoginPage = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
-  const loginFormWidth = relative_width_size_generator(398).value;
   return (
     <StackCompoent
       direction="column"
       alignItems="center"
-      style={{ width: loginFormWidth, minWidth: "385px" }}
+      style={{ width: relative_width_size_generator(398), minWidth: "385px" }}
     >
       <ImageComponent
         height="72px"
