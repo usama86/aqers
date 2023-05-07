@@ -1,6 +1,6 @@
 import CssBaseline from "@mui/material/CssBaseline";
-import Navbar from "../../../components/UseCase/Navbar";
-import Footer from "../../../components/UseCase/Footer";
+import Navbar from "components/UseCase/Navbar";
+import Footer from "components/UseCase/Footer";
 
 const MainAppStyles = ({ path, Component }) => {
   return (

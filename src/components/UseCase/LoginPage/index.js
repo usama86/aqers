@@ -1,11 +1,11 @@
-import { relative_width_size_generator } from "@/component/utils/helpers";
-import ImageComponent from "../../Base/ImageComponent";
-import StackCompoent from "../../Base/StackCompoent";
+import { relative_width_size_generator } from "utils/helpers";
+import ImageComponent from "components/Base/ImageComponent";
+import StackCompoent from "components/Base/StackCompoent";
 import logo from "./../../../assets/common/Logo.png";
-import TextFieldComponent from "../../Base/TextFieldComponent";
+import TextFieldComponent from "components/Base/TextFieldComponent";
 import { useState } from "react";
-import TypographyComponent from "../../Base/TypographyComponent";
-import ButtonComponent from "../../Base/ButtonComponent";
+import TypographyComponent from "components/Base/TypographyComponent";
+import ButtonComponent from "components/Base/ButtonComponent";
 import GoogleLogo from "./../../../assets/common/Google-logo";
 
 const LoginPage = () => {
