@@ -1,8 +1,8 @@
 import StackCompoent from "../../Base/StackCompoent";
 import TextFieldComponent from "../../Base/TextFieldComponent";
 import { useState } from "react";
-import TypographyComponent from "../../Base/TypographyComponent";
-import ButtonComponent from "../../Base/ButtonComponent";
+import TypographyComponent from "components/Base/TypographyComponent";
+import ButtonComponent from "components/Base/ButtonComponent";
 import GoogleLogo from "./../../../assets/common/Google-logo";
 import LoginPagesForm from "../../Layouts/LoginPagesForm";
 

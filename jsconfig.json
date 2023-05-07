@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/component/*": ["./src/*"]
+      "pages/*": ["./src/pages/*"],
+      "components/*": ["./src/components/*"],
+      "public/*": ["./src/public/*"],
+      "utils/*": ["./src/utils/*"],
+      "/*": ["./src/*"]
     }
   }
 }

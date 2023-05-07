@@ -1,14 +1,9 @@
-import "@/component/styles/globals.css";
+import "./../styles/globals.css";
 import Head from "next/head";
-import CssBaseline from "@mui/material/CssBaseline";
 import { useRouter } from "next/router";
 import Theme from "../Theme";
-import Navbar from "../components/UseCase/Navbar";
-import Footer from "../components/UseCase/Footer";
-import SpacerComponent from "../components/ServiceComponents/SpacerComponent";
-import { styles } from "../styles/app-style";
-import LoginAppStyles from "./../components/UseCase/LoginPagesStyles";
-import MainAppStyles from "../components/UseCase/MainAppLayout";
+import LoginAppStyles from "components/UseCase/LoginPagesStyles";
+import MainAppStyles from "components/UseCase/MainAppLayout";
 import { wrapper } from "../store/store";
 
 const LOGIN_ROUTES = ["login", "otp", "select-purpose"];
