@@ -5,12 +5,12 @@ import Theme from "../Theme";
 import LoginAppStyles from "components/UseCase/LoginPagesStyles";
 import MainAppStyles from "components/UseCase/MainAppLayout";
 import { wrapper } from "../store/store";
+import useRouterProps from "hooks/useRouterProps";
 
 const LOGIN_ROUTES = ["login", "otp", "select-purpose"];
 
 function App({ Component, pageProps }) {
-  const router = useRouter();
-  const path = router.asPath.split("/")[1];
+  const { path } = useRouterProps();
   return (
     <>
       <Head>

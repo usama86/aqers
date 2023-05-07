@@ -7,7 +7,8 @@ import {
   relative_width_size_generator,
 } from "@/component/utils/helpers";
 
-const LoginAppStyles = ({ Component }) => {
+const LoginAppStyles = ({ Component, path }) => {
+  console.log({ path });
   return (
     <StackComponent
       alignItems="center"
@@ -15,12 +16,14 @@ const LoginAppStyles = ({ Component }) => {
       style={{ height: "100vh", width: "100%", gap: "135px" }}
     >
       {Component}
-      <ImageComponent
-        width={relative_width_size_generator(727)}
-        position="relative"
-        source="/login/Frame.png"
-        alt="login-img"
-      />
+      {path === "select-purpose" ? null : (
+        <ImageComponent
+          width={relative_width_size_generator(727)}
+          position="relative"
+          source="/login/Frame.png"
+          alt="login-img"
+        />
+      )}
     </StackComponent>
   );
 };

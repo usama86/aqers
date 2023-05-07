@@ -51,7 +51,16 @@ const LoginPage = () => {
         variant="body2"
       >
         Didn&apos;t receive code?{" "}
-        <span color={theme.palette.primary.main}>Resend</span>
+        <a
+          href="#"
+          style={{
+            color: theme.palette.primary.main,
+            fontWeight: 600,
+            textDecoration: "none",
+          }}
+        >
+          Resend
+        </a>
       </TypographyComponent>
     </LoginPagesForm>
   );
