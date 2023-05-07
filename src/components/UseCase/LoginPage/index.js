@@ -3,8 +3,9 @@ import TextFieldComponent from "../../Base/TextFieldComponent";
 import { useState } from "react";
 import TypographyComponent from "components/Base/TypographyComponent";
 import ButtonComponent from "components/Base/ButtonComponent";
-import GoogleLogo from "./../../../assets/common/Google-logo";
+import GoogleLogo from "../../Icons/Google-logo";
 import LoginPagesForm from "../../Layouts/LoginPagesForm";
+import { relative_width_size_generator } from "utils/helpers";
 
 const LoginPage = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -36,7 +37,11 @@ const LoginPage = () => {
           <TypographyComponent variant="button">Google</TypographyComponent>
         </ButtonComponent>
       </StackCompoent>
-      <ButtonComponent color="primary" fullWidth style={{ marginTop: "68px" }}>
+      <ButtonComponent
+        color="primary"
+        fullWidth
+        style={{ marginTop: relative_width_size_generator(68) }}
+      >
         Login
       </ButtonComponent>
     </LoginPagesForm>

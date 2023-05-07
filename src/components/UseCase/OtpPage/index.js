@@ -3,10 +3,13 @@ import TextFieldComponent from "../../Base/TextFieldComponent";
 import { useState } from "react";
 import TypographyComponent from "../../Base/TypographyComponent";
 import ButtonComponent from "../../Base/ButtonComponent";
-import GoogleLogo from "./../../../assets/common/Google-logo";
+import GoogleLogo from "../../Icons/Google-logo";
 import LoginPagesForm from "../../Layouts/LoginPagesForm";
+import { relative_width_size_generator } from "utils/helpers";
+import { useTheme } from "@mui/material";
 
 const LoginPage = () => {
+  const theme = useTheme();
   const [otp, setOtp] = useState("");
   return (
     <LoginPagesForm heading="OTP Verification">
@@ -18,7 +21,7 @@ const LoginPage = () => {
           value={otp}
           label="Enter OTP"
           placeholder="Enter here"
-          onInputChange={(input) => setPhoneNumber(input)}
+          onInputChange={(input) => setOtp(input)}
         />
       </StackCompoent>
       <StackCompoent
@@ -36,9 +39,20 @@ const LoginPage = () => {
           <TypographyComponent variant="button">Google</TypographyComponent>
         </ButtonComponent>
       </StackCompoent>
-      <ButtonComponent color="primary" fullWidth style={{ marginTop: "68px" }}>
+      <ButtonComponent
+        color="primary"
+        fullWidth
+        style={{ marginTop: relative_width_size_generator(68) }}
+      >
         Login
       </ButtonComponent>
+      <TypographyComponent
+        style={{ marginTop: relative_width_size_generator(42) }}
+        variant="body2"
+      >
+        Didn&apos;t receive code?{" "}
+        <span color={theme.palette.primary.main}>Resend</span>
+      </TypographyComponent>
     </LoginPagesForm>
   );
 };

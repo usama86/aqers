@@ -1,5 +1,5 @@
 import Link from "next/link";
-import OtpPage from "@/component/components/UseCase/OtpPage";
+import OtpPage from "components/UseCase/OtpPage";
 
 const Otp = () => {
   return (

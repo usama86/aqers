@@ -1,6 +1,6 @@
 import Image from "next/image";
 import StackComponent from "../../Base/StackCompoent";
-import loginImage from "./../../../assets/login/Frame.png";
+// import loginImage from "./../../../assets/login/Frame.png";
 import ImageComponent from "../../Base/ImageComponent";
 import {
   relative_height_size_generator,
@@ -18,7 +18,7 @@ const LoginAppStyles = ({ Component }) => {
       <ImageComponent
         width={relative_width_size_generator(727)}
         position="relative"
-        source={loginImage}
+        source="/login/Frame.png"
         alt="login-img"
       />
     </StackComponent>

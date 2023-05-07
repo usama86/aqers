@@ -1,7 +1,6 @@
 import ImageComponent from "../Base/ImageComponent";
 import StackCompoent from "../Base/StackCompoent";
 import TypographyComponent from "../Base/TypographyComponent";
-import logo from "./../../assets/common/Logo.png";
 import { relative_width_size_generator } from "@/component/utils/helpers";
 
 const LoginPagesForm = ({ heading, children }) => {
@@ -15,7 +14,7 @@ const LoginPagesForm = ({ heading, children }) => {
         height="72px"
         width="69.23px"
         position="relative"
-        source={logo}
+        source="/Common/Logo.png"
       />
       <TypographyComponent
         style={{ marginBottom: "56px", marginTop: "71px" }}
