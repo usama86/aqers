@@ -11,6 +11,7 @@ import { relative_width_size_generator } from "utils/helpers";
 import ListComponent from "./ListComponent";
 import { DRAWER_ITEMS_SIGN_IN, DRAWER_ITEMS_SIGN_OUT } from "./drawer.config";
 import React, { useCallback, useEffect, Suspense, useState, lazy } from "react";
+import TypographyComponent from "components/Base/TypographyComponent";
 
 const Drawer = lazy(() => import("./ResponsiveSidebar/index"));
 
@@ -64,7 +65,14 @@ export default function Navbar({ path }) {
     dispatch(changeAuthModalTypeAction({ type: AUTH_MODAL_TYPE["SIGN_IN"] }));
   }, []);
 
-  // const NAVBAR_ITEMS = NavbarConfig();
+  const NAVBAR_ITEMS = [
+    { label: "Home" },
+    { label: "Buy" },
+    { label: "Rent" },
+    { label: "About" },
+    { label: "Contact" },
+    { label: "FAQs" },
+  ];
   const resetDrawer = useCallback(() => {
     setDrawer({
       left: false,
@@ -116,19 +124,25 @@ export default function Navbar({ path }) {
             <ImageComponent
               source={
                 path == "/" && scrollY < 50
-                  ? "/home-page-images/GraanaLogoResponsive.svg"
-                  : "/home-page-images/GraanaLogo.svg"
+                  ? "/Navbar/Aqers-Logo.png"
+                  : "/Navbar/Aqers-Logo.png"
               }
               width="129px"
               height="30px"
-              alt="Graana Logo Responsive"
+              alt="Aqers Logo Responsive"
             />
           </Box>
         </Link>
 
         <Box sx={styles.flexGrowItems}>
-          {[]?.map((item, index) => (
-            <div style={{ position: "relative" }} key={index}>
+          {NAVBAR_ITEMS?.map((item, index) => (
+            <div
+              style={{
+                position: "relative",
+                marginLeft: index !== 0 ? "56px" : "0px",
+              }}
+              key={index}
+            >
               <ButtonComponent
                 id={item.id}
                 sx={styles.navbarItem}
@@ -137,106 +151,33 @@ export default function Navbar({ path }) {
                 onMouseLeave={item.onMouseLeave}
                 ref={item.ref}
               >
-                {item.id == "investButton" ? (
-                  <a
-                    style={styles.navbarItemInvest}
-                    href={`${config.BASE_URL}/projects/list`}
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  item.label
-                )}
+                <TypographyComponent variant={"NavStyle"} component={"span"}>
+                  {item.label}
+                </TypographyComponent>
               </ButtonComponent>
-
-              {item.id !== "investButton" ? (
-                <div
-                  style={{
-                    ...styles.popOverContainer,
-                    display: !item.open && "none",
-                  }}
-                  onMouseEnter={item.onMouseEnter}
-                  onMouseLeave={item.onMouseLeave}
-                >
-                  <div
-                    style={{
-                      ...styles.popover,
-                      display: !item.open && "none",
-                    }}
-                    onMouseEnter={item.onMouseEnter}
-                    onMouseLeave={item.onMouseLeave}
-                  >
-                    <ListComponent
-                      key={index}
-                      sx={styles.listMenu}
-                      onMouseEnter={() => {
-                        item.ref.current.style.backgroundColor = "#f2f2f2";
-                      }}
-                      onMouseLeave={() =>
-                        (item.ref.current.style.backgroundColor = "transparent")
-                      }
-                      listArray={item.listArray}
-                      listTypes={item.types}
-                      purpose={item.purpose === "buy" ? "sale" : item.purpose}
-                      disableTypography
-                    />
-                  </div>
-                </div>
-              ) : null}
             </div>
           ))}
+          <Box sx={{ width: "185px", height: "48px", marginLeft: "240px" }}>
+            <ButtonComponent color="primary" fullWidth>
+              Login
+            </ButtonComponent>
+          </Box>
         </Box>
 
         <>
-          {path !== "/wanted" && (
-            <Box sx={styles.displayNoneResponsive}>
-              <Link
-                href={`/wanted`}
-                prefetch={false}
-                style={styles.wantedStyle}
-              >
-                <ButtonComponent
-                  variant="outlined"
-                  color="secondary"
-                  sx={styles.wantedStyle}
-                >
-                  Wanted
-                </ButtonComponent>
-              </Link>
-            </Box>
-          )}
-          {authLoader ? (
-            <>
-              <Box
-                sx={{
-                  paddingRight: "80px",
-                  "@media (max-width: 600px)": {
-                    display: "none",
-                  },
-                }}
-              >
-                {/* <AvatarSkeleton /> */}
-              </Box>
-              <Box sx={styles.responsiveBoxSignin} />
-            </>
-          ) : (
-            <>
-              <Box sx={styles.responsiveBoxSignin} />
-              {!isLoggedIn && initialLoad && (
-                <ButtonComponent
-                  variant="outlined"
-                  onClick={handleSignInButton}
-                  sx={
-                    path == "/"
-                      ? styles.signinButton
-                      : styles.signinButtonResponsive
-                  }
-                >
-                  Sign In
-                </ButtonComponent>
-              )}
-              {isLoggedIn && initialLoad && <Avatar />}
-            </>
+          <Box sx={styles.responsiveBoxSignin} />
+          {!isLoggedIn && initialLoad && (
+            <ButtonComponent
+              variant="outlined"
+              onClick={handleSignInButton}
+              sx={
+                path == "/"
+                  ? styles.signinButton
+                  : styles.signinButtonResponsive
+              }
+            >
+              Sign In
+            </ButtonComponent>
           )}
         </>
       </Toolbar>

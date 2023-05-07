@@ -1,6 +1,6 @@
 export const styles = {
   appBar: {
-    boxShadow: "0px 2px 10px var(--mui-pallete-black-10)",
+    boxShadow: "none",
     backgroundColor: "var(--mui-palette-white-A50)",
     /**
      *  fix irrelevant padding, cause by MUI Menu component,when it render, it add extra paddingRight to navbar and body
@@ -12,10 +12,11 @@ export const styles = {
       backgroundColor: "var(--mui-palette-white-A50)",
       position: "fixed",
       top: "0",
+      border: "none",
     },
   },
   appBarHome: {
-    boxShadow: "0px 2px 10px var(--mui-pallete-black-10)",
+    boxShadow: "none",
     backgroundColor: "var(--mui-palette-white-A50)",
     position: "fixed",
     "@media (max-width: 600px)": {
@@ -23,6 +24,7 @@ export const styles = {
       backgroundColor: "transparent",
       position: "fixed",
       top: "0",
+      border: "none",
     },
   },
   appBarHomeScroll: {
@@ -36,7 +38,7 @@ export const styles = {
     "@media (max-width: 300px)": { marginLeft: "10%" },
   },
   aqersLogo: {
-    marginLeft: "108px",
+    marginLeft: "213px",
     marginRight: "30px",
     "@media (max-width: 885px)": { marginLeft: "80px", marginRight: "40px" },
     "@media (max-width: 845px)": { marginLeft: "50px", marginRight: "30px" },
@@ -48,7 +50,7 @@ export const styles = {
     "@media (max-width: 600px)": { display: "none" },
   },
   navbarItem: {
-    color: "var(--mui-palette-common-black)",
+    color: "var(--mui-palette-grey)",
     textDecoration: "none",
     textAlign: "center",
     "&:hover": { backgroundColor: "var(--mui-palette-white) !important" },
@@ -118,7 +120,7 @@ export const styles = {
   responsiveBoxSignin: {
     width: "25px",
     height: "25px",
-    "@media (min-width: 600px)": { display: "none" },
+    "@media (max-width: 600px)": { display: "none" },
   },
   headerRow: { display: "flex" },
   customMenuItem: {
@@ -159,12 +161,14 @@ export const styles = {
   flexGrowItems: {
     flexGrow: 1,
     display: "flex",
+    marginLeft: "354px",
     "@media (max-width: 600px)": { display: "none" },
   },
   toolbarStyleOverride: {
     "@media (min-width: 600px)": {
       paddingLeft: "10px",
       paddingRight: "10px",
+      paddingTop: "30px",
       minHeight: "76px",
     },
   },

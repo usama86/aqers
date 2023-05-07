@@ -246,5 +246,12 @@ export const getDesignTokens = (mode) => ({
       fontSize: "0.579rem",
       lineHeight: "1.143",
     },
+    NavStyle: {
+      fontSize: "18px",
+      fontWeight: 700,
+      lineHeight: "27px",
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
   },
 });
