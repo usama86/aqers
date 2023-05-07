@@ -7,16 +7,16 @@ import GoogleLogo from "./../../../assets/common/Google-logo";
 import LoginPagesForm from "../../Layouts/LoginPagesForm";
 
 const LoginPage = () => {
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [otp, setOtp] = useState("");
   return (
-    <LoginPagesForm heading="Login to your Account">
+    <LoginPagesForm heading="OTP Verification">
       <StackCompoent direction="column" style={{ width: "100%" }}>
-        <TypographyComponent variant="h6">Phone Number</TypographyComponent>
+        <TypographyComponent variant="h6">Enter OTP</TypographyComponent>
         <TextFieldComponent
           fullWidth
           variant="outlined"
-          value={phoneNumber}
-          label="Phone Number"
+          value={otp}
+          label="Enter OTP"
           placeholder="Enter here"
           onInputChange={(input) => setPhoneNumber(input)}
         />
