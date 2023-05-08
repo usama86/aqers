@@ -6,6 +6,8 @@ import Link from "next/link";
 import Search from "components/UseCase/HomePage/Search";
 import BoxComponent from "components/Base/BoxComponent";
 import SecondSection from "components/UseCase/HomePage/SecondSection";
+import ThirdSecion from "components/UseCase/HomePage/ThirdSection";
+import { relative_width_size_generator } from "utils/helpers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +21,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Search />
-      <BoxComponent sx={{ p: "110 243 0 243" }}>
+      <BoxComponent
+        sx={{
+          p: `110px ${relative_width_size_generator(
+            243
+          )} 0px ${relative_width_size_generator(243)}`,
+        }}
+      >
         <SecondSection />
+        <ThirdSecion />
       </BoxComponent>
     </>
   );

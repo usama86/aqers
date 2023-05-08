@@ -281,5 +281,11 @@ export const getDesignTokens = (mode) => ({
       letterSpacing: "0.20000000298023224px",
       textAlign: "left",
     },
+    HomeSecondSection: {
+      fontWeight: 600,
+      lineHeight: "72px",
+      letterSpacing: "-0.4000000059604645px",
+      textAlign: "left",
+    },
   },
 });
