@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ButtonComponent from "components/Base/ButtonComponent";
-import { styles } from "./style";
+import { StyledSelect, StyledSelectBtn, styles } from "./style";
 import ImageComponent from "components/Base/ImageComponent";
 import Chip from "@mui/material/Chip";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
@@ -10,13 +10,15 @@ import ListItemText from "@mui/material/ListItemText";
 import TextFieldComponent from "components/Base/TextFieldComponent";
 import { useRouter } from "next/router";
 import TypographyComponent from "components/Base/TypographyComponent";
+import { CITIES } from "config/dummy_search_data";
+import { capitalizeFirstLetter } from "../../../utils/helpers";
 
 export default function SearchBar({ purpose }) {
   const [areas, setAreas] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [selectedList, setSelectedList] = useState([]);
   const [recentSearch, setRecentSearch] = useState([]);
-  const [openList, setOpenList] = useState(false);
+  const [openList, setOpenList] = useState(true);
 
   const router = useRouter();
 
@@ -29,7 +31,38 @@ export default function SearchBar({ purpose }) {
   return (
     <>
       <ClickAwayListener onClickAway={() => onFocusDisplay(false)}>
-        <div>
+        <div
+          style={{ display: "flex", borderRadius: "5px", overflow: "hidden" }}
+        >
+          {/* <StyledSelect
+            typeB
+            options={[
+              ...CITIES.map((eachCity) => ({
+                value: eachCity,
+                label: capitalizeFirstLetter(eachCity),
+              })),
+            ]}
+          /> */}
+          {/* LOCATION */}
+          {/* <StyledSelectBtn sx={{ background: "#F3F1F2", color: "#4D4D4D" }}>
+            <span style={{ marginRight: "9.15px" }}>
+              <ImageComponent
+                height="18px"
+                width="18px"
+                position="relative"
+                source="/Common/pin.png"
+              />
+            </span>
+            <span>Location</span>
+            <span style={{ marginLeft: "7.35px" }}>
+              <ImageComponent
+                height="18px"
+                width="18px"
+                position="relative"
+                source="/Common/dropdown.png"
+              />
+            </span>
+          </StyledSelectBtn> */}
           <TextFieldComponent
             placeholder="Find Property"
             onChange={handleChange}
@@ -59,7 +92,7 @@ export default function SearchBar({ purpose }) {
               Search
             </TypographyComponent>
           </ButtonComponent>
-          {openList && (
+          {/* {openList && (
             <div
               style={{
                 backgroundColor: "#fff",
@@ -101,7 +134,7 @@ export default function SearchBar({ purpose }) {
                           </ListItemButton>
                         ))}
                     </>
-                    {selectedList.length == 0 && cities && cities.length > 0 ? (
+                    {selectedList.length == 0 && CITIES && CITIES.length > 0 ? (
                       <ListItemText
                         primary="Popular Cities"
                         disableTypography
@@ -109,15 +142,15 @@ export default function SearchBar({ purpose }) {
                       />
                     ) : null}
                     {selectedList.length == 0 &&
-                      cities &&
-                      cities.length > 0 &&
-                      cities.map((item) => (
+                      CITIES &&
+                      CITIES.length > 0 &&
+                      CITIES.map((item) => (
                         <ListItemButton
                           sx={styles.listButton}
-                          key={item.id}
+                          key={item}
                           onClick={() => handleCity(item)}
                         >
-                          {item.name}
+                          {item}
                         </ListItemButton>
                       ))}
                   </>
@@ -136,7 +169,7 @@ export default function SearchBar({ purpose }) {
                 )}
               </List>
             </div>
-          )}
+          )} */}
         </div>
       </ClickAwayListener>
     </>

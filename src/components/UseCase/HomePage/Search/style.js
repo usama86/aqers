@@ -1,4 +1,7 @@
-import { relative_width_size_generator } from "utils/helpers";
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
 
 export const styles = {
   containerBox: {
@@ -24,6 +27,7 @@ export const styles = {
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
+    marginBottom: relative_height_size_generator(50),
   },
   containerDiv: {
     textAlign: "center",
@@ -43,6 +47,8 @@ export const styles = {
   },
   headerTextWeb: {
     color: "#ffffff",
+    whiteSpace: "nowrap",
+    marginBottom: relative_height_size_generator(20),
     width: "843px",
     textShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
     "@media (max-width: 600px)": {
@@ -107,7 +113,7 @@ export const styles = {
     },
   },
   searchBar: {
-    marginTop: "22px",
+    // marginTop: "22px",
     height: "50px",
     "@media (max-width: 600px)": { marginTop: "15px" },
   },

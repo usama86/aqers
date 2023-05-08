@@ -1,12 +1,16 @@
+import styled from "@emotion/styled";
+import ButtonComponent from "components/Base/ButtonComponent";
+import SelectComponent from "components/Base/SelectComponent";
+
 export const styles = {
   button: {
     marginLeft: "0px !important",
     borderRadius: "0px",
     height: "50px",
     width: "133px",
-    position: "absolute",
-    bottom: "0px",
-    right: "0px",
+    // position: "absolute",
+    // bottom: "0px",
+    // right: "0px",
     "@media (max-width: 600px)": {
       height: "50px",
       borderRadius: "0px",
@@ -101,3 +105,14 @@ export const styles = {
     marginBottom: "10px",
   },
 };
+
+export const StyledSelect = styled(SelectComponent)(({}) => ({
+  // "& ul": {
+  //   background: "#fff",
+  //   listStyle: "none",
+  // },
+}));
+
+export const StyledSelectBtn = styled(ButtonComponent)(({}) => ({
+  borderRadius: "none",
+}));

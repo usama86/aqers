@@ -39,3 +39,7 @@ export const relative_height_size_generator = (
     return 0;
   }
 };
+
+export function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}

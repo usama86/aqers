@@ -8,7 +8,8 @@
       "utils/*": ["./src/utils/*"],
       "/*": ["./src/*"],
       "hooks/*": ["./src/hooks/*"],
-      "styles/*": ["./src/styles/*"]
+      "styles/*": ["./src/styles/*"],
+      "config/*": ["./src/config/*"]
     }
   }
 }
