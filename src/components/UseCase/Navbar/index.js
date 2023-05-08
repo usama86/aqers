@@ -12,7 +12,10 @@ import ButtonComponent from "components/Base/ButtonComponent";
 import MenuItem from "@mui/material/MenuItem";
 import ImageComponent from "components/Base/ImageComponent";
 import LinkComponent from "components/Base/LinkComponent";
-import { relative_width_size_generator } from "utils/helpers";
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
 import { styles } from "./style";
 
 const pages = ["Home", "Buy", "Rent", "About", "Contact", "FAQs"];
@@ -38,114 +41,120 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="fixed" sx={styles.appBar}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{ justifyContent: "space-around" }}>
-          {/* logo */}
-          <Box sx={styles.aqersLogo}>
-            <LinkComponent href={"/"} prefetch={false} linkStyle={{}}>
-              <ImageComponent
-                source="/Navbar/Aqers-Logo.png"
-                width={relative_width_size_generator(69)}
-                height="72px"
-                alt="Aqers Logo"
-              />
-            </LinkComponent>
-          </Box>
-
-          {/* Menu for resposnive */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="black"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-
-          {/* Logo on responsive in middle */}
-          <LinkComponent href={"/"} prefetch={false}>
-            <Box
-              sx={{
-                ...styles.aqersLogo,
-                ...{ display: { xs: "flex", md: "none" }, mr: 1 },
-              }}
-            >
-              <ImageComponent
-                source="/Navbar/Aqers-Logo.png"
-                width={relative_width_size_generator(69)}
-                height="72px"
-                alt="Aqers Logo"
-              />
-            </Box>
+      {/* <Container maxWidth="xl"> */}
+      <Toolbar disableGutters sx={{ justifyContent: "space-around" }}>
+        {/* logo */}
+        <Box sx={styles.aqersLogo}>
+          <LinkComponent href={"/"} prefetch={false} linkStyle={{}}>
+            <ImageComponent
+              source="/Navbar/Aqers-Logo.png"
+              width={relative_width_size_generator(69)}
+              height={relative_height_size_generator(72)}
+              alt="Aqers Logo"
+            />
           </LinkComponent>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+        </Box>
+
+        {/* Menu for resposnive */}
+        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+            color="black"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
             }}
-          ></Typography>
-
-          {/* Menu  */}
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{
+              display: { xs: "block", md: "none" },
+            }}
+          >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "#616569", display: "block" }}
-              >
-                <Typography variant="NavStyle" component="span">
-                  {page}
-                </Typography>
-              </Button>
+              <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">{page}</Typography>
+              </MenuItem>
             ))}
-          </Box>
+          </Menu>
+        </Box>
 
-          {/* Login */}
-          <Box sx={{ flexGrow: 0, width: "185px", height: "48px" }}>
-            <ButtonComponent color="primary" fullWidth>
-              Login
-            </ButtonComponent>
+        {/* Logo on responsive in middle */}
+        <LinkComponent href={"/"} prefetch={false}>
+          <Box
+            sx={{
+              ...styles.aqersLogo,
+              ...{ display: { xs: "flex", md: "none" }, mr: 1 },
+            }}
+          >
+            <ImageComponent
+              source="/Navbar/Aqers-Logo.png"
+              width={relative_width_size_generator(69)}
+              height={relative_height_size_generator(72)}
+              alt="Aqers Logo"
+            />
           </Box>
-        </Toolbar>
-      </Container>
+        </LinkComponent>
+        <Typography
+          variant="h5"
+          noWrap
+          component="a"
+          href=""
+          sx={{
+            mr: 2,
+            display: { xs: "flex", md: "none" },
+            flexGrow: 1,
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
+        ></Typography>
+
+        {/* Menu  */}
+        <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          {pages.map((page) => (
+            <Button
+              key={page}
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "#616569", display: "block" }}
+            >
+              <Typography variant="NavStyle" component="span">
+                {page}
+              </Typography>
+            </Button>
+          ))}
+        </Box>
+
+        {/* Login */}
+        <Box
+          sx={{
+            flexGrow: 0,
+            width: relative_width_size_generator(185),
+            height: relative_height_size_generator(48),
+          }}
+        >
+          <ButtonComponent color="primary" fullWidth>
+            Login
+          </ButtonComponent>
+        </Box>
+      </Toolbar>
+      {/* </Container> */}
     </AppBar>
   );
 }

@@ -1,7 +1,9 @@
+import { relative_height_size_generator } from "utils/helpers";
+
 export const styles = {
   appBar: {
     background: "#FFFFFF",
-    minHeight: "132px",
+    minHeight: relative_height_size_generator(132),
     border: "none",
     boxShadow: "none",
     display: "flex",
