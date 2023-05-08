@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import OutlinedInput from "@mui/material/OutlinedInput";
 
 export const TextFieldCustom = styled(OutlinedInput)(
-  ({ theme, fullWidth }) => ({
+  ({ theme, fullWidth, height }) => ({
     fontWeight: 400,
     fontSize: "11.64px",
     lineHeight: "19.8px",
@@ -17,7 +17,7 @@ export const TextFieldCustom = styled(OutlinedInput)(
       padding: "0",
     },
     border: "1px solid #C2C9D1",
-    height: "48px",
+    height: height,
     width: fullWidth ? "100%" : "auto",
   })
 );

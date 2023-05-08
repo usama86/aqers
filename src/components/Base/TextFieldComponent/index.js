@@ -20,6 +20,7 @@ export default function TextFieldComponent({
   isAuto,
   fullWidth,
   focused,
+  height,
   isError,
   errorMessage,
   ...otherProps
@@ -73,6 +74,7 @@ export default function TextFieldComponent({
   return (
     <>
       <TextFieldCustom
+        height={height}
         fullWidth={fullWidth}
         sx={{ "& fieldset": { border: "none" } }}
         placeholder={placeholder}
@@ -106,4 +108,5 @@ TextFieldComponent.defaultProps = {
   isLabel: false,
   placeholder: "",
   isAuto: false,
+  height: "48px",
 };

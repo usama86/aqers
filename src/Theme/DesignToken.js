@@ -1,3 +1,5 @@
+import { relative_width_size_generator } from "utils/helpers";
+
 const primary = "#92198C";
 const secondary = "#37474F";
 const success = "#27AE60";
@@ -233,6 +235,11 @@ export const getDesignTokens = (mode) => ({
       fontWeight: "500",
       fontSize: "1rem",
       lineHeight: "24px",
+    },
+    SelectPurposeText: {
+      fontWeight: "500",
+      fontSize: relative_width_size_generator(30),
+      lineHeight: relative_width_size_generator(45),
     },
     //Captions 10.4px
     captionNew: {

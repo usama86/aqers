@@ -8,6 +8,7 @@ import {
 } from "utils/helpers";
 import SellProperty from "./SellProperty";
 import BuyProperty from "./BuyProperty";
+import LinkComponent from "components/Base/LinkComponent";
 
 const PurposeLayout = ({ children }) => {
   return (
@@ -40,17 +41,20 @@ const SelectPurpose = () => {
             <SellProperty />
           </PurposeLayout>
         </CardComponent>
-        <CardComponent
-          id="purpose-sell-property"
-          cardStyles={{
-            height: relative_height_size_generator(267.42),
-            width: relative_width_size_generator(607.49),
-          }}
-        >
-          <PurposeLayout>
-            <BuyProperty />
-          </PurposeLayout>
-        </CardComponent>
+
+        <LinkComponent href="/">
+          <CardComponent
+            id="purpose-sell-property"
+            cardStyles={{
+              height: relative_height_size_generator(267.42),
+              width: relative_width_size_generator(607.49),
+            }}
+          >
+            <PurposeLayout>
+              <BuyProperty />
+            </PurposeLayout>
+          </CardComponent>
+        </LinkComponent>
       </StackCompoent>
     </LoginPagesForm>
   );
