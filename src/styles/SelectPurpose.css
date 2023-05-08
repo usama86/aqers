@@ -10,12 +10,10 @@
   border: 1px solid transparent;
   transition: all 0.3s ease-in;
 }
-#purpose-buy-property:hover.MuiPaper-root {
+#purpose-buy-property:hover.MuiPaper-root,
+#purpose-sell-property:hover.MuiPaper-root {
   border: 1px solid rgba(59, 136, 157, 1);
 }
 #purpose-buy-property:hover img {
-  background: red;
-}
-#purpose-sell-property:hover.MuiPaper-root {
-  border: 1px solid rgba(59, 136, 157, 1);
+  color: red;
 }
