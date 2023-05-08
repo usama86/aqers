@@ -1,4 +1,7 @@
-import { relative_height_size_generator } from "utils/helpers";
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
 
 export const styles = {
   appBar: {

@@ -10,6 +10,8 @@ export default function Search() {
   return (
     <Box sx={styles.containerBox}>
       <ImageComponent
+        position="absolute"
+        style={{ top: 0, bottom: 0, left: 0, right: 0, zIndex: -1 }}
         source={"/HomePage/Home_Image.png"}
         objectFit="cover"
         alt="Homepage"
