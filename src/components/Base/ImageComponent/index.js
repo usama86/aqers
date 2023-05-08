@@ -1,7 +1,7 @@
-import React from 'react'
-import Image from 'next/image'
-import PropTypes from 'prop-types'
-import { CustomBox } from './style'
+import React from "react";
+import Image from "next/image";
+import PropTypes from "prop-types";
+import { CustomBox } from "./style";
 
 export default function ImageComponent({
   source,
@@ -14,6 +14,7 @@ export default function ImageComponent({
   imageClassName,
   sizes,
   priority,
+  imageStyle,
   ...otherProps
 }) {
   return (
@@ -28,14 +29,14 @@ export default function ImageComponent({
         src={source}
         alt={alt}
         fill={true}
-        style={{ objectFit: objectFit }}
+        style={{ objectFit: objectFit, ...imageStyle }}
         className={imageClassName}
         sizes={sizes}
         priority={priority}
         {...otherProps}
       />
     </CustomBox>
-  )
+  );
 }
 
 ImageComponent.propTypes = {
@@ -47,15 +48,17 @@ ImageComponent.propTypes = {
   imageClassName: PropTypes.string,
   position: PropTypes.string,
   overflow: PropTypes.string,
-}
+  imageStyle: PropTypes.object,
+};
 ImageComponent.defaultProps = {
-  source: '',
-  width: '100%',
-  height: '100%',
-  alt: 'image',
-  objectFit: 'contain',
-  position: 'relative',
-  overflow: 'hidden',
-  imageClassName: '',
-  sizes: '33vw',
-}
+  source: "",
+  width: "100%",
+  height: "100%",
+  alt: "image",
+  objectFit: "contain",
+  position: "relative",
+  overflow: "hidden",
+  imageClassName: "",
+  sizes: "33vw",
+  imageStyle: {},
+};

@@ -5,7 +5,7 @@ import ImageComponent from "../../Base/ImageComponent";
 import {
   relative_height_size_generator,
   relative_width_size_generator,
-} from "@/component/utils/helpers";
+} from "utils/helpers";
 
 const LoginAppStyles = ({ Component, path }) => {
   console.log({ path });
