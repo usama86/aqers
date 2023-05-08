@@ -25,7 +25,7 @@ export default function SearchBar({ purpose }) {
     setAreas(areas);
   };
   const handleSearch = () => {};
-
+  const onFocusDisplay = (bool) => {};
   return (
     <>
       <ClickAwayListener onClickAway={() => onFocusDisplay(false)}>
