@@ -1,100 +1,103 @@
-import Link from "next/link";
-import Avatar from "./Avatar";
-import { styles } from "./style";
+import * as React from "react";
 import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Box from "components/Base/BoxComponent";
-import { useDispatch, useSelector } from "react-redux";
-import ImageComponent from "components/Base/ImageComponent";
+import IconButton from "@mui/material/IconButton";
+import Typography from "components/Base/TypographyComponent";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
 import ButtonComponent from "components/Base/ButtonComponent";
+import MenuItem from "@mui/material/MenuItem";
+import ImageComponent from "components/Base/ImageComponent";
+import LinkComponent from "components/Base/LinkComponent";
 import { relative_width_size_generator } from "utils/helpers";
-import ListComponent from "./ListComponent";
-import { DRAWER_ITEMS_SIGN_IN, DRAWER_ITEMS_SIGN_OUT } from "./drawer.config";
-import React, { useCallback, useEffect, Suspense, useState, lazy } from "react";
-import TypographyComponent from "components/Base/TypographyComponent";
+import { styles } from "./style";
 
-const Drawer = lazy(() => import("./ResponsiveSidebar/index"));
+const pages = ["Home", "Buy", "Rent", "About", "Contact", "FAQs"];
 
-const direction = "left";
+function ResponsiveAppBar() {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-export default function Navbar({ path }) {
-  const dispatch = useDispatch();
-  const { user, isLoggedIn, initialLoad, authLoader } = useSelector(
-    (state) => state.user
-  );
-
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    // if (path) {
-    //   const url = redirectUrl(window?.location);
-    //   setLocalStorage(LOCAL_STORAGE.REDIRECT_URL, url);
-    //   dispatch(propertyResetReducer());
-    // }
-  }, [path]);
-
-  const onScroll = useCallback((event) => {
-    const { pageYOffset } = window;
-    setScrollY(pageYOffset);
-  }, []);
-
-  useEffect(() => {
-    //add eventlistener to window
-    window.addEventListener("scroll", onScroll, { passive: true });
-    // remove event on unmount to prevent a memory leak with the cleanup
-    return () => {
-      window.removeEventListener("scroll", onScroll, { passive: true });
-    };
-  }, []);
-
-  const [drawer, setDrawer] = React.useState({
-    left: false,
-  });
-
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-    setDrawer({ ...drawer, [anchor]: open });
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
   };
 
-  const handleSignInButton = useCallback(() => {
-    dispatch(changeAuthModalTypeAction({ type: AUTH_MODAL_TYPE["SIGN_IN"] }));
-  }, []);
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
-  const NAVBAR_ITEMS = [
-    { label: "Home" },
-    { label: "Buy" },
-    { label: "Rent" },
-    { label: "About" },
-    { label: "Contact" },
-    { label: "FAQs" },
-  ];
-  const resetDrawer = useCallback(() => {
-    setDrawer({
-      left: false,
-    });
-  }, [drawer]);
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
   return (
-    <AppBar
-      component="nav"
-      sx={
-        path == "/" && scrollY < 50
-          ? styles.appBarHome
-          : path == "/" && scrollY > 50
-          ? styles.appBarHomeScroll
-          : styles.appBar
-      }
-    >
-      <Toolbar
-        sx={{ ...styles.justifyBetween, ...styles.toolbarStyleOverride }}
-      >
-        <Box sx={styles.displayNone}>
-          <Link href={path !== "/" ? "/" : ""} prefetch={false}>
-            <Box sx={styles.aqersLogo}>
+    <AppBar position="fixed" sx={styles.appBar}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters sx={{ justifyContent: "space-around" }}>
+          {/* logo */}
+          <Box sx={styles.aqersLogo}>
+            <LinkComponent href={"/"} prefetch={false} linkStyle={{}}>
+              <ImageComponent
+                source="/Navbar/Aqers-Logo.png"
+                width={relative_width_size_generator(69)}
+                height="72px"
+                alt="Aqers Logo"
+              />
+            </LinkComponent>
+          </Box>
+
+          {/* Menu for resposnive */}
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="black"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+
+          {/* Logo on responsive in middle */}
+          <LinkComponent href={"/"} prefetch={false}>
+            <Box
+              sx={{
+                ...styles.aqersLogo,
+                ...{ display: { xs: "flex", md: "none" }, mr: 1 },
+              }}
+            >
               <ImageComponent
                 source="/Navbar/Aqers-Logo.png"
                 width={relative_width_size_generator(69)}
@@ -102,98 +105,48 @@ export default function Navbar({ path }) {
                 alt="Aqers Logo"
               />
             </Box>
-          </Link>
-        </Box>
+          </LinkComponent>
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: "flex", md: "none" },
+              flexGrow: 1,
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          ></Typography>
 
-        <Box sx={styles.displayNoneMin}>
-          <ImageComponent
-            source={
-              path == "/" && scrollY < 50
-                ? "/common/hamburgerWhite.svg"
-                : "/common/hamburgerBlack.svg"
-            }
-            width="25px"
-            height="25px"
-            alt="Hamburger"
-            onClick={toggleDrawer(direction, true)}
-          />
-        </Box>
-
-        <Link href={path !== "/" ? "/" : ""} prefetch={false}>
-          <Box sx={styles.responsiveImage}>
-            <ImageComponent
-              source={
-                path == "/" && scrollY < 50
-                  ? "/Navbar/Aqers-Logo.png"
-                  : "/Navbar/Aqers-Logo.png"
-              }
-              width="129px"
-              height="30px"
-              alt="Aqers Logo Responsive"
-            />
-          </Box>
-        </Link>
-
-        <Box sx={styles.flexGrowItems}>
-          {NAVBAR_ITEMS?.map((item, index) => (
-            <div
-              style={{
-                position: "relative",
-                marginLeft: index !== 0 ? "56px" : "0px",
-              }}
-              key={index}
-            >
-              <ButtonComponent
-                id={item.id}
-                sx={styles.navbarItem}
-                variant="text"
-                onMouseEnter={item.onMouseEnter}
-                onMouseLeave={item.onMouseLeave}
-                ref={item.ref}
+          {/* Menu  */}
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "#616569", display: "block" }}
               >
-                <TypographyComponent variant={"NavStyle"} component={"span"}>
-                  {item.label}
-                </TypographyComponent>
-              </ButtonComponent>
-            </div>
-          ))}
-          <Box sx={{ width: "185px", height: "48px", marginLeft: "240px" }}>
+                <Typography variant="NavStyle" component="span">
+                  {page}
+                </Typography>
+              </Button>
+            ))}
+          </Box>
+
+          {/* Login */}
+          <Box sx={{ flexGrow: 0, width: "185px", height: "48px" }}>
             <ButtonComponent color="primary" fullWidth>
               Login
             </ButtonComponent>
           </Box>
-        </Box>
-
-        <>
-          <Box sx={styles.responsiveBoxSignin} />
-          {!isLoggedIn && initialLoad && (
-            <ButtonComponent
-              variant="outlined"
-              onClick={handleSignInButton}
-              sx={
-                path == "/"
-                  ? styles.signinButton
-                  : styles.signinButtonResponsive
-              }
-            >
-              Sign In
-            </ButtonComponent>
-          )}
-        </>
-      </Toolbar>
-
-      {drawer.left && (
-        <Suspense fallback={""}>
-          <Drawer
-            drawer={drawer}
-            closeDrawer={resetDrawer}
-            toggleDrawer={toggleDrawer}
-            direction={direction}
-            isLoggedIn={isLoggedIn}
-            listItem={isLoggedIn ? DRAWER_ITEMS_SIGN_IN : DRAWER_ITEMS_SIGN_OUT}
-          />
-        </Suspense>
-      )}
+        </Toolbar>
+      </Container>
     </AppBar>
   );
 }
+export default ResponsiveAppBar;
