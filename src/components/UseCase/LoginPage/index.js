@@ -37,13 +37,24 @@ const LoginPage = () => {
           </span>
           <TypographyComponent variant="button">Google</TypographyComponent>
         </ButtonComponent>
-      </StackCompoent>
+      </StackCompoent>{" "}
       <ButtonComponent
         color="primary"
         fullWidth
         style={{ marginTop: relative_width_size_generator(68) }}
       >
-        <LinkComponent prefetch={false}>Login</LinkComponent>
+        <LinkComponent
+          linkStyle={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          href="/otp"
+        >
+          Login
+        </LinkComponent>
       </ButtonComponent>
     </LoginPagesForm>
   );

@@ -1,5 +1,6 @@
 import "styles/globals.css";
 import "styles/SelectPurpose.css";
+import "styles/Footer.css";
 import Head from "next/head";
 import Theme from "../Theme";
 import LoginAppStyles from "components/UseCase/LoginPagesStyles";
