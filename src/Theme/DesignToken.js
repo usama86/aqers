@@ -48,7 +48,7 @@ export const getDesignTokens = (mode) => ({
     fontFamily: '"Poppins", sans-serif;',
     h1: {
       fontWeight: "600",
-      fontSize: "50px",
+      fontSize: relative_width_size_generator(50),
     },
     h2: {
       fontWeight: "600",
@@ -253,22 +253,29 @@ export const getDesignTokens = (mode) => ({
       fontSize: "0.579rem",
       lineHeight: "1.143",
     },
-    NavStyle: {
+    NavStyleSelected: {
       fontSize: "18px",
       fontWeight: 700,
       lineHeight: "27px",
       letterSpacing: "0em",
       textAlign: "left",
     },
+    NavStyle: {
+      fontSize: "18px",
+      fontWeight: 500,
+      lineHeight: "27px",
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
     HomeBold: {
-      fontSize: "52px",
+      fontSize: relative_width_size_generator(52),
       fontWeight: "700",
       lineHeight: "72px",
       letterSpacing: "0em",
       textAlign: "center",
     },
     HomeLight: {
-      fontSize: "20px",
+      fontSize: relative_width_size_generator(20),
       fontWeight: 400,
       lineHeight: "28px",
       letterSpacing: "0em",

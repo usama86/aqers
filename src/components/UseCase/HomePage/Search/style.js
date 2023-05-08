@@ -1,3 +1,5 @@
+import { relative_width_size_generator } from "utils/helpers";
+
 export const styles = {
   containerBox: {
     display: "flex",
@@ -5,8 +7,10 @@ export const styles = {
     justifyContent: "center",
     height: "758px",
     position: "relative",
-    padding: "50px",
-    paddingTop: "144px",
+    // padding: "50px",
+    width: relative_width_size_generator(1820),
+    margin: "0 auto",
+    // marginTop: "144px",
     "@media (max-width: 600px)": {
       display: "block",
       height: "317px",
@@ -23,9 +27,9 @@ export const styles = {
   },
   containerDiv: {
     textAlign: "center",
-    position: "absolute",
-    top: "50%",
-    width: "843px",
+    // position: "absolute",
+    // top: "50%",
+    width: relative_width_size_generator(843),
     margin: "0px auto",
     maxWidth: "1440px",
     "@media (max-width: 900px)": {
