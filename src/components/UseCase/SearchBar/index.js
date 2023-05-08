@@ -53,7 +53,9 @@ export default function SearchBar({ purpose }) {
               height="24px"
               alt="Search Icon"
             />
-            {/* <TypographyComponent>Search</TypographyComponent> */}
+            <TypographyComponent variant="HomeMedium" component="span">
+              Search
+            </TypographyComponent>
           </ButtonComponent>
           {openList && (
             <div

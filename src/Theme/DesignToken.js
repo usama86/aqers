@@ -253,5 +253,26 @@ export const getDesignTokens = (mode) => ({
       letterSpacing: "0em",
       textAlign: "left",
     },
+    HomeBold: {
+      fontSize: "52px",
+      fontWeight: "700",
+      lineHeight: "72px",
+      letterSpacing: "0em",
+      textAlign: "center",
+    },
+    HomeLight: {
+      fontSize: "20px",
+      fontWeight: 400,
+      lineHeight: "28px",
+      letterSpacing: "0em",
+      textAlign: "center",
+    },
+    HomeMedium: {
+      fontSize: "14px",
+      fontWeight: 600,
+      lineHeight: "20px",
+      letterSpacing: "0.20000000298023224px",
+      textAlign: "left",
+    },
   },
 });
