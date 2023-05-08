@@ -7,6 +7,8 @@ body {
      */
   /* padding: 0 !important; */
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-size: 87.5%;
 
   /* Hide scrollbar for IE, Edge and Firefox */

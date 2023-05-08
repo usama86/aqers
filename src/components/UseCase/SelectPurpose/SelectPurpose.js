@@ -8,7 +8,6 @@ import {
 } from "utils/helpers";
 import SellProperty from "./SellProperty";
 import BuyProperty from "./BuyProperty";
-import styles from "styles/SelectPurpose.module.css";
 
 const PurposeLayout = ({ children }) => {
   return (
@@ -31,7 +30,7 @@ const SelectPurpose = () => {
     <LoginPagesForm heading="Thank you for being part of us!">
       <StackCompoent spacing={relative_width_size_generator(60.4)}>
         <CardComponent
-          id="buy-property"
+          id="purpose-buy-property"
           cardStyles={{
             height: relative_height_size_generator(267.42),
             width: relative_width_size_generator(607.49),
@@ -42,7 +41,7 @@ const SelectPurpose = () => {
           </PurposeLayout>
         </CardComponent>
         <CardComponent
-          id="sell-property"
+          id="purpose-sell-property"
           cardStyles={{
             height: relative_height_size_generator(267.42),
             width: relative_width_size_generator(607.49),

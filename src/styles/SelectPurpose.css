@@ -1,0 +1,9 @@
+#purpose-buy-property:hover.MuiPaper-root {
+  transition: all 0.4s ease;
+  border: 1px solid rgba(59, 136, 157, 1);
+}
+
+#purpose-sell-property:hover.MuiPaper-root {
+  transition: all 0.4s ease;
+  border: 1px solid rgba(59, 136, 157, 1);
+}

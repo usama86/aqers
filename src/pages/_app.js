@@ -1,6 +1,6 @@
-import "./../styles/globals.css";
+import "styles/globals.css";
+import "styles/SelectPurpose.css";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import Theme from "../Theme";
 import LoginAppStyles from "components/UseCase/LoginPagesStyles";
 import MainAppStyles from "components/UseCase/MainAppLayout";
