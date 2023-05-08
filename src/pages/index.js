@@ -3,7 +3,9 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "./../styles/Home.module.css";
 import Link from "next/link";
-import Search from "components/UseCase/Search";
+import Search from "components/UseCase/HomePage/Search";
+import BoxComponent from "components/Base/BoxComponent";
+import HomePageSecondSection from "components/UseCase/HomePage/HomePageSecondSection";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +19,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Search />
+      <BoxComponent sx={{ p: "110 243 0 243" }}>
+        <HomePageSecondSection />
+      </BoxComponent>
     </>
   );
 }
