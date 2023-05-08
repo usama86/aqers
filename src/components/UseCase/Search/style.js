@@ -24,8 +24,8 @@ export const styles = {
   containerDiv: {
     textAlign: "center",
     position: "absolute",
-    top: "25%",
-    width: "800px",
+    top: "50%",
+    width: "843px",
     margin: "0px auto",
     maxWidth: "1440px",
     "@media (max-width: 900px)": {
@@ -39,7 +39,17 @@ export const styles = {
   },
   headerTextWeb: {
     color: "#ffffff",
-    width: "675px",
+    width: "843px",
+    textShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
+    "@media (max-width: 600px)": {
+      display: "none",
+      textShadow: "0px 0px 5px rgba(0, 0, 0, 0.75)",
+    },
+  },
+  headerlightWeb: {
+    color: "#EDEFF6",
+    width: "843px",
+    textAlign: "left",
     textShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
     "@media (max-width: 600px)": {
       display: "none",

@@ -1,7 +1,7 @@
 import ImageComponent from "../Base/ImageComponent";
 import StackCompoent from "../Base/StackCompoent";
 import TypographyComponent from "../Base/TypographyComponent";
-import { relative_width_size_generator } from "@/component/utils/helpers";
+import { relative_width_size_generator } from "utils/helpers";
 import useRouterProps from "hooks/useRouterProps";
 
 const LoginPagesForm = ({ heading, children }) => {
