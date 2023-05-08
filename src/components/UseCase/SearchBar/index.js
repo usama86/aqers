@@ -31,19 +31,21 @@ export default function SearchBar({ purpose }) {
       <ClickAwayListener onClickAway={() => onFocusDisplay(false)}>
         <div>
           <TextFieldComponent
-            placeholder="Search by city or area"
+            placeholder="Find Property"
             onChange={handleChange}
             value={inputValue}
             onFocus={() => onFocusDisplay(true)}
             isAuto
             focused={openList}
+            height={"50px"}
+            borderRadius="0px"
           />
           <ButtonComponent
             variant="contained"
             color="primary"
             sx={{
               ...styles.button,
-              borderBottomRightRadius: openList ? "0px" : "16px",
+              borderRadius: "0px",
             }}
             onClick={handleSearch}
           >

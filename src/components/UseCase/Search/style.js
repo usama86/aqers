@@ -104,6 +104,7 @@ export const styles = {
   },
   searchBar: {
     marginTop: "22px",
+    height: "50px",
     "@media (max-width: 600px)": { marginTop: "15px" },
   },
 };

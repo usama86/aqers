@@ -1,19 +1,19 @@
 export const styles = {
   button: {
     marginLeft: "0px !important",
-    borderRadius: "0px 16px 16px 0px",
-    height: "133px",
-    width: "80px",
+    borderRadius: "0px",
+    height: "50px",
+    width: "133px",
     position: "absolute",
     bottom: "0px",
     right: "0px",
     "@media (max-width: 600px)": {
-      height: "60px",
-      borderRadius: "0px 8px 8px 0px",
+      height: "50px",
+      borderRadius: "0px",
     },
   },
   searchBar: {
-    height: "80px",
+    height: "50px",
     width: "100%",
     backgroundColor: "#ffffff",
     borderRadius: "16px",
@@ -21,7 +21,7 @@ export const styles = {
     fontSize: "14px",
     lineHeight: "24px",
     "@media (max-width: 800px)": {
-      height: "55px",
+      height: "50px",
       borderRadius: "8px",
     },
   },
