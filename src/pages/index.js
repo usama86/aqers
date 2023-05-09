@@ -29,8 +29,8 @@ export default function Home() {
         }}
       >
         <SecondSection />
-        <ThirdSecion />
       </BoxComponent>
+      <ThirdSecion />
     </>
   );
 }
