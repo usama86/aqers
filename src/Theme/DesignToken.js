@@ -274,6 +274,7 @@ export const getDesignTokens = (mode) => ({
       letterSpacing: "0em",
       textAlign: "center",
     },
+
     HomeLight: {
       fontSize: relative_width_size_generator(20),
       fontWeight: 400,
@@ -305,6 +306,25 @@ export const getDesignTokens = (mode) => ({
       lineHeight: "32px",
       letterSpacing: "0px",
       textAlign: "left",
+    },
+    HomeFifthSection: {
+      fontWeight: 700,
+      lineHeight: "72px",
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
+    HomeSixthSection: {
+      fontSize: relative_width_size_generator(20),
+      fontWeight: 400,
+      lineHeight: "28px",
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
+    HomeSeventhSection: {
+      fontWeight: 600,
+      lineHeight: "18px",
+      letterSpacing: "0em",
+      textAlign: "center",
     },
   },
 });

@@ -1,5 +1,5 @@
 import AboutUs from "./AboutUs/AboutUs";
-import DownloadApp from "./DownloadApp/DownloadApp";
+import DownloadApp from "./DownloadApp";
 import FooterUrls from "./FooterUrls/FooterUrls";
 
 function Footer() {
