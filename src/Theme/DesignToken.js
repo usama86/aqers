@@ -320,11 +320,24 @@ export const getDesignTokens = (mode) => ({
       letterSpacing: "0em",
       textAlign: "left",
     },
+
     HomeSeventhSection: {
       fontWeight: 600,
       lineHeight: "18px",
       letterSpacing: "0em",
       textAlign: "center",
+    },
+    HomeEightSection: {
+      fontWeight: 600,
+      lineHeight: "72px",
+      letterSpacing: "-0.4000000059604645px",
+      textAlign: "left",
+    },
+    HomeNineScreen: {
+      fontWeight: 400,
+      lineHeight: "39px",
+      letterSpacing: "0em",
+      textAlign: "left",
     },
   },
 });

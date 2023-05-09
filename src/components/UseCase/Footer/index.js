@@ -1,4 +1,4 @@
-import AboutUs from "./AboutUs/AboutUs";
+import AboutUs from "./AboutUs";
 import DownloadApp from "./DownloadApp";
 import FooterUrls from "./FooterUrls/FooterUrls";
 
