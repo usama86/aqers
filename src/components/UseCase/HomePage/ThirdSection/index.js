@@ -68,6 +68,7 @@ export default function ThirdSecion() {
           display: "flex",
           gap: "35px",
           flexDirection: "column",
+          p: "78px 0px 78px 0px",
         }}
         className="hello"
       >
@@ -91,10 +92,26 @@ export default function ThirdSecion() {
             our pleasure. We strive to provide the best service by:
           </TypographyComponent>
         </Box>
-        <Box>
-          <TypographyComponent>
-            Customer satisfaction is our first priority
-          </TypographyComponent>
+        <Box sx={{ display: "flex", gap: "16px", flexDirection: "column" }}>
+          {TextBox.map((data) => (
+            <Box
+              sx={{ display: "flex", alignItems: "center", gap: "24px" }}
+              key={data.id}
+            >
+              <ImageComponent
+                source={"/HomePage/Tick_Icon.png"}
+                width={"24px"}
+                height={"24px"}
+              />
+              <TypographyComponent
+                variant="HomeFourthSection"
+                component="span"
+                sx={{ fontSize: "18px" }}
+              >
+                {data.content}
+              </TypographyComponent>
+            </Box>
+          ))}
         </Box>
       </Box>
     </Box>
@@ -124,5 +141,28 @@ const ImagesBox = [
     id: 4,
     color: "#4ADB61",
     content: "We have more than customers",
+  },
+];
+
+const TextBox = [
+  {
+    id: 1,
+    content: "Provide idea support from our creative team",
+  },
+  {
+    id: 2,
+    content: "Provide attractive and professional design services",
+  },
+  {
+    id: 3,
+    content: "Support for service 24 hours a week",
+  },
+  {
+    id: 4,
+    content: "Helping our customers to grow their business",
+  },
+  {
+    id: 5,
+    content: "Provide support to market products through online marketplace ",
   },
 ];

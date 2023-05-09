@@ -300,5 +300,11 @@ export const getDesignTokens = (mode) => ({
       letterSpacing: "0px",
       textAlign: "center",
     },
+    HomeFourthSection: {
+      fontWeight: 400,
+      lineHeight: "32px",
+      letterSpacing: "0px",
+      textAlign: "left",
+    },
   },
 });
