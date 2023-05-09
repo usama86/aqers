@@ -4,6 +4,7 @@ import TypographyComponent from "components/Base/TypographyComponent";
 import SearchBarComponent from "components/UseCase/SearchBar";
 import { styles } from "./style";
 import Box from "components/Base/BoxComponent";
+import { relative_height_size_generator } from "utils/helpers";
 
 export default function Search() {
   const [activeButton, setActiveButton] = useState("buy");
@@ -30,7 +31,10 @@ export default function Search() {
             Fast & Free way to Find Property
           </TypographyComponent>
         </Box>
-        <Box sx={styles.titleContainer}>
+        <Box
+          sx={styles.titleContainer}
+          style={{ marginBottom: relative_height_size_generator(50) }}
+        >
           <TypographyComponent
             variant="HomeLight"
             component={"h2"}
