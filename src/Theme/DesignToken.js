@@ -339,5 +339,12 @@ export const getDesignTokens = (mode) => ({
       letterSpacing: "0em",
       textAlign: "left",
     },
+    FooterScreen: {
+      fontWeight: 300,
+      lineHeight: "26px",
+      letterSpacing: "0em",
+      textAlign: "left",
+      fontFamily: "Inter",
+    },
   },
 });
