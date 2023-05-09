@@ -9,7 +9,8 @@
       "/*": ["./src/*"],
       "hooks/*": ["./src/hooks/*"],
       "styles/*": ["./src/styles/*"],
-      "config/*": ["./src/config/*"]
+      "config/*": ["./src/config/*"],
+      "theme/*": ["./src/Theme/*"]
     }
   }
 }

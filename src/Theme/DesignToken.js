@@ -1,4 +1,7 @@
-import { relative_width_size_generator } from "utils/helpers";
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
 
 const primary = "#92198C";
 const secondary = "#37474F";
@@ -9,6 +12,7 @@ const grey1 = "#737678";
 const grey2 = "#BBBBBB";
 const grey3 = "#F2F2F2";
 const white = "#FFFFFF";
+export const infoPagesBackground = "#E8E8E8";
 
 export const getDesignTokens = (mode) => ({
   palette: {
@@ -67,8 +71,8 @@ export const getDesignTokens = (mode) => ({
     },
     h6: {
       fontWeight: "600",
-      fontSize: "18px",
-      lineHeight: "28px",
+      fontSize: relative_width_size_generator(18),
+      lineHeight: relative_width_size_generator(18),
     },
     logo1: {
       fontWeight: "600",
@@ -345,6 +349,41 @@ export const getDesignTokens = (mode) => ({
       letterSpacing: "0em",
       textAlign: "left",
       fontFamily: "Inter",
+    },
+    InfoPageHeading: {
+      fontWeight: 600,
+      fontSize: relative_width_size_generator(56),
+      lineHeight: relative_height_size_generator(72),
+    },
+    InfoPageBodyParagraph: {
+      fontWeight: "500",
+      fontSize: "1rem",
+      lineHeight: relative_height_size_generator(28),
+    },
+    InfoPageBodySubHeading: {
+      fontWeight: "500",
+      fontSize: "24px",
+      lineHeight: relative_height_size_generator(30),
+    },
+    FaqAnswerHeading: {
+      fontWeight: "700",
+      fontSize: "18px",
+      lineHeight: relative_height_size_generator(28),
+    },
+    ContactHeading1: {
+      fontWeight: "600",
+      fontSize: relative_width_size_generator(48),
+      lineHeight: relative_height_size_generator(64),
+    },
+    ContactBody: {
+      fontWeight: "500",
+      fontSize: relative_width_size_generator(18),
+      lineHeight: relative_height_size_generator(30),
+    },
+    ContactHeading2: {
+      fontWeight: "500",
+      fontSize: relative_width_size_generator(24),
+      lineHeight: relative_height_size_generator(30),
     },
   },
 });

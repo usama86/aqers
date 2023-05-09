@@ -160,18 +160,30 @@ function ResponsiveAppBar() {
                   minWidth: relative_width_size_generator(55),
                 }}
               >
-                <Typography
-                  sx={{
-                    color: path === eachPage.route ? "primary.main" : "inherit",
-                    textTransform: "capitalize",
+                <LinkComponent
+                  linkStyle={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
-                  variant={
-                    path === eachPage.route ? "NavStyleSelected" : "NavStyle"
-                  }
-                  component="span"
+                  href={`/${eachPage.route}`}
                 >
-                  {eachPage.label}
-                </Typography>
+                  <Typography
+                    sx={{
+                      color:
+                        path === eachPage.route ? "primary.main" : "inherit",
+                      textTransform: "capitalize",
+                    }}
+                    variant={
+                      path === eachPage.route ? "NavStyleSelected" : "NavStyle"
+                    }
+                    component="span"
+                  >
+                    {eachPage.label}
+                  </Typography>
+                </LinkComponent>
               </Button>
             ))}
           </Box>
@@ -185,7 +197,18 @@ function ResponsiveAppBar() {
             }}
           >
             <ButtonComponent color="primary" fullWidth>
-              Login
+              <LinkComponent
+                linkStyle={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                href="/login"
+              >
+                Login
+              </LinkComponent>
             </ButtonComponent>
           </Box>
         </Toolbar>

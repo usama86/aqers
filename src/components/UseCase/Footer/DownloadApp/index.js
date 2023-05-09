@@ -6,13 +6,15 @@ import Box from "components/Base/BoxComponent";
 import { relative_width_size_generator } from "utils/helpers";
 import ButtonComponent from "components/Base/ButtonComponent";
 
-export default function ThirdSecion() {
+export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
   return (
     <Box
       sx={{
         height: "720px",
         display: "flex",
-        backgroundColor: "primary.main",
+        backgroundColor: isBackgroundLightDownloadApp
+          ? "#EDEDED"
+          : "primary.main",
         p: `70px ${relative_width_size_generator(
           243
         )} 0px ${relative_width_size_generator(243)}`,
@@ -41,7 +43,10 @@ export default function ThirdSecion() {
           <Box>
             <TypographyComponent
               variant="HomeFifthSection"
-              sx={{ color: "#FFFFFF", fontSize: "52px" }}
+              sx={{
+                color: isBackgroundLightDownloadApp ? "000000" : "#FFFFFF",
+                fontSize: "52px",
+              }}
               component="h2"
             >
               Get The App For Better Experience
@@ -52,7 +57,10 @@ export default function ThirdSecion() {
             <TypographyComponent
               variant="HomeSixthSection"
               component="span"
-              sx={{ color: "#EDEFF6", fontSize: "20px" }}
+              sx={{
+                color: isBackgroundLightDownloadApp ? "000000" : "#EDEFF6",
+                fontSize: "20px",
+              }}
             >
               Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
               posuere cubilia curae; Proin sodales ultrices nulla blandit
@@ -66,9 +74,10 @@ export default function ThirdSecion() {
                 height: "48px",
                 width: "185px",
                 borderRadius: "14px",
-                background: "#FFFFFF",
-                color: "primary.main",
+                background: !isBackgroundLightDownloadApp && "#FFFFFF",
+                color: !isBackgroundLightDownloadApp && "primary.main",
               }}
+              color="primary"
             >
               <TypographyComponent
                 variant="HomeSeventhSection"
