@@ -339,9 +339,30 @@ export const getDesignTokens = (mode) => ({
       letterSpacing: "0em",
       textAlign: "left",
     },
+
     FooterScreen: {
       fontWeight: 300,
       lineHeight: "26px",
+      letterSpacing: "0em",
+      textAlign: "left",
+      fontFamily: "Inter",
+    },
+    FooterSecondScreen: {
+      fontSize: "18px",
+      fontWeight: 500,
+      lineHeight: "32px",
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
+    FooterThirdScreen: {
+      fontWeight: 400,
+      lineHeight: "27px",
+      letterSpacing: "0px",
+      textAlign: "left",
+    },
+    FooterFourthScreen: {
+      fontWeight: 400,
+      lineHeight: "18px",
       letterSpacing: "0em",
       textAlign: "left",
       fontFamily: "Inter",
