@@ -3,20 +3,33 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
+import Typography from "components/Base/TypographyComponent";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
+import ButtonComponent from "components/Base/ButtonComponent";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import ImageComponent from "components/Base/ImageComponent";
+import LinkComponent from "components/Base/LinkComponent";
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
+import { styles } from "./style";
+import useRouterProps from "hooks/useRouterProps";
 
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = [
+  { label: "Home", route: "" },
+  { label: "Buy", route: "buy" },
+  { label: "Rent", route: "rent" },
+  { label: "About", route: "about" },
+  { label: "Contact", route: "contact" },
+  { label: "FAQs", route: "faq" },
+];
 
-function Navbar() {
+function ResponsiveAppBar() {
+  const { path } = useRouterProps();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -36,28 +49,23 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+    <>
+      <AppBar position="fixed" sx={styles.appBar}>
+        {/* <Container maxWidth="xl"> */}
+        <Toolbar disableGutters sx={{ justifyContent: "space-around" }}>
+          {/* logo */}
+          <Box sx={styles.aqersLogo}>
+            <LinkComponent href={"/"} prefetch={false} linkStyle={{}}>
+              <ImageComponent
+                source="/Navbar/Aqers-Logo.png"
+                width={relative_width_size_generator(69)}
+                height={relative_height_size_generator(72)}
+                alt="Aqers Logo"
+              />
+            </LinkComponent>
+          </Box>
 
+          {/* Menu for resposnive */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -65,7 +73,7 @@ function Navbar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="black"
             >
               <MenuIcon />
             </IconButton>
@@ -87,76 +95,127 @@ function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((eachPage) => (
+                <MenuItem key={eachPage.route} onClick={handleCloseNavMenu}>
+                  <Typography variant={"NavStyle"} textAlign="center">
+                    {eachPage.label}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
+
+          {/* Logo on responsive in middle */}
+          <LinkComponent href={"/"} prefetch={false}>
+            <Box
+              sx={{
+                ...styles.aqersLogo,
+                ...{ display: { xs: "flex", md: "none" }, mr: 1 },
+              }}
+            >
+              <ImageComponent
+                source="/Navbar/Aqers-Logo.png"
+                width={relative_width_size_generator(69)}
+                height={relative_height_size_generator(72)}
+                alt="Aqers Logo"
+              />
+            </Box>
+          </LinkComponent>
+          {/* <Typography
+        variant="h5"
+        noWrap
+        component="a"
+        href=""
+        sx={{
+          mr: 2,
+          display: { xs: "flex", md: "none" },
+          flexGrow: 1,
+          fontFamily: "monospace",
+          fontWeight: 700,
+          letterSpacing: ".3rem",
+          color: "inherit",
+          textDecoration: "none",
+        }}
+      ></Typography> */}
+
+          {/* Menu  */}
+          <Box
             sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+              display: {
+                xs: "none",
+                md: "flex",
+                gap: relative_width_size_generator(56),
+              },
             }}
           >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map((eachPage) => (
               <Button
-                key={page}
+                key={eachPage.label}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "#616569",
+                  display: "block",
+                  // minWidth: relative_width_size_generator(111),
+                  minWidth: relative_width_size_generator(55),
+                }}
               >
-                {page}
+                <LinkComponent
+                  linkStyle={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  href={`/${eachPage.route}`}
+                >
+                  <Typography
+                    sx={{
+                      color:
+                        path === eachPage.route ? "primary.main" : "inherit",
+                      textTransform: "capitalize",
+                    }}
+                    variant={
+                      path === eachPage.route ? "NavStyleSelected" : "NavStyle"
+                    }
+                    component="span"
+                  >
+                    {eachPage.label}
+                  </Typography>
+                </LinkComponent>
               </Button>
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+          {/* Login */}
+          <Box
+            sx={{
+              flexGrow: 0,
+              width: relative_width_size_generator(185),
+              height: relative_height_size_generator(48),
+            }}
+          >
+            <ButtonComponent color="primary" fullWidth>
+              <LinkComponent
+                linkStyle={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                href="/login"
+              >
+                Login
+              </LinkComponent>
+            </ButtonComponent>
           </Box>
         </Toolbar>
-      </Container>
-    </AppBar>
+        {/* </Container> */}
+      </AppBar>
+      <div style={{ height: relative_height_size_generator(132) }} />
+    </>
   );
 }
-export default Navbar;
+export default ResponsiveAppBar;

@@ -14,6 +14,7 @@ const ButtonComponent = forwardRef((props, ref) => {
     height,
     onClick,
     variant,
+    borderRadius,
     loading,
     children,
     disabled,
@@ -43,6 +44,7 @@ const ButtonComponent = forwardRef((props, ref) => {
   }
   return (
     <CustomButton
+      borderRadius={borderRadius}
       variant={variant}
       href={path}
       onClick={handleClick}
@@ -122,6 +124,7 @@ ButtonComponent.defaultProps = {
   path: null,
   color: "secondary",
   onClick: () => {},
+  borderRadius: "14px",
 };
 
 export default ButtonComponent;

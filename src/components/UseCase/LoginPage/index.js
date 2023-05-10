@@ -1,34 +1,17 @@
-import { relative_width_size_generator } from "@/component/utils/helpers";
-import ImageComponent from "../../Base/ImageComponent";
 import StackCompoent from "../../Base/StackCompoent";
-import logo from "./../../../assets/common/Logo.png";
 import TextFieldComponent from "../../Base/TextFieldComponent";
 import { useState } from "react";
-import TypographyComponent from "../../Base/TypographyComponent";
-import ButtonComponent from "../../Base/ButtonComponent";
-import GoogleLogo from "./../../../assets/common/Google-logo";
+import TypographyComponent from "components/Base/TypographyComponent";
+import ButtonComponent from "components/Base/ButtonComponent";
+import GoogleLogo from "../../Icons/Google-logo";
+import LoginPagesForm from "../../Layouts/LoginPagesForm";
+import { relative_width_size_generator } from "utils/helpers";
+import LinkComponent from "components/Base/LinkComponent";
 
 const LoginPage = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
-  const loginFormWidth = relative_width_size_generator(398).value;
   return (
-    <StackCompoent
-      direction="column"
-      alignItems="center"
-      style={{ width: loginFormWidth, minWidth: "385px" }}
-    >
-      <ImageComponent
-        height="72px"
-        width="69.23px"
-        position="relative"
-        source={logo}
-      />
-      <TypographyComponent
-        style={{ marginBottom: "56px", marginTop: "71px" }}
-        variant="h2"
-      >
-        Login to your Account
-      </TypographyComponent>
+    <LoginPagesForm heading="Login to your Account">
       <StackCompoent direction="column" style={{ width: "100%" }}>
         <TypographyComponent variant="h6">Phone Number</TypographyComponent>
         <TextFieldComponent
@@ -54,12 +37,26 @@ const LoginPage = () => {
           </span>
           <TypographyComponent variant="button">Google</TypographyComponent>
         </ButtonComponent>
-      </StackCompoent>
-      <ButtonComponent color="primary" fullWidth style={{ marginTop: "68px" }}>
-        Login
+      </StackCompoent>{" "}
+      <ButtonComponent
+        color="primary"
+        fullWidth
+        style={{ marginTop: relative_width_size_generator(68) }}
+      >
+        <LinkComponent
+          linkStyle={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          href="/otp"
+        >
+          Login
+        </LinkComponent>
       </ButtonComponent>
-      {/* login buton */}
-    </StackCompoent>
+    </LoginPagesForm>
   );
 };
 

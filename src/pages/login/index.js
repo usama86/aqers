@@ -1,5 +1,4 @@
-import Link from "next/link";
-import LoginPage from "@/component/components/UseCase/LoginPage";
+import LoginPage from "components/UseCase/LoginPage";
 
 const Login = () => {
   return (

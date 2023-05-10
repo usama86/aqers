@@ -1,3 +1,8 @@
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
+
 const primary = "#92198C";
 const secondary = "#37474F";
 const success = "#27AE60";
@@ -7,6 +12,7 @@ const grey1 = "#737678";
 const grey2 = "#BBBBBB";
 const grey3 = "#F2F2F2";
 const white = "#FFFFFF";
+export const infoPagesBackground = "#E8E8E8";
 
 export const getDesignTokens = (mode) => ({
   palette: {
@@ -46,7 +52,7 @@ export const getDesignTokens = (mode) => ({
     fontFamily: '"Poppins", sans-serif;',
     h1: {
       fontWeight: "600",
-      fontSize: "50px",
+      fontSize: relative_width_size_generator(50),
     },
     h2: {
       fontWeight: "600",
@@ -65,8 +71,8 @@ export const getDesignTokens = (mode) => ({
     },
     h6: {
       fontWeight: "600",
-      fontSize: "18px",
-      lineHeight: "28px",
+      fontSize: relative_width_size_generator(18),
+      lineHeight: relative_width_size_generator(18),
     },
     logo1: {
       fontWeight: "600",
@@ -234,6 +240,11 @@ export const getDesignTokens = (mode) => ({
       fontSize: "1rem",
       lineHeight: "24px",
     },
+    SelectPurposeText: {
+      fontWeight: "500",
+      fontSize: relative_width_size_generator(30),
+      lineHeight: relative_width_size_generator(45),
+    },
     //Captions 10.4px
     captionNew: {
       fontWeight: "400",
@@ -245,6 +256,154 @@ export const getDesignTokens = (mode) => ({
       fontWeight: "400",
       fontSize: "0.579rem",
       lineHeight: "1.143",
+    },
+    NavStyleSelected: {
+      fontSize: "18px",
+      fontWeight: 700,
+      lineHeight: "27px",
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
+    NavStyle: {
+      fontSize: "18px",
+      fontWeight: 500,
+      lineHeight: "27px",
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
+    HomeBold: {
+      fontSize: relative_width_size_generator(52),
+      fontWeight: "700",
+      lineHeight: "72px",
+      letterSpacing: "0em",
+      textAlign: "center",
+    },
+
+    HomeLight: {
+      fontSize: relative_width_size_generator(20),
+      fontWeight: 400,
+      lineHeight: "28px",
+      letterSpacing: "0em",
+      textAlign: "center",
+    },
+    HomeMedium: {
+      fontSize: "14px",
+      fontWeight: 600,
+      lineHeight: "20px",
+      letterSpacing: "0.20000000298023224px",
+      textAlign: "left",
+    },
+    HomeSecondSection: {
+      fontWeight: 600,
+      lineHeight: "72px",
+      letterSpacing: "-0.4000000059604645px",
+      textAlign: "left",
+    },
+    HomeThirdSection: {
+      fontWeight: 400,
+      lineHeight: "32px",
+      letterSpacing: "0px",
+      textAlign: "center",
+    },
+    HomeFourthSection: {
+      fontWeight: 400,
+      lineHeight: "32px",
+      letterSpacing: "0px",
+      textAlign: "left",
+    },
+    HomeFifthSection: {
+      fontWeight: 700,
+      lineHeight: "72px",
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
+    HomeSixthSection: {
+      fontSize: relative_width_size_generator(20),
+      fontWeight: 400,
+      lineHeight: "28px",
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
+
+    HomeSeventhSection: {
+      fontWeight: 600,
+      lineHeight: "18px",
+      letterSpacing: "0em",
+      textAlign: "center",
+    },
+    HomeEightSection: {
+      fontWeight: 600,
+      lineHeight: "72px",
+      letterSpacing: "-0.4000000059604645px",
+      textAlign: "left",
+    },
+    HomeNineScreen: {
+      fontWeight: 400,
+      lineHeight: "39px",
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
+
+    FooterScreen: {
+      fontWeight: 300,
+      lineHeight: "26px",
+      letterSpacing: "0em",
+      textAlign: "left",
+      fontFamily: "Inter",
+    },
+    InfoPageHeading: {
+      fontWeight: 600,
+      fontSize: relative_width_size_generator(56),
+      lineHeight: relative_height_size_generator(72),
+    },
+    InfoPageBodyParagraph: {
+      fontWeight: "500",
+      fontSize: "1rem",
+      lineHeight: relative_height_size_generator(28),
+    },
+    InfoPageBodySubHeading: {
+      fontWeight: "500",
+      fontSize: "24px",
+      lineHeight: relative_height_size_generator(30),
+    },
+    FaqAnswerHeading: {
+      fontWeight: "700",
+      fontSize: "18px",
+      lineHeight: relative_height_size_generator(28),
+    },
+    ContactHeading1: {
+      fontWeight: "600",
+      fontSize: relative_width_size_generator(48),
+      lineHeight: relative_height_size_generator(64),
+    },
+    ContactBody: {
+      fontWeight: "500",
+      fontSize: relative_width_size_generator(18),
+      lineHeight: relative_height_size_generator(30),
+    },
+    ContactHeading2: {
+      fontWeight: "500",
+      fontSize: relative_width_size_generator(24),
+      lineHeight: relative_height_size_generator(30),
+    FooterSecondScreen: {
+      fontSize: "18px",
+      fontWeight: 500,
+      lineHeight: "32px",
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
+    FooterThirdScreen: {
+      fontWeight: 400,
+      lineHeight: "27px",
+      letterSpacing: "0px",
+      textAlign: "left",
+    },
+    FooterFourthScreen: {
+      fontWeight: 400,
+      lineHeight: "18px",
+      letterSpacing: "0em",
+      textAlign: "left",
+      fontFamily: "Inter",
     },
   },
 });

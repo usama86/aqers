@@ -1,0 +1,19 @@
+#purpose-buy-property * {
+}
+#purpose-sell-property * {
+}
+#purpose-buy-property.MuiPaper-root {
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in;
+}
+#purpose-sell-property.MuiPaper-root {
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in;
+}
+#purpose-buy-property:hover.MuiPaper-root,
+#purpose-sell-property:hover.MuiPaper-root {
+  border: 1px solid rgba(59, 136, 157, 1);
+}
+#purpose-buy-property:hover img {
+  color: red;
+}

@@ -2,8 +2,8 @@ import Button from "@mui/material/Button";
 import BoxComponent from "../BoxComponent";
 import { styled } from "@mui/material/styles";
 
-export const CustomButton = styled(Button)(({ theme }) => ({
-  borderRadius: "14px",
+export const CustomButton = styled(Button)(({ theme, borderRadius }) => ({
+  borderRadius: borderRadius,
   height: "48px",
   borderColor: theme.palette.common.black,
   boxShadow: "none",

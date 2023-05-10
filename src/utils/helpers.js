@@ -10,14 +10,15 @@ export const relative_width_size_generator = (
       width = totalFrameWidthInPixels;
     }
     if (+pixelValue === NaN) {
-      return { error: true, msg: "first param must only be number" };
+      return 0;
     }
 
-    return { value: `${(+pixelValue * 100) / width}vw`, error: false };
+    return `${(+pixelValue * 100) / width}vw`;
   } catch (err) {
-    return { error: true, msg: err.message };
+    return 0;
   }
 };
+
 export const relative_height_size_generator = (
   pixelValue,
   totalFrameHeightInPixels
@@ -25,7 +26,7 @@ export const relative_height_size_generator = (
   try {
     let height;
     if (!totalFrameHeightInPixels) {
-      height = 1920;
+      height = 1080;
     } else {
       height = totalFrameHeightInPixels;
     }
@@ -33,8 +34,12 @@ export const relative_height_size_generator = (
       return { error: true, msg: "first param must only be number" };
     }
 
-    return { value: `${(+pixelValue * 100) / height}vh`, error: false };
+    return `${(+pixelValue * 100) / height}vh`;
   } catch (err) {
-    return { error: true, msg: err.message };
+    return 0;
   }
 };
+
+export function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}

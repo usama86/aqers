@@ -20,8 +20,10 @@ export default function TextFieldComponent({
   isAuto,
   fullWidth,
   focused,
+  height,
   isError,
   errorMessage,
+  borderRadius,
   ...otherProps
 }) {
   const handleChange = (event) => {
@@ -55,9 +57,11 @@ export default function TextFieldComponent({
               placeholder={placeholder}
               value={value}
               onChange={handleChange}
+              height={height}
               inputProps={{
                 autoComplete: "off",
               }}
+              borderRadius={borderRadius}
               {...otherProps}
             />
           )}
@@ -73,6 +77,7 @@ export default function TextFieldComponent({
   return (
     <>
       <TextFieldCustom
+        height={height}
         fullWidth={fullWidth}
         sx={{ "& fieldset": { border: "none" } }}
         placeholder={placeholder}
@@ -106,4 +111,6 @@ TextFieldComponent.defaultProps = {
   isLabel: false,
   placeholder: "",
   isAuto: false,
+  height: "48px",
+  borderRadius: "0px",
 };
