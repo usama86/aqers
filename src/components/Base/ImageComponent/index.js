@@ -9,6 +9,7 @@ export default function ImageComponent({
   height,
   alt,
   position,
+  autoHeight,
   overflow,
   objectFit,
   imageClassName,
