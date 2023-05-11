@@ -52,7 +52,13 @@ function ResponsiveAppBar() {
     <>
       <AppBar position="fixed" sx={styles.appBar}>
         {/* <Container maxWidth="xl"> */}
-        <Toolbar disableGutters sx={{ justifyContent: "space-around" }}>
+        <Toolbar
+          disableGutters
+          sx={{
+            justifyContent: "space-around",
+            padding: { xs: `0 ${relative_width_size_generator(30)}`, ms: 0 },
+          }}
+        >
           {/* logo */}
           <Box sx={styles.aqersLogo}>
             <LinkComponent href={"/"} prefetch={false} linkStyle={{}}>
@@ -92,7 +98,11 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: {
+                  xs: "block",
+                  md: "none",
+                  zIndex: 100000000000000000,
+                },
               }}
             >
               {pages.map((eachPage) => (
@@ -102,6 +112,24 @@ function ResponsiveAppBar() {
                   </Typography>
                 </MenuItem>
               ))}
+              <MenuItem onClick={handleCloseNavMenu}>
+                <ButtonComponent color="primary" fullWidth>
+                  <LinkComponent
+                    linkStyle={{
+                      width: "100%",
+                      height: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                    href="/login"
+                  >
+                    <Typography variant={"NavStyle"} textAlign="center">
+                      Login
+                    </Typography>
+                  </LinkComponent>
+                </ButtonComponent>
+              </MenuItem>
             </Menu>
           </Box>
 
@@ -121,22 +149,6 @@ function ResponsiveAppBar() {
               />
             </Box>
           </LinkComponent>
-          {/* <Typography
-        variant="h5"
-        noWrap
-        component="a"
-        href=""
-        sx={{
-          mr: 2,
-          display: { xs: "flex", md: "none" },
-          flexGrow: 1,
-          fontFamily: "monospace",
-          fontWeight: 700,
-          letterSpacing: ".3rem",
-          color: "inherit",
-          textDecoration: "none",
-        }}
-      ></Typography> */}
 
           {/* Menu  */}
           <Box
@@ -194,6 +206,7 @@ function ResponsiveAppBar() {
               flexGrow: 0,
               width: relative_width_size_generator(185),
               height: relative_height_size_generator(48),
+              display: { xs: "none", md: "block" },
             }}
           >
             <ButtonComponent color="primary" fullWidth>

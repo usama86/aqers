@@ -317,14 +317,12 @@ export const getDesignTokens = (mode) => ({
     },
     HomeFifthSection: {
       fontWeight: 700,
-      lineHeight: "72px",
+      lineHeight: relative_height_size_generator(72),
       letterSpacing: "0em",
       textAlign: "left",
     },
     HomeSixthSection: {
-      fontSize: relative_width_size_generator(20),
-      fontWeight: 400,
-      lineHeight: "28px",
+      ...getDesignSystem(400, 20, 28),
       letterSpacing: "0em",
       textAlign: "left",
     },
@@ -372,13 +370,13 @@ export const getDesignTokens = (mode) => ({
     },
     HomeEightSection: {
       fontWeight: 600,
-      lineHeight: "72px",
+      lineHeight: relative_height_size_generator(72),
       letterSpacing: "-0.4000000059604645px",
       textAlign: "left",
     },
     HomeNineScreen: {
       fontWeight: 400,
-      lineHeight: "39px",
+      lineHeight: relative_height_size_generator(39),
       letterSpacing: "0em",
       textAlign: "left",
     },
@@ -429,13 +427,13 @@ export const getDesignTokens = (mode) => ({
       },
       FooterThirdScreen: {
         fontWeight: 400,
-        lineHeight: "27px",
+        lineHeight: relative_height_size_generator(27),
         letterSpacing: "0px",
         textAlign: "left",
       },
       FooterFourthScreen: {
         fontWeight: 400,
-        lineHeight: "18px",
+        lineHeight: relative_height_size_generator(18),
         letterSpacing: "0em",
         textAlign: "left",
         fontFamily: "Inter",

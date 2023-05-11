@@ -12,13 +12,20 @@ export default function Search() {
     <Box sx={styles.containerBox}>
       <ImageComponent
         position="absolute"
-        style={{ top: 0, bottom: 0, left: 0, right: 0, zIndex: -1 }}
+        style={{
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: -1,
+          borderRadius: "44px",
+        }}
         source={"/HomePage/Home_Image.png"}
-        objectFit="cover"
+        objectFit="contain"
         alt="Homepage"
         sizes="100vw"
         priority
-        imageStyle={{ borderRadius: "44px" }}
+        // imageStyle={{  }}
       />
 
       <Box sx={styles.containerDiv}>
