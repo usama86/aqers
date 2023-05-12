@@ -21,13 +21,17 @@ const configureFooterProps = (location) => {
     case "privacy-policy": {
       return {
         sectionsToShow: ["footer-url"],
-        isBackgroundLightDownloadApp: true,
       };
     }
     case "contact": {
       return {
         sectionsToShow: ["download-app", "footer-url"],
         isBackgroundLightDownloadApp: true,
+      };
+    }
+    case "personal-profile": {
+      return {
+        sectionsToShow: ["footer-url"],
       };
     }
     default: {
