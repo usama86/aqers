@@ -30,16 +30,27 @@ const configureFooterProps = (location) => {
         isBackgroundLightDownloadApp: true,
       };
     }
+    case "agent-listing": {
+      return {
+        sectionsToShow: ["download-app", "footer-url"],
+        isBackgroundLightDownloadApp: true,
+      };
+    }
     default: {
       return {};
     }
   }
 };
 
-const MainAppStyles = ({ path, Component }) => {
+const MainAppStyles = ({ path, Component, componentVariant }) => {
   return (
-    <>
-      <Navbar path={path} />
+    <main
+      style={{
+        backgroundColor:
+          componentVariant === "" ? "#FFFFFF" : "rgba(245, 245, 245, 1)",
+      }}
+    >
+      <Navbar componentVariant={componentVariant} path={path} />
       <CssBaseline />
       {/* <SpacerComponent
         sx={
@@ -50,7 +61,7 @@ const MainAppStyles = ({ path, Component }) => {
       /> */}
       {Component}
       <Footer {...configureFooterProps(path)} />
-    </>
+    </main>
   );
 };
 export default MainAppStyles;

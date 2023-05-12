@@ -18,6 +18,7 @@ import {
 } from "utils/helpers";
 import { styles } from "./style";
 import useRouterProps from "hooks/useRouterProps";
+import NavbarRightBuyProperties from "./NavbarRightBuyProperties";
 
 const pages = [
   { label: "Home", route: "" },
@@ -28,7 +29,7 @@ const pages = [
   { label: "FAQs", route: "faq" },
 ];
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({ componentVariant }) {
   const { path } = useRouterProps();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -50,13 +51,16 @@ function ResponsiveAppBar() {
 
   return (
     <>
-      <AppBar position="fixed" sx={styles.appBar}>
+      <AppBar position="fixed" sx={{ ...styles.appBar({ componentVariant }) }}>
         {/* <Container maxWidth="xl"> */}
         <Toolbar
           disableGutters
           sx={{
-            justifyContent: "space-around",
-            padding: { xs: `0 ${relative_width_size_generator(30)}`, ms: 0 },
+            justifyContent: "space-between",
+            padding: {
+              xs: `0 ${relative_width_size_generator(30)}`,
+              md: `0 ${relative_width_size_generator(243)}`,
+            },
           }}
         >
           {/* logo */}
@@ -206,23 +210,32 @@ function ResponsiveAppBar() {
               flexGrow: 0,
               width: relative_width_size_generator(185),
               height: relative_height_size_generator(48),
-              display: { xs: "none", md: "block" },
+              display: { xs: "none", md: "flex", alignItems: "center" },
+              // marginRight: relative_width_size_generator(243),
             }}
           >
-            <ButtonComponent color="primary" fullWidth>
-              <LinkComponent
-                linkStyle={{
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-                href="/login"
-              >
-                Login
-              </LinkComponent>
-            </ButtonComponent>
+            {componentVariant === "buyProperties" ? (
+              <>
+                <NavbarRightBuyProperties />
+              </>
+            ) : componentVariant === "sellProperties" ? (
+              <></>
+            ) : (
+              <ButtonComponent color="primary" fullWidth>
+                <LinkComponent
+                  linkStyle={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  href="/login"
+                >
+                  Login
+                </LinkComponent>
+              </ButtonComponent>
+            )}
           </Box>
         </Toolbar>
         {/* </Container> */}
