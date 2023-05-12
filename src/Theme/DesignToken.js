@@ -14,7 +14,7 @@ const grey3 = "#F2F2F2";
 const white = "#FFFFFF";
 export const infoPagesBackground = "#E8E8E8";
 
-function getDesignSystem(fontWeight, fontSize, lineHeight) {
+export function getDesignSystem(fontWeight, fontSize, lineHeight) {
   return {
     fontWeight,
     fontSize: relative_width_size_generator(fontSize),
@@ -477,6 +477,18 @@ export const getDesignTokens = (mode) => ({
       lineHeight: relative_height_size_generator("41px"),
       letterSpacing: "0em",
       textAlign: "left",
+    },
+    NavBarRightBuyPropertiesName: {
+      ...getDesignSystem(600, 16, 19.36),
+    },
+    AgentListingCardName: {
+      ...getDesignSystem(600, 12, 18),
+    },
+    AgentListingCardEmail: {
+      ...getDesignSystem(400, 12, 18),
+    },
+    AgentListingCardProperties: {
+      ...getDesignSystem(400, 14, 21),
     },
   },
 });

@@ -31,6 +31,7 @@ export const styles = {
   },
   containerDiv: {
     textAlign: "center",
+    zIndex: 10,
     // position: "absolute",
     // top: "50%",
     width: relative_width_size_generator(843),

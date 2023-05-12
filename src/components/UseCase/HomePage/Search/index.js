@@ -17,7 +17,7 @@ export default function Search() {
           bottom: 0,
           left: 0,
           right: 0,
-          zIndex: -1,
+          zIndex: 0,
           borderRadius: "44px",
         }}
         source={"/HomePage/Home_Image.png"}
