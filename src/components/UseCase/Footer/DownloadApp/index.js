@@ -3,49 +3,66 @@ import ImageComponent from "components/Base/ImageComponent";
 import TypographyComponent from "components/Base/TypographyComponent";
 import { styles } from "./style";
 import Box from "components/Base/BoxComponent";
-import { relative_width_size_generator } from "utils/helpers";
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
 import ButtonComponent from "components/Base/ButtonComponent";
 
 export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
   return (
     <Box
       sx={{
-        height: "720px",
+        height: relative_height_size_generator(720),
         display: "flex",
         backgroundColor: isBackgroundLightDownloadApp
           ? "#EDEDED"
           : "primary.main",
-        p: `70px ${relative_width_size_generator(
+        p: `${relative_height_size_generator(
+          70
+        )} ${relative_width_size_generator(
           243
         )} 0px ${relative_width_size_generator(243)}`,
-        gap: "37px",
+        gap: relative_width_size_generator(37),
       }}
     >
       <Box>
         <ImageComponent
           source={"/Footer/DownloadImage.png"}
-          width={"695px"}
-          height={"580px"}
+          width={relative_width_size_generator(695)}
+          height={relative_height_size_generator(580)}
         />
       </Box>
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "35px" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: relative_height_size_generator(35),
+        }}
+      >
         <ImageComponent
           source={"/Footer/QR_Code.png"}
-          width={"187.5px"}
-          height={"187.5px"}
+          width={relative_width_size_generator(187.5)}
+          height={relative_width_size_generator(187.5)}
           imageStyle={{
-            border: "13.25px solid #2A3249",
+            border: `${relative_width_size_generator(13.25)} solid #2A3249`,
             borderRadius: "14px",
             background: "#2A3249",
           }}
         />
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "32px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: relative_height_size_generator(32),
+          }}
+        >
           <Box>
             <TypographyComponent
               variant="HomeFifthSection"
               sx={{
                 color: isBackgroundLightDownloadApp ? "000000" : "#FFFFFF",
-                fontSize: "52px",
+                fontSize: relative_width_size_generator(52),
               }}
               component="h2"
             >
@@ -59,7 +76,7 @@ export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
               component="span"
               sx={{
                 color: isBackgroundLightDownloadApp ? "000000" : "#EDEFF6",
-                fontSize: "20px",
+                fontSize: relative_width_size_generator(20),
               }}
             >
               Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
@@ -68,11 +85,11 @@ export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
             </TypographyComponent>
           </Box>
 
-          <Box sx={{ pt: "19px" }}>
+          <Box sx={{ pt: relative_height_size_generator(19) }}>
             <ButtonComponent
               sx={{
-                height: "48px",
-                width: "185px",
+                height: relative_height_size_generator(48),
+                width: relative_width_size_generator(185),
                 borderRadius: "14px",
                 background: !isBackgroundLightDownloadApp && "#FFFFFF",
                 color: !isBackgroundLightDownloadApp && "primary.main",
@@ -83,7 +100,7 @@ export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
                 variant="HomeSeventhSection"
                 component="span"
                 sx={{
-                  fontSize: "18px",
+                  fontSize: relative_width_size_generator(18),
                 }}
               ></TypographyComponent>
               Download

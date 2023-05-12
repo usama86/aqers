@@ -3,28 +3,48 @@ import ImageComponent from "components/Base/ImageComponent";
 import TypographyComponent from "components/Base/TypographyComponent";
 import { styles } from "./style";
 import Box from "components/Base/BoxComponent";
-import { relative_width_size_generator } from "utils/helpers";
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
 import ButtonComponent from "components/Base/ButtonComponent";
 
 export default function AboutUs() {
   return (
     <Box
       sx={{
-        height: "748px",
+        height: relative_height_size_generator(748),
         display: "flex",
         backgroundColor: "#F5F5F5",
-        p: `113px ${relative_width_size_generator(
+        p: `${relative_height_size_generator(
+          113
+        )} ${relative_width_size_generator(
           243
         )} 0px ${relative_width_size_generator(243)}`,
-        gap: "81.8px",
+        gap: relative_width_size_generator(81.8),
       }}
     >
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "35px" }}>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: relative_height_size_generator(35),
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: relative_height_size_generator(20),
+          }}
+        >
           <Box sx={{ pt: "38px" }}>
             <TypographyComponent
               variant="HomeEightSection"
-              sx={{ color: "#111029", fontSize: "56px" }}
+              sx={{
+                color: "#111029",
+                fontSize: relative_width_size_generator(56),
+              }}
               component="h2"
             >
               About Us
@@ -35,7 +55,10 @@ export default function AboutUs() {
             <TypographyComponent
               variant="HomeNineScreen"
               component="span"
-              sx={{ color: "#646464", fontSize: "26px" }}
+              sx={{
+                color: "#646464",
+                fontSize: relative_width_size_generator(26),
+              }}
             >
               Together we are programmers, real estate experts, designers,
               marketers, technologists, friends and partners who have set out to
@@ -45,11 +68,11 @@ export default function AboutUs() {
             </TypographyComponent>
           </Box>
 
-          <Box sx={{ pt: "19px" }}>
+          <Box sx={{ pt: relative_height_size_generator(19) }}>
             <ButtonComponent
               sx={{
-                height: "48px",
-                width: "185px",
+                height: relative_height_size_generator(48),
+                width: relative_width_size_generator(185),
                 borderRadius: "14px",
                 background: "#FFFFFF",
                 color: "primary.main",
@@ -59,7 +82,7 @@ export default function AboutUs() {
                 variant="HomeSeventhSection"
                 component="span"
                 sx={{
-                  fontSize: "18px",
+                  fontSize: relative_width_size_generator(18),
                 }}
               ></TypographyComponent>
               Contact Agent
@@ -70,8 +93,8 @@ export default function AboutUs() {
       <Box>
         <ImageComponent
           source={"/Footer/pool.png"}
-          width={"719.43px"}
-          height={"521.73px"}
+          width={relative_width_size_generator(719.43)}
+          height={relative_height_size_generator(521.73)}
         />
       </Box>
     </Box>

@@ -8,7 +8,7 @@ export const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    height: "758px",
+    height: relative_height_size_generator(758),
     position: "relative",
     // padding: "50px",
     width: relative_width_size_generator(1820),
@@ -16,7 +16,7 @@ export const styles = {
     // marginTop: "144px",
     "@media (max-width: 600px)": {
       display: "block",
-      height: "317px",
+      height: relative_height_size_generator(317),
       width: "100%",
       padding: "50px",
       borderRadius: "44px",
@@ -35,7 +35,7 @@ export const styles = {
     // top: "50%",
     width: relative_width_size_generator(843),
     margin: "0px auto",
-    maxWidth: "1440px",
+    width: relative_width_size_generator(1440),
     "@media (max-width: 900px)": {
       width: "92%",
     },
@@ -49,7 +49,7 @@ export const styles = {
     color: "#ffffff",
     whiteSpace: "nowrap",
     marginBottom: relative_height_size_generator(20),
-    width: "843px",
+    width: relative_width_size_generator(843),
     textShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
     "@media (max-width: 600px)": {
       display: "none",
@@ -58,7 +58,7 @@ export const styles = {
   },
   headerlightWeb: {
     color: "#EDEFF6",
-    width: "843px",
+    width: relative_width_size_generator(843),
     textAlign: "center",
     textShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
     "@media (max-width: 600px)": {
@@ -68,7 +68,7 @@ export const styles = {
   },
   headerTextResponsive: {
     color: "#ffffff",
-    width: "675px",
+    width: relative_width_size_generator(675),
     textShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
     "@media (max-width: 600px)": {
       textShadow: "0px 0px 5px rgba(0, 0, 0, 0.75)",
@@ -81,10 +81,10 @@ export const styles = {
   purposeButton: {
     background: "rgba(255, 255, 255, 0.7)",
     color: "#37474f",
-    marginRight: "10px",
-    marginTop: "24px",
-    width: "100px",
-    height: "43px",
+    marginRight: relative_width_size_generator(10),
+    marginTop: relative_height_size_generator(24),
+    width: relative_width_size_generator(100),
+    height: relative_height_size_generator(43),
     "&:hover": {
       backgroundColor: "#ffffff",
     },
@@ -98,23 +98,25 @@ export const styles = {
   activeButton: {
     backgroundColor: "#ffffff",
     color: "#37474f",
-    marginRight: "10px",
-    marginTop: "24px",
-    width: "100px",
-    height: "43px",
+    marginRight: relative_width_size_generator(10),
+    marginTop: relative_height_size_generator(24),
+    width: relative_width_size_generator(100),
+    height: relative_height_size_generator(43),
     "&:hover": {
       backgroundColor: "#ffffff",
     },
     "@media (max-width: 600px)": {
-      width: "75.98px",
-      height: "38px",
+      width: relative_width_size_generator(75.98),
+      height: relative_height_size_generator(38),
       borderRadius: "6.0787px",
-      marginTop: "20px",
+      marginTop: relative_height_size_generator(20),
     },
   },
   searchBar: {
     // marginTop: "22px",
-    height: "50px",
-    "@media (max-width: 600px)": { marginTop: "15px" },
+    height: relative_height_size_generator(50),
+    "@media (max-width: 600px)": {
+      marginTop: relative_height_size_generator(15),
+    },
   },
 };

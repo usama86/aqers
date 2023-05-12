@@ -13,13 +13,15 @@ export default function FooterUrls() {
   return (
     <Box
       sx={{
-        height: "465.44px",
+        height: relative_height_size_generator(465.44),
         display: "flex",
         backgroundColor: "primary.main",
-        p: `76px ${relative_width_size_generator(
+        p: `${relative_height_size_generator(
+          76
+        )} ${relative_width_size_generator(
           243
         )} 0px ${relative_width_size_generator(243)}`,
-        gap: "156.52px",
+        gap: relative_width_size_generator(156.52),
       }}
     >
       {/* Section 1 */}
@@ -27,8 +29,8 @@ export default function FooterUrls() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: "36px",
-          width: "367.95px",
+          gap: relative_height_size_generator(36),
+          width: relative_width_size_generator(367.95),
         }}
       >
         <ImageComponent
@@ -40,13 +42,15 @@ export default function FooterUrls() {
         <TypographyComponent
           variant="HomeNineScreen"
           component="span"
-          sx={{ color: "#FFFFFF", fontSize: "18px" }}
+          sx={{ color: "#FFFFFF", fontSize: relative_width_size_generator(18) }}
         >
           You get alot from us: Manage your application, your portfolio and
           digitize many of the processes that go with it.
         </TypographyComponent>
 
-        <Box sx={{ display: "flex", gap: "27.31px" }}>
+        <Box
+          sx={{ display: "flex", gap: relative_width_size_generator(27.31) }}
+        >
           <ImageComponent
             source="/Footer/facebook.png"
             width={relative_width_size_generator(36)}
@@ -73,14 +77,14 @@ export default function FooterUrls() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: "44.95px",
-          width: "367.95px",
+          gap: relative_height_size_generator(44.95),
+          width: relative_width_size_generator(367.95),
         }}
       >
         <TypographyComponent
           variant="HomeNineScreen"
           component="span"
-          sx={{ color: "#FFFFFF", fontSize: "28px" }}
+          sx={{ color: "#FFFFFF", fontSize: relative_width_size_generator(28) }}
         >
           Quick Links
         </TypographyComponent>
@@ -88,14 +92,17 @@ export default function FooterUrls() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            gap: "20.33px",
+            gap: relative_height_size_generator(20.33),
           }}
         >
           {quickLinks.map((data) => (
             <TypographyComponent
               variant="FooterThirdScreen"
               component="span"
-              sx={{ color: "#FFFFFF", fontSize: "18px" }}
+              sx={{
+                color: "#FFFFFF",
+                fontSize: relative_width_size_generator(18),
+              }}
               key={data.id}
             >
               {data.content}
@@ -109,14 +116,14 @@ export default function FooterUrls() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: "39.9px",
-          width: "367.95px",
+          gap: relative_height_size_generator(39.9),
+          width: relative_width_size_generator(367.95),
         }}
       >
         <TypographyComponent
           variant="HomeNineScreen"
           component="span"
-          sx={{ color: "#FFFFFF", fontSize: "28px" }}
+          sx={{ color: "#FFFFFF", fontSize: relative_width_size_generator(28) }}
         >
           Get App
         </TypographyComponent>
@@ -124,15 +131,16 @@ export default function FooterUrls() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            gap: "22.04px",
+            gap: relative_height_size_generator(22.04),
           }}
         >
           {getApps.map((data) => (
             <ImageComponent
               source={data.imageLink}
-              width={"152.86px"}
-              height={"42.98px"}
+              width={relative_width_size_generator(152.86)}
+              height={relative_height_size_generator(42.98)}
               key={data.id}
+              sx={{ cursor: "pointer" }}
             />
           ))}
         </Box>
@@ -143,43 +151,62 @@ export default function FooterUrls() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: "39.9px",
-          width: "367.95px",
+          gap: relative_height_size_generator(39.9),
+          width: relative_width_size_generator(367.95),
         }}
       >
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "40.89px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: relative_height_size_generator(40.89),
+          }}
+        >
           {detailSection.map((data) => (
-            <Box key={data.id} sx={{ display: "flex", gap: "20.71px" }}>
+            <Box
+              key={data.id}
+              sx={{
+                display: "flex",
+                gap: relative_width_size_generator(20.71),
+              }}
+            >
               <ImageComponent
+                objectFit="cover"
                 source={data.imageLink}
-                width={"40px"}
-                height={"40px"}
+                width={relative_width_size_generator(40)}
+                height={relative_width_size_generator(40)}
               />
               <Box
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "40.89px",
+                  gap: relative_height_size_generator(40.89),
                 }}
               >
                 <Box
                   sx={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "4.28px",
+                    gap: relative_height_size_generator(4.28),
                   }}
                 >
                   <TypographyComponent
                     variant="HomeNineScreen"
                     component="span"
-                    sx={{ color: "#FFFFFF", fontSize: "28px" }}
+                    sx={{
+                      color: "#FFFFFF",
+                      fontSize: relative_width_size_generator(28),
+                    }}
                   >
                     {data.title}
                   </TypographyComponent>
                   <TypographyComponent
                     variant="FooterFourthScreen"
                     component="span"
-                    sx={{ color: "#FFFFFF", fontSize: "14px" }}
+                    sx={{
+                      color: "#FFFFFF",
+                      fontSize: relative_width_size_generator(14),
+                    }}
                   >
                     {data.content}
                   </TypographyComponent>

@@ -3,27 +3,35 @@ import ImageComponent from "components/Base/ImageComponent";
 import TypographyComponent from "components/Base/TypographyComponent";
 import { styles } from "./style";
 import Box from "components/Base/BoxComponent";
-import { relative_width_size_generator } from "utils/helpers";
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
 
 export default function ThirdSecion() {
   return (
     <Box
       sx={{
-        height: "938px",
+        height: relative_height_size_generator(938),
         display: "flex",
         background: "#F9F9FD",
-        p: `110px ${relative_width_size_generator(
+        p: `${relative_height_size_generator(
+          110
+        )} ${relative_width_size_generator(
           243
         )} 0px ${relative_width_size_generator(243)}`,
       }}
     >
       <Box
         sx={{
-          height: "938px",
-          minWidth: "660px",
+          height: relative_height_size_generator(938),
+          width: "100%",
           flexWrap: "wrap",
           display: "flex",
-          gap: "40px",
+          gap: {
+            ms: relative_width_size_generator(40),
+            xs: relative_width_size_generator(20),
+          },
           flexDirection: "column",
         }}
       >
@@ -31,30 +39,33 @@ export default function ThirdSecion() {
           <Box
             key={data.id}
             sx={{
-              height: "300px",
-              width: "270px",
+              height: relative_height_size_generator(300),
+              width: relative_width_size_generator(270),
               borderRadius: "20px",
-              padding: "28px",
+              padding: relative_width_size_generator(28),
               background: "#FFFFFF",
               display: "flex",
               flexDirection: "column",
-              gap: "20px",
+              gap: relative_height_size_generator(20),
               alignItems: "center",
               justifyContent: "center",
-              mt: data.id === 1 ? "50px" : "0px",
+              mt: data.id === 1 ? relative_height_size_generator(50) : "0px",
             }}
           >
             <TypographyComponent
               variant="HomeSecondSection"
               component="h2"
-              sx={{ fontSize: "56px", color: data.color }}
+              sx={{
+                fontSize: relative_width_size_generator(56),
+                color: data.color,
+              }}
             >
               {data.heading}
             </TypographyComponent>
             <TypographyComponent
               variant="HomeThirdSection"
               component="span"
-              sx={{ fontSize: "18px" }}
+              sx={{ fontSize: relative_width_size_generator(18) }}
             >
               {data.content}
             </TypographyComponent>
@@ -63,18 +74,18 @@ export default function ThirdSecion() {
       </Box>
       <Box
         sx={{
-          height: "938px",
-          flexWrap: "wrap",
+          height: relative_height_size_generator(938),
+          // flexWrap: "wrap",
           display: "flex",
-          gap: "35px",
+          gap: relative_width_size_generator(35),
           flexDirection: "column",
-          p: "78px 0px 78px 0px",
+          p: `${relative_height_size_generator(78)} 0px`,
         }}
         className="hello"
       >
         <Box>
           <TypographyComponent
-            sx={{ fontSize: "56px" }}
+            sx={{ fontSize: relative_width_size_generator(56) }}
             variant="HomeSecondSection"
             component="h2"
           >
@@ -84,7 +95,7 @@ export default function ThirdSecion() {
         <Box>
           <TypographyComponent
             variant="HomeThirdSection"
-            sx={{ fontSize: "18px" }}
+            sx={{ fontSize: relative_width_size_generator(18) }}
             component="span"
           >
             We serve many customers, ranging from small businesses, medium
@@ -92,21 +103,31 @@ export default function ThirdSecion() {
             our pleasure. We strive to provide the best service by:
           </TypographyComponent>
         </Box>
-        <Box sx={{ display: "flex", gap: "16px", flexDirection: "column" }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: relative_height_size_generator(16),
+            flexDirection: "column",
+          }}
+        >
           {TextBox.map((data) => (
             <Box
-              sx={{ display: "flex", alignItems: "center", gap: "24px" }}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: relative_width_size_generator(24),
+              }}
               key={data.id}
             >
               <ImageComponent
                 source={"/HomePage/Tick_Icon.png"}
-                width={"24px"}
-                height={"24px"}
+                width={relative_width_size_generator(24)}
+                height={relative_width_size_generator(24)}
               />
               <TypographyComponent
                 variant="HomeFourthSection"
                 component="span"
-                sx={{ fontSize: "18px" }}
+                sx={{ fontSize: relative_width_size_generator(18) }}
               >
                 {data.content}
               </TypographyComponent>

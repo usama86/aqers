@@ -14,6 +14,14 @@ const grey3 = "#F2F2F2";
 const white = "#FFFFFF";
 export const infoPagesBackground = "#E8E8E8";
 
+function getDesignSystem(fontWeight, fontSize, lineHeight) {
+  return {
+    fontWeight,
+    fontSize: relative_width_size_generator(fontSize),
+    lineHeight: relative_height_size_generator(lineHeight),
+  };
+}
+
 export const getDesignTokens = (mode) => ({
   palette: {
     mode: mode,
@@ -70,9 +78,7 @@ export const getDesignTokens = (mode) => ({
       lineHeight: "22px",
     },
     h6: {
-      fontWeight: "600",
-      fontSize: relative_width_size_generator(18),
-      lineHeight: relative_width_size_generator(18),
+      ...getDesignSystem(600, 18, 18),
     },
     logo1: {
       fontWeight: "600",
@@ -241,9 +247,7 @@ export const getDesignTokens = (mode) => ({
       lineHeight: "24px",
     },
     SelectPurposeText: {
-      fontWeight: "500",
-      fontSize: relative_width_size_generator(30),
-      lineHeight: relative_width_size_generator(45),
+      ...getDesignSystem(500, 30, 45),
     },
     //Captions 10.4px
     captionNew: {
@@ -313,18 +317,51 @@ export const getDesignTokens = (mode) => ({
     },
     HomeFifthSection: {
       fontWeight: 700,
-      lineHeight: "72px",
+      lineHeight: relative_height_size_generator(72),
       letterSpacing: "0em",
       textAlign: "left",
     },
     HomeSixthSection: {
-      fontSize: relative_width_size_generator(20),
-      fontWeight: 400,
-      lineHeight: "28px",
+      ...getDesignSystem(400, 20, 28),
       letterSpacing: "0em",
       textAlign: "left",
     },
-
+    AboutHeading2: {
+      ...getDesignSystem(600, 36, 44),
+    },
+    AboutAchievements: {
+      ...getDesignSystem(700, 36, 50),
+    },
+    AboutAchievementsHeading: {
+      ...getDesignSystem(600, 24, 25.56),
+    },
+    AboutSingleImageHeading: {
+      ...getDesignSystem(600, 48, 56),
+    },
+    AboutAchievementsText: {
+      ...getDesignSystem(500, 16, 28),
+    },
+    AboutTeamMemberRole: {
+      ...getDesignSystem(600, 14, 16),
+    },
+    AboutTeamMemberName: {
+      ...getDesignSystem(600, 24, 32),
+    },
+    AboutTeamMemberDescription: {
+      ...getDesignSystem(400, 14, 27.83),
+    },
+    TestimonialsHeading: {
+      ...getDesignSystem(600, 48, 56),
+    },
+    TestimonialsDescription: {
+      ...getDesignSystem(500, 18, 30),
+    },
+    TestimonialName: {
+      ...getDesignSystem(500, 24, 41.04),
+    },
+    TestimonialPosition: {
+      ...getDesignSystem(500, 18, 30.78),
+    },
     HomeSeventhSection: {
       fontWeight: 600,
       lineHeight: "18px",
@@ -333,13 +370,13 @@ export const getDesignTokens = (mode) => ({
     },
     HomeEightSection: {
       fontWeight: 600,
-      lineHeight: "72px",
+      lineHeight: relative_height_size_generator(72),
       letterSpacing: "-0.4000000059604645px",
       textAlign: "left",
     },
     HomeNineScreen: {
       fontWeight: 400,
-      lineHeight: "39px",
+      lineHeight: relative_height_size_generator(39),
       letterSpacing: "0em",
       textAlign: "left",
     },
@@ -352,9 +389,7 @@ export const getDesignTokens = (mode) => ({
       fontFamily: "Inter",
     },
     InfoPageHeading: {
-      fontWeight: 600,
-      fontSize: relative_width_size_generator(56),
-      lineHeight: relative_height_size_generator(72),
+      ...getDesignSystem(600, 56, 72),
     },
     InfoPageBodyParagraph: {
       fontWeight: "500",
@@ -374,17 +409,15 @@ export const getDesignTokens = (mode) => ({
     ContactHeading1: {
       fontWeight: "600",
       fontSize: relative_width_size_generator(48),
-      lineHeight: relative_height_size_generator(64),
+      lineHeight: "64px",
     },
     ContactBody: {
       fontWeight: "500",
       fontSize: relative_width_size_generator(18),
-      lineHeight: relative_height_size_generator(30),
+      lineHeight: "30px",
     },
     ContactHeading2: {
-      fontWeight: "500",
-      fontSize: relative_width_size_generator(24),
-      lineHeight: relative_height_size_generator(30),
+      ...getDesignSystem(500, 24, 30),
       FooterSecondScreen: {
         fontSize: "18px",
         fontWeight: 500,
@@ -394,13 +427,13 @@ export const getDesignTokens = (mode) => ({
       },
       FooterThirdScreen: {
         fontWeight: 400,
-        lineHeight: "27px",
+        lineHeight: relative_height_size_generator(27),
         letterSpacing: "0px",
         textAlign: "left",
       },
       FooterFourthScreen: {
         fontWeight: 400,
-        lineHeight: "18px",
+        lineHeight: relative_height_size_generator(18),
         letterSpacing: "0em",
         textAlign: "left",
         fontFamily: "Inter",

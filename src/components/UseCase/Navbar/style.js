@@ -11,6 +11,7 @@ export const styles = {
     boxShadow: "none",
     display: "flex",
     justifyContent: "center",
+    zIndex: 100000000,
   },
   aqersLogo: {
     display: { xs: "none", md: "flex" },
