@@ -9,9 +9,26 @@ import { wrapper } from "../store/store";
 import useRouterProps from "hooks/useRouterProps";
 
 const LOGIN_ROUTES = ["login", "otp", "select-purpose"];
+const BUY_PROPERTIES_PROTECTED_PAGES = [
+  "agent-listing",
+  "agent-profile",
+  "buy-properties",
+];
+const SELL_PROPERTIES_PROTECTED_PAGES = ["personal-profile"];
 
 function App({ Component, pageProps }) {
   const { path } = useRouterProps();
+  let navBarVariant = "";
+  if (BUY_PROPERTIES_PROTECTED_PAGES.includes(path)) {
+    navBarVariant = "buyProperties";
+  }
+  if (SELL_PROPERTIES_PROTECTED_PAGES.includes(path)) {
+    navBarVariant = "sellProperties";
+  }
+  console.log(
+    "using this console log because im expecting a problem at dynamic routes",
+    { path }
+  );
   return (
     <>
       <Head>
@@ -27,7 +44,11 @@ function App({ Component, pageProps }) {
             Component={<Component {...pageProps} />}
           />
         ) : (
-          <MainAppStyles path={path} Component={<Component {...pageProps} />} />
+          <MainAppStyles
+            componentVariant={navBarVariant}
+            path={path}
+            Component={<Component {...pageProps} />}
+          />
         )}
       </Theme>
     </>
