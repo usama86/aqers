@@ -51,6 +51,7 @@ export default function PropertyCard({ type }) {
               position: "absolute",
               top: "20px",
               right: "20px",
+              zIndex: 100,
             }}
           >
             {type === "drop" ? (
