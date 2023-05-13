@@ -1,6 +1,7 @@
 import {
   relative_height_size_generator,
   relative_width_size_generator,
+  relative_width_font_size_generator,
 } from "utils/helpers";
 
 const primary = "#92198C";
@@ -17,7 +18,7 @@ export const infoPagesBackground = "#E8E8E8";
 export function getDesignSystem(fontWeight, fontSize, lineHeight) {
   return {
     fontWeight,
-    fontSize: relative_width_size_generator(fontSize),
+    fontSize: relative_width_font_size_generator(fontSize),
     lineHeight: relative_height_size_generator(lineHeight),
   };
 }

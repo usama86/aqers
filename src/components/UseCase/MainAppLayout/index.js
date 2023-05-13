@@ -29,7 +29,7 @@ const configureFooterProps = (location) => {
         isBackgroundLightDownloadApp: true,
       };
     }
-    case "personal-profile": {
+    case "dashboard": {
       return {
         sectionsToShow: ["footer-url"],
       };

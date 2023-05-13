@@ -30,18 +30,19 @@ const SelectPurpose = () => {
   return (
     <LoginPagesForm heading="Thank you for being part of us!">
       <StackCompoent spacing={relative_width_size_generator(60.4)}>
-        <CardComponent
-          id="purpose-buy-property"
-          cardStyles={{
-            height: relative_height_size_generator(267.42),
-            width: relative_width_size_generator(607.49),
-          }}
-        >
-          <PurposeLayout>
-            <SellProperty />
-          </PurposeLayout>
-        </CardComponent>
-
+        <LinkComponent href="/dashboard">
+          <CardComponent
+            id="purpose-buy-property"
+            cardStyles={{
+              height: relative_height_size_generator(267.42),
+              width: relative_width_size_generator(607.49),
+            }}
+          >
+            <PurposeLayout>
+              <SellProperty />
+            </PurposeLayout>
+          </CardComponent>
+        </LinkComponent>
         <LinkComponent href="/">
           <CardComponent
             id="purpose-sell-property"
