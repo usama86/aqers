@@ -54,17 +54,19 @@ const MainAppStyles = ({ path, Component, componentVariant }) => {
           componentVariant === "" ? "#FFFFFF" : "rgba(245, 245, 245, 1)",
       }}
     >
-      <Navbar componentVariant={componentVariant} path={path} />
-      <CssBaseline />
-      {/* <SpacerComponent
+      <>
+        <Navbar componentVariant={componentVariant} path={path} />
+        <CssBaseline />
+        {/* <SpacerComponent
         sx={
           router.asPath == "/"
             ? styles.spacerStyleNavHome
             : styles.spacerStyleNav
         }
       /> */}
-      {Component}
-      <Footer {...configureFooterProps(path)} />
+        {Component}
+        <Footer {...configureFooterProps(path)} />
+      </>
     </main>
   );
 };

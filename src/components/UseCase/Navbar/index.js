@@ -19,6 +19,7 @@ import {
 import { styles } from "./style";
 import useRouterProps from "hooks/useRouterProps";
 import NavbarRightBuyProperties from "./NavbarRightBuyProperties";
+import NavbarRightSellProperties from "./NavbarRightSellProperties";
 
 const pages = [
   { label: "Home", route: "" },
@@ -219,7 +220,9 @@ function ResponsiveAppBar({ componentVariant }) {
                 <NavbarRightBuyProperties />
               </>
             ) : componentVariant === "sellProperties" ? (
-              <></>
+              <>
+                <NavbarRightSellProperties />
+              </>
             ) : (
               <ButtonComponent color="primary" fullWidth>
                 <LinkComponent
