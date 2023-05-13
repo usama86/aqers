@@ -14,7 +14,7 @@ export const styles = {
     // background: "rgba(245, 245, 245, 1)",
     width: "100%",
     height: "100%",
-    m: `${relative_height_size_generator(40)} ${relative_width_size_generator(
+    p: `${relative_height_size_generator(40)} ${relative_width_size_generator(
       243
     )} ${relative_height_size_generator(60)} ${relative_width_size_generator(
       243
