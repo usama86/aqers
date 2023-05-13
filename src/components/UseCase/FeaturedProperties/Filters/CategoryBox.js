@@ -37,7 +37,7 @@ const CategoryBox = ({
         component="body2"
       >
         {label}
-      </TypographyComponent>{" "}
+      </TypographyComponent>
       {number ? (
         <TypographyComponent
           variant={"FilterLabelUnselected"}
@@ -52,11 +52,11 @@ const CategoryBox = ({
 
 CategoryBox.propTypes = {
   identification: PropTypes.any,
-  indentation: PropTypes.oneOf([1, 2, 3]),
+  indentation: PropTypes.oneOf([0, 1, 2, 3]),
   label: PropTypes.string,
   number: PropTypes.number,
   onSelectionChange: PropTypes.func,
-  selectedCategoryId: PropTypes.string,
+  selectedCategoryId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 CategoryBox.defaultProps = {

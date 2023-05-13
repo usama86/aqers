@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import {
   relative_height_size_generator,
   relative_width_size_generator,
+  truncateString,
 } from "utils/helpers";
 import CategoryBox from "./CategoryBox";
 import SelectComponent from "components/Base/SelectComponent";
@@ -14,12 +15,25 @@ import { CATEGORIES, COUNTRIES, LOCATIONS } from "utils/dummy_data";
 import SelectionGroup from "./Group";
 import LinkComponent from "components/Base/LinkComponent";
 import TextFieldComponent from "./UI/TextFieldComponent";
+import useToWords from "hooks/useToWords";
+import SliderComponent from "components/Base/SliderComponent";
+import styles from "./styles";
+import CheckBoxComponent from "components/Base/CheckboxComponent";
+import CheckboxCustomized from "./UI/CheckboxCustomized";
+import { useCategorySelection } from "./hooks";
+import { FEATURED_PROPERTIES } from "config/static";
 
 const Filters = ({ heading, purpose }) => {
+  const { CONSTRUCTION_STATE_CHECKBOXES, FEATURES_CHECKBOXES, AREA_UNITS } =
+    FEATURED_PROPERTIES;
+  const { convertFn } = useToWords({ currency: false });
   const [selectedCategoryId, setSelectedCategoryId] = useState("");
   const [selectedLocationId, setSelectedLocationId] = useState("");
-  const [priceMin, setPriceMin] = useState("500,000");
-  const [priceMax, setPriceMax] = useState("10,000,000,000");
+  const [selectedAreaUnitId, setSelectedAreaUnitId] = useState("");
+  const [priceRange, setPriceRange] = useState([500000, 10000000000]);
+  const [areaRange, setAreaRange] = useState([0, 99999]);
+  const { toggleSelections, getSelectionValue } = useCategorySelection();
+  const validateNumerical = (input) => !isNaN(+input);
   return (
     <StackCompoent
       direction="column"
@@ -127,13 +141,148 @@ const Filters = ({ heading, purpose }) => {
       <StackCompoent sx={{ gap: relative_width_size_generator(16) }}>
         <TextFieldComponent
           style={{ width: relative_width_size_generator(128) }}
-          value={priceMin}
-          setValue={setPriceMin}
+          value={priceRange[0]}
+          setValue={(e) => {
+            if (validateNumerical) {
+              setPriceRange((prevState) => [e, prevState[1]]);
+            }
+          }}
+          helperText={
+            !isNaN(+priceRange[0])
+              ? truncateString(convertFn(priceRange[0]), 17)
+              : ""
+          }
         />
         <TextFieldComponent
           style={{ width: relative_width_size_generator(128) }}
-          value={priceMax}
-          setValue={setPriceMax}
+          value={priceRange[1]}
+          setValue={(e) => {
+            if (validateNumerical(e)) {
+              setPriceRange((prevState) => [prevState[0], e]);
+            }
+          }}
+          helperText={
+            !isNaN(+priceRange[1])
+              ? truncateString(convertFn(priceRange[1]), 17)
+              : ""
+          }
+        />
+      </StackCompoent>
+      <SliderComponent
+        value={priceRange}
+        min={0}
+        max={10000000000}
+        onChange={(event) => {
+          setPriceRange(event);
+        }}
+        sx={styles.priceSlider}
+      />
+      <DividerComponent />
+      <GroupHeading
+        label="furnished"
+        style={{
+          marginTop: relative_height_size_generator(18),
+          marginBottom: relative_height_size_generator(18.92),
+        }}
+      />
+      <StackCompoent
+        direction="column"
+        sx={{
+          gap: relative_height_size_generator(8),
+          mb: relative_height_size_generator(25),
+          pl: relative_width_size_generator(16 * 1),
+        }}
+      >
+        {CONSTRUCTION_STATE_CHECKBOXES.map((eachState) => (
+          <CheckboxCustomized
+            key={eachState.id}
+            checked={getSelectionValue(eachState.name)}
+            label={`${eachState.label} (${eachState.number})`}
+            onChecking={() => {
+              toggleSelections(eachState.name);
+            }}
+          />
+        ))}
+      </StackCompoent>
+      <DividerComponent />
+      <GroupHeading label="features" />
+      <StackCompoent
+        direction="column"
+        sx={{
+          gap: relative_height_size_generator(8),
+          pl: relative_width_size_generator(16 * 1),
+        }}
+      >
+        {FEATURES_CHECKBOXES.map((eachState) => (
+          <CheckboxCustomized
+            key={eachState.id}
+            checked={getSelectionValue(eachState.name)}
+            label={`${eachState.label} (${eachState.number})`}
+            onChecking={() => {
+              toggleSelections(eachState.name);
+            }}
+          />
+        ))}
+      </StackCompoent>
+      <LinkComponent
+        linkStyle={{ marginTop: relative_height_size_generator(10) }}
+        href=""
+      >
+        <TypographyComponent
+          sx={{
+            color: "#3A77FF",
+            // pl: relative_width_size_generator(16 * 1),
+            pd: relative_height_size_generator(37),
+            mt: relative_height_size_generator(10),
+          }}
+          component="span"
+          variant="FilterLabelUnselected"
+        >
+          View More
+        </TypographyComponent>
+      </LinkComponent>
+      <DividerComponent sx={{ mt: relative_height_size_generator(20) }} />
+      <GroupHeading
+        label="Area Unit"
+        style={{ marginTop: relative_height_size_generator(18) }}
+      />
+      {AREA_UNITS.map((eachUnit) => (
+        <CategoryBox
+          key={eachUnit.id}
+          onSelectionChange={setSelectedAreaUnitId}
+          identification={eachUnit.id}
+          label={eachUnit.location}
+          selectedCategoryId={selectedAreaUnitId}
+          indentation={0}
+        />
+      ))}
+      <DividerComponent sx={{ mt: relative_height_size_generator(28) }} />
+      <GroupHeading
+        label="area"
+        style={{ marginTop: relative_height_size_generator(18) }}
+      />
+      <StackCompoent sx={{ gap: relative_width_size_generator(16) }}>
+        <TextFieldComponent
+          style={{ width: relative_width_size_generator(128) }}
+          value={areaRange[0]}
+          setValue={(e) => {
+            {
+              if (validateNumerical(e)) {
+                setAreaRange((prevState) => [e, prevState[1]]);
+              }
+            }
+          }}
+        />
+        <TextFieldComponent
+          style={{ width: relative_width_size_generator(128) }}
+          value={areaRange[1]}
+          setValue={(e) => {
+            {
+              if (validateNumerical(e)) {
+                setAreaRange((prevState) => [prevState[0], e]);
+              }
+            }
+          }}
         />
       </StackCompoent>
     </StackCompoent>

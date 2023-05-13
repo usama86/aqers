@@ -1,15 +1,25 @@
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
+
 import {
   relative_height_size_generator,
   relative_width_size_generator,
 } from "utils/helpers";
 
-const LabelStyled = styled("label")(({ theme }) => ({}));
+const LabelStyled = styled("label")(({ theme }) => ({
+  fontFamily: "Roboto",
+  fontSize: relative_width_size_generator(12),
+  fontWeight: "400",
+  lineHeight: relative_height_size_generator(14),
+  letterSpacing: "0em",
+  textAlign: "left",
+}));
 
 const InputStyled = styled("input")(({ theme }) => ({
   border: "none",
+  backgroundColor: "#ffffff",
   outline: "none",
   borderBottom: "1px solid black",
   fontFamily: "Roboto",
@@ -25,21 +35,28 @@ const InputStyled = styled("input")(({ theme }) => ({
 
 const TextFieldComponent = ({
   placeholder,
-  label,
+  helperText,
   value,
   setValue,
+  showHelper,
   ...props
 }) => {
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        gap: relative_height_size_generator(6),
+      }}
+    >
       <InputStyled
-        id="filters-input"
         {...props}
         value={value}
         placeholder={placeholder}
         onChange={(e) => setValue(e.target.value)}
       />
-      <LabelStyled htmlFor="filters-input">{label}</LabelStyled>
+      {showHelper ? <LabelStyled>{helperText}</LabelStyled> : null}
     </div>
   );
 };
@@ -47,11 +64,11 @@ const TextFieldComponent = ({
 TextFieldComponent.propTypes = {
   setValue: PropTypes.func.isRequired,
   value: PropTypes.any,
-  label: PropTypes.string,
+  helperText: PropTypes.string,
 };
 
 TextFieldComponent.defaultProps = {
-  label: "Default label",
+  helperText: "Default Helper",
   placeholder: "Enter here...",
 };
 

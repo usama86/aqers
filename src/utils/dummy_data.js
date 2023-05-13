@@ -10,6 +10,20 @@ export const AGENT_LISTINGS = [
     };
   }),
 ];
+export const FEATURED_PROPERTIES = [
+  ...new Array(16).fill(null).map((_, index) => {
+    return {
+      img: `/FeaturedProperties/${index}.png`,
+      title: "92 ALLIUM PLACE, ORLA...",
+      beds: "4",
+      baths: "4",
+      area: '2096 ft',
+      location: 'New York, NY',
+      viewedBy: 569,
+      id: index,
+    };
+  }),
+];
 
 export const CATEGORIES = [
   {

@@ -11,7 +11,12 @@ import TextFieldComponent from "components/Base/TextFieldComponent";
 import { useRouter } from "next/router";
 import TypographyComponent from "components/Base/TypographyComponent";
 import { CITIES } from "config/dummy_search_data";
-import { capitalizeFirstLetter } from "../../../utils/helpers";
+import {
+  capitalizeFirstLetter,
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "../../../utils/helpers";
+import { getDesignSystem } from "theme/DesignToken";
 
 export default function SearchBar({ purpose }) {
   const [areas, setAreas] = useState([]);
@@ -32,37 +37,14 @@ export default function SearchBar({ purpose }) {
     <>
       <ClickAwayListener onClickAway={() => onFocusDisplay(false)}>
         <div
-          style={{ display: "flex", borderRadius: "5px", overflow: "hidden" }}
+          style={{
+            display: "flex",
+            borderRadius: relative_width_size_generator(5),
+            overflow: "hidden",
+            width: relative_width_size_generator(589),
+            margin: "0 auto",
+          }}
         >
-          {/* <StyledSelect
-            typeB
-            options={[
-              ...CITIES.map((eachCity) => ({
-                value: eachCity,
-                label: capitalizeFirstLetter(eachCity),
-              })),
-            ]}
-          /> */}
-          {/* LOCATION */}
-          {/* <StyledSelectBtn sx={{ background: "#F3F1F2", color: "#4D4D4D" }}>
-            <span style={{ marginRight: "9.15px" }}>
-              <ImageComponent
-                height="18px"
-                width="18px"
-                position="relative"
-                source="/Common/pin.png"
-              />
-            </span>
-            <span>Location</span>
-            <span style={{ marginLeft: "7.35px" }}>
-              <ImageComponent
-                height="18px"
-                width="18px"
-                position="relative"
-                source="/Common/dropdown.png"
-              />
-            </span>
-          </StyledSelectBtn> */}
           <TextFieldComponent
             placeholder="Find Property"
             onChange={handleChange}
@@ -70,8 +52,20 @@ export default function SearchBar({ purpose }) {
             onFocus={() => onFocusDisplay(true)}
             isAuto
             focused={openList}
-            height={"50px"}
-            borderRadius="0px"
+            height={relative_height_size_generator(50)}
+            borderradius="0px"
+            sx={{
+              "& .MuiInputBase-root": {
+                borderRadius: "0",
+                padding: `0 ${relative_width_size_generator(20)}`,
+                ...getDesignSystem(400, 14, 21),
+                "&::placeholder": {
+                  ...getDesignSystem(400, 14, 21),
+                },
+                
+              },
+              "& *": { ...getDesignSystem(400, 14, 21) },
+            }}
           />
           <ButtonComponent
             variant="contained"
@@ -79,97 +73,21 @@ export default function SearchBar({ purpose }) {
             sx={{
               ...styles.button,
               borderRadius: "0px",
+              height: relative_height_size_generator(50),
+              gap: relative_width_size_generator(12),
             }}
             onClick={handleSearch}
           >
             <ImageComponent
               source="/HomePage/searchIcon.svg"
-              width="24px"
-              height="24px"
+              width={relative_width_size_generator(14)}
+              height={relative_width_size_generator(14)}
               alt="Search Icon"
             />
             <TypographyComponent variant="HomeMedium" component="span">
               Search
             </TypographyComponent>
           </ButtonComponent>
-          {/* {openList && (
-            <div
-              style={{
-                backgroundColor: "#fff",
-                width: "100%",
-                position: "absolute",
-              }}
-            >
-              <List sx={styles.listItem}>
-                <div style={styles.chipsContainer}>
-                  {selectedList?.map((item, index) => (
-                    <Chip
-                      key={index}
-                      variant="outlined"
-                      label={item.longName ? item.longName : item.name}
-                      onDelete={() => handleDelete(item, index)}
-                      sx={styles.chips}
-                    />
-                  ))}
-                </div>
-                {!inputValue ? (
-                  <>
-                    {recentSearch && recentSearch.length > 0 && (
-                      <ListItemText
-                        primary="Recent Searches"
-                        disableTypography
-                        sx={styles.listHeader}
-                      />
-                    )}
-                    <>
-                      {recentSearch &&
-                        recentSearch.length > 0 &&
-                        recentSearch.map((item, index) => (
-                          <ListItemButton
-                            key={item.longName}
-                            onClick={() => handleClick(item, index)}
-                            sx={styles.listButton}
-                          >
-                            {item && item.cityId ? item.longName : item.name}
-                          </ListItemButton>
-                        ))}
-                    </>
-                    {selectedList.length == 0 && CITIES && CITIES.length > 0 ? (
-                      <ListItemText
-                        primary="Popular Cities"
-                        disableTypography
-                        sx={styles.listHeader}
-                      />
-                    ) : null}
-                    {selectedList.length == 0 &&
-                      CITIES &&
-                      CITIES.length > 0 &&
-                      CITIES.map((item) => (
-                        <ListItemButton
-                          sx={styles.listButton}
-                          key={item}
-                          onClick={() => handleCity(item)}
-                        >
-                          {item}
-                        </ListItemButton>
-                      ))}
-                  </>
-                ) : (
-                  areas &&
-                  areas.length > 0 &&
-                  areas.map((item, index) => (
-                    <ListItemButton
-                      key={item.longName}
-                      onClick={() => handleClick(item, index)}
-                      sx={styles.listButton}
-                    >
-                      {item.longName}
-                    </ListItemButton>
-                  ))
-                )}
-              </List>
-            </div>
-          )} */}
         </div>
       </ClickAwayListener>
     </>

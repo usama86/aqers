@@ -1,5 +1,5 @@
-import Checkbox from '@mui/material/Checkbox'
-import { CustomCheckBox } from './style'
+import Checkbox from "@mui/material/Checkbox";
+import { CustomCheckBox } from "./style";
 const CheckBoxComponent = ({ onChangeCheckbox, label, ...otherProps }) => {
   return (
     <CustomCheckBox
@@ -8,7 +8,7 @@ const CheckBoxComponent = ({ onChangeCheckbox, label, ...otherProps }) => {
       label={label}
       {...otherProps}
     />
-  )
-}
+  );
+};
 
-export default CheckBoxComponent
+export default CheckBoxComponent;
