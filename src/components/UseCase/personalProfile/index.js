@@ -10,6 +10,7 @@ import DividerComponent from "components/Base/DividerComponent";
 const PersonalProfiles = () => {
   return (
     <BoxComponent sx={styles.pageStyle}>
+      asad
       <BoxComponent sx={styles.paddingStyle}>
         <Header />
         <DividerComponent sx={styles.dividerStyle} />
