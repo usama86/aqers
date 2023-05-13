@@ -42,8 +42,8 @@ export const styles = {
   },
   avatarStyle: {
     bgcolor: "primary.main",
-    width: relative_width_size_generator(150),
-    height: relative_height_size_generator(150),
+    width: "150px",
+    height: "150px",
     background: "grey",
   },
   textDiv: {

@@ -40,6 +40,12 @@ const configureFooterProps = (location) => {
         isBackgroundLightDownloadApp: true,
       };
     }
+    case "profile-listing": {
+      return {
+        sectionsToShow: ["footer-url"],
+        isBackgroundLightDownloadApp: true,
+      };
+    }
     default: {
       return {};
     }
