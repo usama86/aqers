@@ -491,5 +491,17 @@ export const getDesignTokens = (mode) => ({
     AgentListingCardProperties: {
       ...getDesignSystem(400, 14, 21),
     },
+    FiterTitle: {
+      ...getDesignSystem(700, 15.96, 23.94),
+    },
+    FilterHeading: {
+      ...getDesignSystem(700, 15.96, 23.94),
+    },
+    FilterLabelUnselected: {
+      ...getDesignSystem(400, 14, 16),
+    },
+    FilterLabelSelected: {
+      ...getDesignSystem(700, 14, 16),
+    },
   },
 });
