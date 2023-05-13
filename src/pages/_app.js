@@ -14,7 +14,7 @@ const BUY_PROPERTIES_PROTECTED_PAGES = [
   "agent-profile",
   "buy-properties",
 ];
-const SELL_PROPERTIES_PROTECTED_PAGES = ["personal-profile"];
+const SELL_PROPERTIES_PROTECTED_PAGES = ["dashboard"];
 
 function App({ Component, pageProps }) {
   const { path } = useRouterProps();

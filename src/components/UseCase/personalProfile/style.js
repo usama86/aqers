@@ -11,19 +11,24 @@ const flexStyle = {
 
 export const styles = {
   pageStyle: {
-    background: "rgba(245, 245, 245, 1)",
+    // background: "rgba(245, 245, 245, 1)",
     width: "100%",
     height: "100%",
-  },
-  paddingStyle: {
-    height: "100%",
-    borderRadius: "10px",
-    background: "#FFFFFF",
     m: `${relative_height_size_generator(40)} ${relative_width_size_generator(
       243
     )} ${relative_height_size_generator(60)} ${relative_width_size_generator(
       243
     )}`,
+  },
+  paddingStyle: {
+    height: "100%",
+    borderRadius: "10px",
+    background: "#FFFFFF",
+    // m: `${relative_height_size_generator(40)} ${relative_width_size_generator(
+    //   243
+    // )} ${relative_height_size_generator(60)} ${relative_width_size_generator(
+    //   243
+    // )}`,
     p: `${relative_height_size_generator(40)} ${relative_width_size_generator(
       36
     )} ${relative_height_size_generator(40)} ${relative_width_size_generator(
