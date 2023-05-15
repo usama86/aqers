@@ -237,21 +237,20 @@ function ResponsiveAppBar({ componentVariant }) {
                 <NavbarRightBuyProperties />
               </>
             ) : (
-              // <ButtonComponent color="primary" fullWidth>
-              //   <LinkComponent
-              //     linkStyle={{
-              //       width: "100%",
-              //       height: "100%",
-              //       display: "flex",
-              //       alignItems: "center",
-              //       justifyContent: "center",
-              //     }}
-              //     href="/login"
-              //   >
-              //     Login
-              //   </LinkComponent>
-              // </ButtonComponent>
-              <div>h</div>
+              <ButtonComponent color="primary" fullWidth>
+                <LinkComponent
+                  linkStyle={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  href="/login"
+                >
+                  Login
+                </LinkComponent>
+              </ButtonComponent>
             )}
           </Box>
         </Toolbar>

@@ -38,7 +38,7 @@ export default function AboutUs() {
             gap: relative_height_size_generator(20),
           }}
         >
-          <Box sx={{ pt: "38px" }}>
+          <Box sx={{ pt: relative_height_size_generator(38) }}>
             <TypographyComponent
               variant="HomeEightSection"
               sx={{
@@ -73,9 +73,12 @@ export default function AboutUs() {
               sx={{
                 height: relative_height_size_generator(48),
                 width: relative_width_size_generator(185),
-                borderRadius: "14px",
+                borderRadius: relative_width_size_generator(14),
                 background: "#FFFFFF",
                 color: "primary.main",
+                "&:hover": {
+                  background: "#efefef",
+                },
               }}
             >
               <TypographyComponent
@@ -84,8 +87,9 @@ export default function AboutUs() {
                 sx={{
                   fontSize: relative_width_size_generator(18),
                 }}
-              ></TypographyComponent>
-              Contact Agent
+              >
+                Contact Agent
+              </TypographyComponent>
             </ButtonComponent>
           </Box>
         </Box>

@@ -5,6 +5,7 @@ import { styles } from "./style";
 import Box from "components/Base/BoxComponent";
 import {
   relative_height_size_generator,
+  relative_width_font_size_generator,
   relative_width_size_generator,
 } from "utils/helpers";
 import ButtonComponent from "components/Base/ButtonComponent";
@@ -90,9 +91,14 @@ export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
               sx={{
                 height: relative_height_size_generator(48),
                 width: relative_width_size_generator(185),
-                borderRadius: "14px",
+                borderRadius: relative_width_size_generator(14),
                 background: !isBackgroundLightDownloadApp && "#FFFFFF",
                 color: !isBackgroundLightDownloadApp && "primary.main",
+                "&:hover": {
+                  background: isBackgroundLightDownloadApp
+                    ? "primary.dark"
+                    : "#efefef",
+                },
               }}
               color="primary"
             >
@@ -100,10 +106,11 @@ export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
                 variant="HomeSeventhSection"
                 component="span"
                 sx={{
-                  fontSize: relative_width_size_generator(18),
+                  fontSize: relative_width_font_size_generator(18),
                 }}
-              ></TypographyComponent>
-              Download
+              >
+                Download
+              </TypographyComponent>
             </ButtonComponent>
           </Box>
         </Box>
