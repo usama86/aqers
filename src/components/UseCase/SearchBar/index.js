@@ -125,7 +125,12 @@ export default function SearchBar({ purpose }) {
             onClick={handleSearch}
           >
             <LinkComponent
-              href="featured-properties"
+              href={{
+                pathname: "featured-properties",
+                query: {
+                  search: inputValue,
+                },
+              }}
               linkStyle={{
                 width: "100%",
                 height: "100%",

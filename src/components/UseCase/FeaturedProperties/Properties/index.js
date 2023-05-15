@@ -8,7 +8,7 @@ import {
   relative_width_size_generator,
 } from "utils/helpers";
 
-const Properties = () => {
+const Properties = ({ heading }) => {
   return (
     <div style={{ flexGrow: 1 }}>
       <TypographyComponent
@@ -16,7 +16,7 @@ const Properties = () => {
         variant="FeaturedPropertiesHeading"
         component="h1"
       >
-        Featured Properties
+        {heading}
       </TypographyComponent>
       <StackCompoent
         sx={{ flexWrap: "wrap", gap: relative_width_size_generator(30) }}
