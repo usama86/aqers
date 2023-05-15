@@ -11,14 +11,14 @@ export default function PropertyCard({ data }) {
         width="190px"
         position="relative"
         source={data.source1}
-        imageStyle={{ objectFit: "cover" }}
+        imageStyle={{ objectFit: "cover", border: "0.5px solid #FFFFFF" }}
       />
       <ImageComponent
         height="190px"
         width="190px"
         position="relative"
         source={data.source2}
-        imageStyle={{ objectFit: "cover" }}
+        imageStyle={{ objectFit: "cover", border: "0.5px solid #FFFFFF" }}
       />
       <ImageComponent
         height="190px"
@@ -33,7 +33,7 @@ export default function PropertyCard({ data }) {
           width="190px"
           position="relative"
           source={data.source4}
-          imageStyle={{ objectFit: "cover" }}
+          imageStyle={{ objectFit: "cover", border: "0.5px solid #FFFFFF" }}
         />
         <BoxComponent sx={styles.shadowStyling}>
           <TypographyComponent

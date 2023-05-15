@@ -39,7 +39,9 @@ const PersonalProfiles = () => {
           >
             Listed Properties Collections
           </TypographyComponent>
-          <BoxComponent sx={{ display: "flex", gap: "114px" }}>
+          <BoxComponent
+            sx={{ display: "flex", gap: "114px", flexWrap: "wrap" }}
+          >
             {collectionCardData.map((data) => (
               <React.Fragment key={data.id}>
                 <CollectionCard data={data} />
