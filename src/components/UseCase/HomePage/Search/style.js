@@ -59,7 +59,7 @@ export const styles = {
   },
   headerlightWeb: {
     color: "#EDEFF6",
-    width: relative_width_size_generator(843),
+    width: relative_width_size_generator(696),
     textAlign: "center",
     textShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
     "@media (max-width: 600px)": {

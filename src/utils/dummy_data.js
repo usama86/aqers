@@ -10,3 +10,80 @@ export const AGENT_LISTINGS = [
     };
   }),
 ];
+export const FEATURED_PROPERTIES = [
+  ...new Array(16).fill(null).map((_, index) => {
+    return {
+      img: `/FeaturedProperties/${index}.png`,
+      title: "92 ALLIUM PLACE, ORLA...",
+      beds: "4",
+      baths: "4",
+      area: '2096 ft',
+      location: 'New York, NY',
+      viewedBy: 569,
+      id: index,
+    };
+  }),
+];
+
+export const CATEGORIES = [
+  {
+    type: "Lands & Plots",
+    number: 51427,
+    id: 0,
+  },
+  {
+    type: "Houses",
+    number: 21101,
+    id: 1,
+  },
+  {
+    type: "Apartments & Flats",
+    number: 7407,
+    id: 2,
+  },
+  {
+    type: "Shops - Offices - Commercial Space",
+    number: 3621,
+    id: 3,
+  },
+  {
+    type: "Portions & Floors",
+    number: 830,
+    id: 4,
+  },
+];
+
+export const LOCATIONS = [
+  {
+    location: "Punjab",
+    number: 13831,
+    id: 0,
+  },
+  {
+    location: "Islamabad Capital Territory",
+    number: 3590,
+    id: 1,
+  },
+  {
+    location: "Sindh",
+    number: 3190,
+    id: 2,
+  },
+  {
+    location: "Khyber Pakhtunkhwa",
+    number: 483,
+    id: 3,
+  },
+  {
+    location: "Balochistan",
+    number: 3,
+    id: 4,
+  },
+];
+
+export const COUNTRIES = [
+  { id: 1, label: "United States", code: "US" },
+  { id: 2, label: "Canada", code: "CA" },
+  { id: 3, label: "France", code: "FR" },
+  { id: 4, label: "Japan", code: "JP" },
+];

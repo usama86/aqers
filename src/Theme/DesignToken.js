@@ -279,7 +279,7 @@ export const getDesignTokens = (mode) => ({
     HomeBold: {
       fontSize: relative_width_size_generator(52),
       fontWeight: "700",
-      lineHeight: "72px",
+      lineHeight: relative_height_size_generator(72),
       letterSpacing: "0em",
       textAlign: "center",
     },
@@ -287,20 +287,20 @@ export const getDesignTokens = (mode) => ({
     HomeLight: {
       fontSize: relative_width_size_generator(20),
       fontWeight: 400,
-      lineHeight: "28px",
+      lineHeight: relative_height_size_generator(28),
       letterSpacing: "0em",
       textAlign: "center",
     },
     HomeMedium: {
-      fontSize: "14px",
+      fontSize: relative_width_font_size_generator(14),
       fontWeight: 600,
-      lineHeight: "20px",
+      lineHeight: relative_height_size_generator(20),
       letterSpacing: "0.20000000298023224px",
       textAlign: "left",
     },
     HomeSecondSection: {
       fontWeight: 600,
-      lineHeight: "72px",
+      lineHeight: relative_height_size_generator(72),
       letterSpacing: "-0.4000000059604645px",
       textAlign: "left",
     },
@@ -312,7 +312,7 @@ export const getDesignTokens = (mode) => ({
     },
     HomeFourthSection: {
       fontWeight: 400,
-      lineHeight: "32px",
+      lineHeight: relative_height_size_generator(32),
       letterSpacing: "0px",
       textAlign: "left",
     },
@@ -365,7 +365,7 @@ export const getDesignTokens = (mode) => ({
     },
     HomeSeventhSection: {
       fontWeight: 600,
-      lineHeight: "18px",
+      lineHeight: relative_height_size_generator(18),
       letterSpacing: "0em",
       textAlign: "center",
     },
@@ -490,6 +490,21 @@ export const getDesignTokens = (mode) => ({
     },
     AgentListingCardProperties: {
       ...getDesignSystem(400, 14, 21),
+    },
+    FeaturedPropertiesHeading: {
+      ...getDesignSystem(600, 56, 72),
+    },
+    FiterTitle: {
+      ...getDesignSystem(700, 15.96, 23.94),
+    },
+    FilterHeading: {
+      ...getDesignSystem(700, 15.96, 23.94),
+    },
+    FilterLabelUnselected: {
+      ...getDesignSystem(400, 14, 16),
+    },
+    FilterLabelSelected: {
+      ...getDesignSystem(700, 14, 16),
     },
     profileListing: {
       fontWeight: 700,
