@@ -68,6 +68,7 @@ export default function CustomizedMenus({
   transparent,
   iconBtn,
   children,
+  customStyles,
 }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -188,23 +189,27 @@ export default function CustomizedMenus({
     <div>
       <Button
         {...btnProps}
-        sx={{
-          background: "#ffff",
-          color: "#000",
-          textTransform: "capitalize",
-          width: fullWidth ? "100%" : width,
-          minWidth: rigidWidth ? "auto" : "max-content",
-          padding: `${relative_height_size_generator(
-            14
-          )} ${relative_width_size_generator(
-            30
-          )} ${relative_height_size_generator(
-            14
-          )} ${relative_width_size_generator(41)}`,
-          "&:hover": {
-            background: "#c4c4c4",
-          },
-        }}
+        sx={
+          customStyles
+            ? { ...customStyles }
+            : {
+                background: "#ffff",
+                color: "#000",
+                textTransform: "capitalize",
+                width: fullWidth ? "100%" : width,
+                minWidth: rigidWidth ? "auto" : "max-content",
+                padding: `${relative_height_size_generator(
+                  14
+                )} ${relative_width_size_generator(
+                  30
+                )} ${relative_height_size_generator(
+                  14
+                )} ${relative_width_size_generator(41)}`,
+                "&:hover": {
+                  background: "#c4c4c4",
+                },
+              }
+        }
         id="demo-customized-button"
         aria-controls={open ? "demo-customized-menu" : undefined}
         aria-haspopup="true"
@@ -214,7 +219,7 @@ export default function CustomizedMenus({
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
       >
-        {label}
+        {label ? label : children}
       </Button>
       <StyledMenu
         id="demo-customized-menu"
@@ -248,7 +253,6 @@ export default function CustomizedMenus({
 }
 
 CustomizedMenus.defaultProps = {
-  label: "Default Label",
   width: "max-content",
   fullWidth: false,
   rigidWidth: false,

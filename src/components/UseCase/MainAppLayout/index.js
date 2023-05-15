@@ -52,6 +52,12 @@ const configureFooterProps = (location) => {
         isBackgroundLightDownloadApp: true,
       };
     }
+    case "agent-profile": {
+      return {
+        sectionsToShow: ["footer-url"],
+        isBackgroundLightDownloadApp: true,
+      };
+    }
     case "my-booking": {
       return {
         sectionsToShow: ["footer-url"],

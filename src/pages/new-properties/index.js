@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 const FeaturedProperties = () => {
   const router = useRouter();
   const { search } = router.query;
-  return <FeaturedPropertiesComponent heading={"Featured Properties"} />;
+  return <FeaturedPropertiesComponent heading={"New Properties"} />;
 };
 
 export default FeaturedProperties;

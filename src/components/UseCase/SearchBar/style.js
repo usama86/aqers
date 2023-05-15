@@ -1,10 +1,23 @@
 import styled from "@emotion/styled";
 import ButtonComponent from "components/Base/ButtonComponent";
 import SelectComponent from "components/Base/SelectComponent";
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
 
 export const styles = {
   dropDownButton: {
     backgroundColor: "rgba(243, 241, 242, 1)",
+    borderRadius: "0px",
+    height: relative_height_size_generator(50),
+    width: relative_width_size_generator(139),
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    // padding: `0 ${relative_width_size_generator(
+    //   13
+    // )} 0 ${relative_width_size_generator(22.75)}`,
   },
   button: {
     marginLeft: "0px !important",

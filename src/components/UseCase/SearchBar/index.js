@@ -19,6 +19,7 @@ import {
 import { getDesignSystem } from "theme/DesignToken";
 import LinkComponent from "components/Base/LinkComponent";
 import DropdownComponent from "components/Base/DropDownComponent";
+import BoxComponent from "components/Base/BoxComponent";
 
 export default function SearchBar({ purpose }) {
   const [areas, setAreas] = useState([]);
@@ -48,7 +49,7 @@ export default function SearchBar({ purpose }) {
           }}
         >
           <DropdownComponent transparent>
-            <ButtonComponent
+            <BoxComponent
               variant="contained"
               color="primary"
               sx={{
@@ -84,7 +85,7 @@ export default function SearchBar({ purpose }) {
                 width={relative_width_size_generator(9)}
                 height={relative_width_size_generator(4.5)}
               />
-            </ButtonComponent>
+            </BoxComponent>
           </DropdownComponent>
           <TextFieldComponent
             placeholder="Find Property"
@@ -118,19 +119,24 @@ export default function SearchBar({ purpose }) {
               ...styles.button,
               borderRadius: "0px",
               height: relative_height_size_generator(50),
-
-              padding: 0,
+              minWidth: "auto",
+              padding: `0 ${relative_width_size_generator(24)}`,
             }}
             onClick={handleSearch}
           >
             <LinkComponent
-              href="featured-properties"
+              href={{
+                pathname: "featured-properties",
+                query: {
+                  search: inputValue,
+                },
+              }}
               linkStyle={{
                 width: "100%",
                 height: "100%",
                 display: "flex",
-                justifyContent: "center",
-                gap: relative_width_size_generator(12),
+                // justifyContent: "center",
+                // gap: relative_width_size_generator(12),
                 alignItems: "center",
               }}
             >
@@ -139,6 +145,7 @@ export default function SearchBar({ purpose }) {
                 width={relative_width_size_generator(14)}
                 height={relative_width_size_generator(14)}
                 alt="Search Icon"
+                style={{ marginRight: relative_width_size_generator(12) }}
               />
               <TypographyComponent variant="HomeMedium" component="span">
                 Search

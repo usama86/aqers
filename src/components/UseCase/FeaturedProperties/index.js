@@ -20,7 +20,7 @@ export const SearchPropertiesPageLayout = styled(StackCompoent)(
   })
 );
 
-const FeaturedProperties = () => {
+const FeaturedProperties = ({ heading }) => {
   return (
     <>
       <Search />
@@ -33,7 +33,7 @@ const FeaturedProperties = () => {
           direction="row"
         >
           <Filters />
-          <Properties />
+          <Properties heading={heading} />
         </StackCompoent>
       </SearchPropertiesPageLayout>
     </>
