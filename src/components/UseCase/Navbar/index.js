@@ -132,7 +132,11 @@ function ResponsiveAppBar({ componentVariant }) {
                 </MenuItem>
               ))}
               <MenuItem onClick={handleCloseNavMenu}>
-                <ButtonComponent color="primary" fullWidth>
+                <ButtonComponent
+                  color="primary"
+                  sx={{ borderRadius: relative_width_size_generator(14) }}
+                  fullWidth
+                >
                   <LinkComponent
                     linkStyle={{
                       width: "100%",
@@ -238,7 +242,11 @@ function ResponsiveAppBar({ componentVariant }) {
                 <NavbarRightBuyProperties />
               </>
             ) : (
-              <ButtonComponent color="primary" fullWidth>
+              <ButtonComponent
+                color="primary"
+                sx={{ borderRadius: relative_width_size_generator(14) }}
+                fullWidth
+              >
                 <LinkComponent
                   linkStyle={{
                     width: "100%",
