@@ -27,6 +27,6 @@ export const styles = {
   },
   cardsBox: {
     ...flexStyle,
-    gap: relative_width_size_generator(70),
+    gap: "70px",
   },
 };
