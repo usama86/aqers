@@ -15,10 +15,10 @@ export const FEATURED_PROPERTIES = [
     return {
       img: `/FeaturedProperties/${index}.png`,
       title: "92 ALLIUM PLACE, ORLA...",
-      beds: "4",
-      baths: "4",
-      area: '2096 ft',
-      location: 'New York, NY',
+      bed: "4",
+      bath: "4",
+      dimension: "2096 ft",
+      location: "New York, NY",
       viewedBy: 569,
       id: index,
     };

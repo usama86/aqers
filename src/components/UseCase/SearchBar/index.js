@@ -17,6 +17,8 @@ import {
   relative_width_size_generator,
 } from "../../../utils/helpers";
 import { getDesignSystem } from "theme/DesignToken";
+import LinkComponent from "components/Base/LinkComponent";
+import DropdownComponent from "components/Base/DropDownComponent";
 
 export default function SearchBar({ purpose }) {
   const [areas, setAreas] = useState([]);
@@ -45,6 +47,24 @@ export default function SearchBar({ purpose }) {
             margin: "0 auto",
           }}
         >
+          <DropdownComponent transparent>
+            <ButtonComponent
+              variant="contained"
+              color="primary"
+              sx={{
+                ...styles.button,
+                borderRadius: "0px",
+                height: relative_height_size_generator(50),
+
+                padding: 0,
+              }}
+              onClick={handleSearch}
+            >
+              <TypographyComponent variant="HomeMedium" component="span">
+                Location
+              </TypographyComponent>
+            </ButtonComponent>
+          </DropdownComponent>
           <TextFieldComponent
             placeholder="Find Property"
             onChange={handleChange}
@@ -57,12 +77,14 @@ export default function SearchBar({ purpose }) {
             sx={{
               "& .MuiInputBase-root": {
                 borderRadius: "0",
-                padding: `0 ${relative_width_size_generator(20)}`,
+                padding: `0 ${relative_width_size_generator(21)}`,
                 ...getDesignSystem(400, 14, 21),
                 "&::placeholder": {
                   ...getDesignSystem(400, 14, 21),
                 },
-                
+                "& fieldset": {
+                  border: "none",
+                },
               },
               "& *": { ...getDesignSystem(400, 14, 21) },
             }}
@@ -74,19 +96,32 @@ export default function SearchBar({ purpose }) {
               ...styles.button,
               borderRadius: "0px",
               height: relative_height_size_generator(50),
-              gap: relative_width_size_generator(12),
+
+              padding: 0,
             }}
             onClick={handleSearch}
           >
-            <ImageComponent
-              source="/HomePage/searchIcon.svg"
-              width={relative_width_size_generator(14)}
-              height={relative_width_size_generator(14)}
-              alt="Search Icon"
-            />
-            <TypographyComponent variant="HomeMedium" component="span">
-              Search
-            </TypographyComponent>
+            <LinkComponent
+              href="featured-properties"
+              linkStyle={{
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                gap: relative_width_size_generator(12),
+                alignItems: "center",
+              }}
+            >
+              <ImageComponent
+                source="/HomePage/searchIcon.svg"
+                width={relative_width_size_generator(14)}
+                height={relative_width_size_generator(14)}
+                alt="Search Icon"
+              />
+              <TypographyComponent variant="HomeMedium" component="span">
+                Search
+              </TypographyComponent>
+            </LinkComponent>
           </ButtonComponent>
         </div>
       </ClickAwayListener>
