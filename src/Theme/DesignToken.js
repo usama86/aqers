@@ -553,5 +553,11 @@ export const getDesignTokens = (mode) => ({
       letterSpacing: "-0.03em",
       textAlign: "left",
     },
+    AccountText: {
+      fontWeight: 600,
+      lineHeight: relative_height_size_generator(18),
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
   },
 });

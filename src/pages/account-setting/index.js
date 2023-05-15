@@ -1,7 +1,7 @@
-import Booking from "components/UseCase/Booking";
+import AccountSetting from "components/UseCase/AccountSetting";
 
-const FeaturedProperties = () => {
-  return <Booking />;
+const AccountSettings = () => {
+  return <AccountSetting />;
 };
 
-export default FeaturedProperties;
+export default AccountSettings;
