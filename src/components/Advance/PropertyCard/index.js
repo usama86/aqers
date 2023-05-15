@@ -9,22 +9,27 @@ import { styles } from "./style";
 import BoxComponent from "components/Base/BoxComponent";
 import DropDownComponent from "components/Base/DropDownComponent";
 
-export default function PropertyCard({ type }) {
+export default function PropertyCard({ type, data }) {
   const propertyDetail = [
-    { id: 1, source: "/Common/bed.png", value: "4" },
-    { id: 2, source: "/Common/bathtub.png", value: "4" },
-    { id: 3, source: "/Common/dimension.png", value: "2.096 ft" },
+    { id: 1, source: "/Common/bed.png", value: data.bed },
+    { id: 2, source: "/Common/bathtub.png", value: data.bath },
+    {
+      id: 3,
+      source: "/Common/dimension.png",
+      value: data.dimension + " " + data.unit,
+    },
   ];
   return (
     <Card sx={styles.cardDiv}>
-      <CardActionArea>
-        <BoxComponent sx={{ position: "relative" }}>
-          <ImageComponent
-            height="236.52px"
-            width="305px"
-            position="relative"
-            source="/Common/test_image.png"
-          />
+      {/* <CardActionArea> */}
+      <BoxComponent sx={{ position: "relative" }}>
+        <ImageComponent
+          height="236.52px"
+          width="305px"
+          position="relative"
+          source="/Common/test_image.png"
+        />
+        {data.featured && (
           <BoxComponent
             sx={{
               position: "absolute",
@@ -45,101 +50,59 @@ export default function PropertyCard({ type }) {
               Featured
             </TypographyComponent>
           </BoxComponent>
+        )}
 
-          <BoxComponent
-            sx={{
-              position: "absolute",
-              top: "20px",
-              right: "20px",
-              zIndex: 100,
-            }}
-          >
-            {type === "drop" ? (
-              <DropDownComponent iconBtn={true}>
-                <ImageComponent
-                  width={"24px"}
-                  height={"24px"}
-                  source="/common/dropDownIcon.png"
-                />
-              </DropDownComponent>
-            ) : (
-              type === "like" && (
-                <ImageComponent
-                  width={"42px"}
-                  height={"42px"}
-                  source="/common/unlike.png"
-                />
-              )
-            )}
-          </BoxComponent>
-        </BoxComponent>
-        <CardContent sx={styles.cardContent}>
-          {/* Heading */}
-          <TypographyComponent
-            variant="CardTitle"
-            component="p"
-            sx={{ fontSize: "18px" }}
-          >
-            92 ALLIUM PLACE, ORLA...
-          </TypographyComponent>
-          {/* proeprty detail */}
-          <BoxComponent sx={styles.iconBox}>
-            {propertyDetail.map((data) => (
-              <BoxComponent sx={styles.iconTextBox} key={data.id}>
-                <ImageComponent
-                  height="24px"
-                  width="24px"
-                  position="relative"
-                  source={data.source}
-                />
-                <TypographyComponent
-                  sx={{
-                    fontSize: "16px",
-                    color: "#6D737A",
-                  }}
-                  variant="CardText"
-                  component="p"
-                >
-                  {data.value}
-                </TypographyComponent>
-              </BoxComponent>
-            ))}
-          </BoxComponent>
-          {/* City */}
-          <BoxComponent sx={styles.cityDiv}>
-            <ImageComponent
-              height="24px"
-              width="24px"
-              position="relative"
-              source={"/Common/location.png"}
-            />
-            <TypographyComponent
-              sx={{
-                fontSize: "14px",
-                color: "#121212",
-              }}
-              variant="CardCityText"
-              component="p"
-            >
-              New York, NY
-            </TypographyComponent>
-          </BoxComponent>
-          {/* Detail View */}
-          <BoxComponent sx={styles.lastSection}>
-            <BoxComponent sx={styles.buttonStyle}>View Details</BoxComponent>
-
-            <ImageComponent
-              height="20px"
-              width="20px"
-              position="relative"
-              source={"/Common/share.png"}
-            />
-            <BoxComponent sx={styles.viewSection}>
+        <BoxComponent
+          sx={{
+            position: "absolute",
+            top: "20px",
+            right: "20px",
+            zIndex: 100,
+          }}
+        >
+          {type === "drop" ? (
+            <DropDownComponent iconBtn={true}>
               <ImageComponent
-                height="20px"
-                width="20px"
+                width={"24px"}
+                height={"24px"}
+                source="/common/dropDownIcon.png"
+              />
+            </DropDownComponent>
+          ) : (
+            type === "like" && (
+              <ImageComponent
+                width={"42px"}
+                height={"42px"}
+                source="/common/unlike.png"
+              />
+            )
+          )}
+        </BoxComponent>
+      </BoxComponent>
+      <CardContent sx={styles.cardContent}>
+        {/* Heading */}
+        <TypographyComponent
+          variant="CardTitle"
+          component="p"
+          sx={{
+            fontSize: "18px",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
+            width: "246px",
+          }}
+        >
+          {data.title}
+        </TypographyComponent>
+        {/* proeprty detail */}
+        <BoxComponent sx={styles.iconBox}>
+          {propertyDetail.map((data) => (
+            <BoxComponent sx={styles.iconTextBox} key={data.id}>
+              <ImageComponent
+                height="24px"
+                width="24px"
                 position="relative"
-                source={"/Common/eye.png"}
+                source={data.source}
               />
               <TypographyComponent
                 sx={{
@@ -149,12 +112,61 @@ export default function PropertyCard({ type }) {
                 variant="CardText"
                 component="p"
               >
-                569
+                {data.value}
               </TypographyComponent>
             </BoxComponent>
+          ))}
+        </BoxComponent>
+        {/* City */}
+        <BoxComponent sx={styles.cityDiv}>
+          <ImageComponent
+            height="24px"
+            width="24px"
+            position="relative"
+            source={"/Common/location.png"}
+          />
+          <TypographyComponent
+            sx={{
+              fontSize: "14px",
+              color: "#121212",
+            }}
+            variant="CardCityText"
+            component="p"
+          >
+            {data.location}
+          </TypographyComponent>
+        </BoxComponent>
+        {/* Detail View */}
+        <BoxComponent sx={styles.lastSection}>
+          <BoxComponent sx={styles.buttonStyle}>View Details</BoxComponent>
+
+          <ImageComponent
+            height="20px"
+            width="20px"
+            position="relative"
+            source={"/Common/share.png"}
+          />
+          <BoxComponent sx={styles.viewSection}>
+            <ImageComponent
+              height="20px"
+              width="20px"
+              position="relative"
+              source={"/Common/eye.png"}
+            />
+            <TypographyComponent
+              sx={{
+                fontSize: "16px",
+                color: "#6D737A",
+              }}
+              variant="CardText"
+              component="p"
+            >
+              {data.view}
+            </TypographyComponent>
           </BoxComponent>
-        </CardContent>
-      </CardActionArea>
+        </BoxComponent>
+      </CardContent>
+      {/* </CardActionArea> */}
     </Card>
   );
 }
@@ -164,4 +176,15 @@ PropertyCard.propTypes = {
 };
 PropertyCard.defaultProps = {
   type: "like", // drop like
+
+  //Sample Data
+  //   id: 1,
+  //   featured: true,
+  //   title: " 92 ALLIUM PLACE, ORLA...",
+  //   bed: "4",
+  //   bath: "4",
+  //   dimension: "2.096",
+  //   unit: "ft",
+  //   location: "New York, NY",
+  //   view: "5690",
 };
