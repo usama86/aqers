@@ -19,5 +19,6 @@ export const styles = {
     justifyContent: "center",
     alignItems: "center",
     display: "flex",
+    border: "1px solid #FFFFFF",
   },
 };

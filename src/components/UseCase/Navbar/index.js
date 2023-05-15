@@ -33,7 +33,8 @@ const pages = (variant) => {
   if (variant === "sellProperties") {
     toRenderPages = [
       { label: "Dashboard", route: "dashboard" },
-      { label: "Listing", route: "listing" },
+      { label: "Listing", route: "profile-listing" },
+      // { label: "Listing", route: "profile-listing-collection" },
       { label: "My Booking", route: "my-booking" },
       { label: "Profile", route: "profile" },
       { label: "Aqers +", route: "aqers-plus" },
