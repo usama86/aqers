@@ -23,7 +23,7 @@ export default function TextFieldComponent({
   height,
   isError,
   errorMessage,
-  borderRadius,
+  borderradius,
   ...otherProps
 }) {
   const handleChange = (event) => {
@@ -61,7 +61,7 @@ export default function TextFieldComponent({
               inputProps={{
                 autoComplete: "off",
               }}
-              borderRadius={borderRadius}
+              borderradius={borderradius}
               {...otherProps}
             />
           )}
@@ -112,5 +112,5 @@ TextFieldComponent.defaultProps = {
   placeholder: "",
   isAuto: false,
   height: "48px",
-  borderRadius: "0px",
+  borderradius: "0px",
 };

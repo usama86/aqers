@@ -40,6 +40,40 @@ export const relative_height_size_generator = (
   }
 };
 
+export const relative_width_font_size_generator = (
+  pixelValue,
+  totalFrameWidthInPixels
+) => {
+  try {
+    let width;
+    if (!totalFrameWidthInPixels) {
+      width = 1920;
+    } else {
+      width = totalFrameWidthInPixels;
+    }
+    if (+pixelValue === NaN) {
+      return 0;
+    }
+
+    return `${(+pixelValue * 100) / width}vw`;
+  } catch (err) {
+    return 0;
+  }
+};
+
 export function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+export function removeCommas(str) {
+  console.log({ str });
+  return str.replace(/,/g, "");
+}
+
+export function truncateString(str, maxLength) {
+  if (str.length > maxLength) {
+    return str.substring(0, maxLength) + "...";
+  } else {
+    return str;
+  }
 }

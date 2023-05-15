@@ -1,6 +1,7 @@
 import {
   relative_height_size_generator,
   relative_width_size_generator,
+  relative_width_font_size_generator,
 } from "utils/helpers";
 
 const primary = "#92198C";
@@ -17,7 +18,7 @@ export const infoPagesBackground = "#E8E8E8";
 export function getDesignSystem(fontWeight, fontSize, lineHeight) {
   return {
     fontWeight,
-    fontSize: relative_width_size_generator(fontSize),
+    fontSize: relative_width_font_size_generator(fontSize),
     lineHeight: relative_height_size_generator(lineHeight),
   };
 }
@@ -278,7 +279,7 @@ export const getDesignTokens = (mode) => ({
     HomeBold: {
       fontSize: relative_width_size_generator(52),
       fontWeight: "700",
-      lineHeight: "72px",
+      lineHeight: relative_height_size_generator(72),
       letterSpacing: "0em",
       textAlign: "center",
     },
@@ -286,20 +287,20 @@ export const getDesignTokens = (mode) => ({
     HomeLight: {
       fontSize: relative_width_size_generator(20),
       fontWeight: 400,
-      lineHeight: "28px",
+      lineHeight: relative_height_size_generator(28),
       letterSpacing: "0em",
       textAlign: "center",
     },
     HomeMedium: {
-      fontSize: "14px",
+      fontSize: relative_width_font_size_generator(14),
       fontWeight: 600,
-      lineHeight: "20px",
+      lineHeight: relative_height_size_generator(20),
       letterSpacing: "0.20000000298023224px",
       textAlign: "left",
     },
     HomeSecondSection: {
       fontWeight: 600,
-      lineHeight: "72px",
+      lineHeight: relative_height_size_generator(72),
       letterSpacing: "-0.4000000059604645px",
       textAlign: "left",
     },
@@ -311,7 +312,7 @@ export const getDesignTokens = (mode) => ({
     },
     HomeFourthSection: {
       fontWeight: 400,
-      lineHeight: "32px",
+      lineHeight: relative_height_size_generator(32),
       letterSpacing: "0px",
       textAlign: "left",
     },
@@ -364,7 +365,7 @@ export const getDesignTokens = (mode) => ({
     },
     HomeSeventhSection: {
       fontWeight: 600,
-      lineHeight: "18px",
+      lineHeight: relative_height_size_generator(18),
       letterSpacing: "0em",
       textAlign: "center",
     },
@@ -441,40 +442,40 @@ export const getDesignTokens = (mode) => ({
     },
     SellSection: {
       fontWeight: 600,
-      lineHeight: relative_height_size_generator("42px"),
+      lineHeight: relative_height_size_generator(42),
       letterSpacing: "0em",
       textAlign: "left",
       fontFamily: "Inter",
     },
     SellSectionSubTitle: {
       fontWeight: 400,
-      lineHeight: relative_height_size_generator("24px"),
+      lineHeight: relative_height_size_generator(24),
       letterSpacing: "0em",
       textAlign: "left",
       fontFamily: "Inter",
     },
     SellSectionSubtitle1: {
       fontWeight: 700,
-      lineHeight: relative_height_size_generator("48px"),
+      lineHeight: relative_height_size_generator(48),
       letterSpacing: "0em",
       textAlign: "left",
       fontFamily: "Inter",
     },
     SellDownSection: {
       fontWeight: 600,
-      lineHeight: relative_height_size_generator("18px"),
+      lineHeight: relative_height_size_generator(18),
       letterSpacing: "0em",
       textAlign: "left",
     },
     SellDownSection2: {
       fontWeight: 600,
-      lineHeight: relative_height_size_generator("75px"),
+      lineHeight: relative_height_size_generator(75),
       letterSpacing: "0em",
       textAlign: "left",
     },
     SellDownSubSection2: {
       fontWeight: 400,
-      lineHeight: relative_height_size_generator("41px"),
+      lineHeight: relative_height_size_generator(41),
       letterSpacing: "0em",
       textAlign: "left",
     },
@@ -489,6 +490,62 @@ export const getDesignTokens = (mode) => ({
     },
     AgentListingCardProperties: {
       ...getDesignSystem(400, 14, 21),
+    },
+    FeaturedPropertiesHeading: {
+      ...getDesignSystem(600, 56, 72),
+    },
+    FiterTitle: {
+      ...getDesignSystem(700, 15.96, 23.94),
+    },
+    FilterHeading: {
+      ...getDesignSystem(700, 15.96, 23.94),
+    },
+    FilterLabelUnselected: {
+      ...getDesignSystem(400, 14, 16),
+    },
+    FilterLabelSelected: {
+      ...getDesignSystem(700, 14, 16),
+    },
+    profileListing: {
+      fontWeight: 700,
+      lineHeight: relative_height_size_generator(40),
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
+    CardTitle: {
+      fontWeight: 700,
+      lineHeight: relative_height_size_generator(22),
+      letterSpacing: "0.20000000298023224px",
+      textAlign: "left",
+      fontFamily: "Inter",
+    },
+    CardText: {
+      fontWeight: 700,
+      lineHeight: relative_height_size_generator(24),
+      letterSpacing: "0em",
+      textAlign: "left",
+      fontFamily: "Inter",
+    },
+    CardCityText: {
+      fontWeight: 700,
+      lineHeight: relative_height_size_generator(17),
+      letterSpacing: "0.20000000298023224px",
+      textAlign: "center",
+      fontFamily: "Inter",
+    },
+    CardButton: {
+      fontWeight: 700,
+      lineHeight: relative_height_size_generator(24),
+      letterSpacing: "0.20000000298023224px",
+      textAlign: "center",
+      fontFamily: "Inter",
+    },
+    CardFeature: {
+      fontWeight: 700,
+      lineHeight: relative_height_size_generator(11),
+      letterSpacing: "0em",
+      textAlign: "left",
+      fontFamily: "Inter",
     },
   },
 });

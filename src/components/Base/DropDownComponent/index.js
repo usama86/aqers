@@ -92,7 +92,7 @@ export default function CustomizedMenus({
             variant="contained"
             disableElevation
             onClick={handleClick}
-            endIcon={<KeyboardArrowDownIcon />}
+            // endIcon={<KeyboardArrowDownIcon />}
           >
             {children}
           </IconButtonComponent>
@@ -143,12 +143,13 @@ export default function CustomizedMenus({
               height: "max-content",
               margin: 0,
               padding: 0,
+              justifyContent: "space-between",
             }}
             id="demo-customized-Button"
             variant="contained"
             disableElevation
             onClick={handleClick}
-            endIcon={<KeyboardArrowDownIcon />}
+            // endIcon={<KeyboardArrowDownIcon />}
           >
             {children}
           </Button>

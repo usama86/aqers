@@ -19,15 +19,29 @@ import {
 import { styles } from "./style";
 import useRouterProps from "hooks/useRouterProps";
 import NavbarRightBuyProperties from "./NavbarRightBuyProperties";
+import NavbarRightSellProperties from "./NavbarRightSellProperties";
 
-const pages = [
-  { label: "Home", route: "" },
-  { label: "Buy", route: "buy" },
-  { label: "Rent", route: "rent" },
-  { label: "About", route: "about" },
-  { label: "Contact", route: "contact" },
-  { label: "FAQs", route: "faq" },
-];
+const pages = (variant) => {
+  let toRenderPages = [
+    { label: "Home", route: "" },
+    { label: "Buy", route: "buy" },
+    { label: "Rent", route: "rent" },
+    { label: "About", route: "about" },
+    { label: "Contact", route: "contact" },
+    { label: "FAQs", route: "faq" },
+  ];
+  if (variant === "sellProperties") {
+    toRenderPages = [
+      { label: "Dashboard", route: "dashboard" },
+      { label: "Listing", route: "listing" },
+      { label: "My Booking", route: "my-booking" },
+      { label: "Profile", route: "profile" },
+      { label: "Aqers +", route: "aqers-plus" },
+    ];
+  }
+
+  return toRenderPages;
+};
 
 function ResponsiveAppBar({ componentVariant }) {
   const { path } = useRouterProps();
@@ -109,7 +123,7 @@ function ResponsiveAppBar({ componentVariant }) {
                 },
               }}
             >
-              {pages.map((eachPage) => (
+              {pages(componentVariant).map((eachPage) => (
                 <MenuItem key={eachPage.route} onClick={handleCloseNavMenu}>
                   <Typography variant={"NavStyle"} textAlign="center">
                     {eachPage.label}
@@ -164,7 +178,7 @@ function ResponsiveAppBar({ componentVariant }) {
               },
             }}
           >
-            {pages.map((eachPage) => (
+            {pages(componentVariant).map((eachPage) => (
               <Button
                 key={eachPage.label}
                 onClick={handleCloseNavMenu}
@@ -219,7 +233,9 @@ function ResponsiveAppBar({ componentVariant }) {
                 <NavbarRightBuyProperties />
               </>
             ) : componentVariant === "sellProperties" ? (
-              <></>
+              <>
+                <NavbarRightBuyProperties />
+              </>
             ) : (
               <ButtonComponent color="primary" fullWidth>
                 <LinkComponent

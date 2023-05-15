@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 import Select from "@mui/material/Select";
 import SelectUnstyled from "@mui/base/Select";
 import OptionUnstyled from "@mui/base/Option";
+import MenuItemComponent from "../MenuItemComponent";
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
 
 export default function SelectComponent({
   value,
@@ -35,8 +40,38 @@ export default function SelectComponent({
     );
   }
   return (
-    <Select value={value} onChange={onChange} {...otherProps}>
-      {children}
+    <Select
+      defaultValue={options[0].value}
+      value={value}
+      onChange={onChange}
+      sx={{
+        fontFamily: "Roboto",
+        fontSize: relative_width_size_generator(16),
+        fontWeight: "400",
+        lineHeight: relative_height_size_generator(19),
+        letterSpacing: "0em",
+        textAlign: "left",
+        alignItems: "center",
+      }}
+      {...otherProps}
+    >
+      {options.map((eachOption) => (
+        <MenuItemComponent
+          sx={{
+            fontFamily: "Roboto",
+            fontSize: relative_width_size_generator(16),
+            fontWeight: "400",
+            lineHeight: relative_height_size_generator(19),
+            letterSpacing: "0em",
+            textAlign: "left",
+            alignItems: "center",
+          }}
+          key={eachOption.value}
+          value={eachOption.value}
+        >
+          {eachOption.label}
+        </MenuItemComponent>
+      ))}
     </Select>
   );
 }

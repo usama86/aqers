@@ -7,7 +7,10 @@ import Search from "components/UseCase/HomePage/Search";
 import BoxComponent from "components/Base/BoxComponent";
 import SecondSection from "components/UseCase/HomePage/SecondSection";
 import ThirdSecion from "components/UseCase/HomePage/ThirdSection";
-import { relative_width_size_generator } from "utils/helpers";
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +26,9 @@ export default function Home() {
       <Search />
       <BoxComponent
         sx={{
-          p: `110px ${relative_width_size_generator(
+          p: `${relative_height_size_generator(
+            110
+          )} ${relative_width_size_generator(
             243
           )} 0px ${relative_width_size_generator(243)}`,
         }}

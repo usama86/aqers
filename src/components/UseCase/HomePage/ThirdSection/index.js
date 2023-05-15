@@ -41,7 +41,7 @@ export default function ThirdSecion() {
             sx={{
               height: relative_height_size_generator(300),
               width: relative_width_size_generator(270),
-              borderRadius: "20px",
+              borderRadius: relative_width_size_generator(20),
               padding: relative_width_size_generator(28),
               background: "#FFFFFF",
               display: "flex",

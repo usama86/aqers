@@ -1,3 +1,9 @@
+import {
+  relative_width_size_generator,
+  relative_height_size_generator,
+  relative_width_font_size_generator,
+} from "utils/helpers";
+
 const flexStyle = {
   display: "flex",
   flexWrap: "wrap",
@@ -5,16 +11,29 @@ const flexStyle = {
 
 export const styles = {
   pageStyle: {
-    background: "rgba(245, 245, 245, 1)",
+    // background: "rgba(245, 245, 245, 1)",
     width: "100%",
-    height: "1464px",
+    height: "100%",
+    p: `${relative_height_size_generator(40)} ${relative_width_size_generator(
+      243
+    )} ${relative_height_size_generator(60)} ${relative_width_size_generator(
+      243
+    )}`,
   },
   paddingStyle: {
-    height: "1364px",
+    height: "100%",
     borderRadius: "10px",
     background: "#FFFFFF",
-    m: "40px 243px 60px 243px",
-    p: "40px 36px 40px 56.67px",
+    // m: `${relative_height_size_generator(40)} ${relative_width_size_generator(
+    //   243
+    // )} ${relative_height_size_generator(60)} ${relative_width_size_generator(
+    //   243
+    // )}`,
+    p: `${relative_height_size_generator(40)} ${relative_width_size_generator(
+      36
+    )} ${relative_height_size_generator(40)} ${relative_width_size_generator(
+      56.67
+    )}`,
   },
   headerStyle: { ...flexStyle, alignItems: "center" },
   avatarDiv: {
@@ -34,16 +53,16 @@ export const styles = {
     flexGrow: "1",
   },
   headingsStyle: {
-    fontSize: "35px",
+    fontSize: relative_width_font_size_generator(35),
     color: "#313131",
   },
   subtitleStyle: {
-    fontSize: "20px",
+    fontSize: relative_width_font_size_generator(20),
     color: "#696969",
   },
   BoxParent: {
     ...flexStyle,
-    gap: "23.36px",
+    gap: relative_width_size_generator(23.36),
   },
   innerBox: {
     background: "#E1E9FF",
@@ -53,15 +72,15 @@ export const styles = {
     alignItems: "center",
   },
   innerHeading: {
-    fontSize: "40px",
+    fontSize: relative_width_font_size_generator(40),
     color: "primary.main",
   },
   innerContent: {
-    fontSize: "20px",
+    fontSize: relative_width_font_size_generator(20),
     color: "primary.main",
   },
   dividerStyle: {
-    pt: "40px",
+    pt: relative_height_size_generator(40),
     width: "90%",
     color: "#696969",
   },

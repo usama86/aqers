@@ -4,7 +4,10 @@ import TypographyComponent from "components/Base/TypographyComponent";
 import SearchBarComponent from "components/UseCase/SearchBar";
 import { styles } from "./style";
 import Box from "components/Base/BoxComponent";
-import { relative_height_size_generator } from "utils/helpers";
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
 
 export default function Search() {
   const [activeButton, setActiveButton] = useState("buy");
@@ -18,7 +21,7 @@ export default function Search() {
           left: 0,
           right: 0,
           zIndex: 0,
-          borderRadius: "44px",
+          borderRadius: relative_width_size_generator(44),
         }}
         source={"/HomePage/Home_Image.png"}
         objectFit="contain"

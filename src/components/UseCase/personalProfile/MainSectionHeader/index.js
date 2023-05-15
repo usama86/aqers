@@ -22,6 +22,7 @@ const MainSectionHeader = () => {
           flexDirection: "column",
           gap: "4px",
           flexGrow: "0.5",
+          flexWrap: "wrap",
         }}
       >
         <TypographyComponent
@@ -44,6 +45,7 @@ const MainSectionHeader = () => {
             p: "15px 14px 15px 25px",
             display: "flex",
             justifyContent: "space-between",
+            flexWrap: "wrap",
           }}
         >
           <TypographyComponent
