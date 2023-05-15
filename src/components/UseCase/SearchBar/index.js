@@ -52,17 +52,38 @@ export default function SearchBar({ purpose }) {
               variant="contained"
               color="primary"
               sx={{
-                ...styles.button,
+                ...styles.dropDownButton,
                 borderRadius: "0px",
                 height: relative_height_size_generator(50),
 
-                padding: 0,
+                padding: `0 ${relative_width_size_generator(
+                  13
+                )} 0 ${relative_width_size_generator(22.75)}`,
               }}
               onClick={handleSearch}
             >
-              <TypographyComponent variant="HomeMedium" component="span">
+              <ImageComponent
+                width={relative_width_size_generator(17)}
+                height={relative_height_size_generator(17)}
+                style={{ marginRight: relative_width_size_generator(9.15) }}
+                source="/Common/location.png"
+              />
+              <TypographyComponent
+                sx={{
+                  color: "rgba(77, 77, 77, 1)",
+                  mr: relative_width_size_generator(7.35),
+                  textTransform: "capitalize",
+                }}
+                variant="HomeMedium"
+                component="span"
+              >
                 Location
               </TypographyComponent>
+              <ImageComponent
+                source="/Common/dropdown.png"
+                width={relative_width_size_generator(9)}
+                height={relative_width_size_generator(4.5)}
+              />
             </ButtonComponent>
           </DropdownComponent>
           <TextFieldComponent
@@ -77,6 +98,7 @@ export default function SearchBar({ purpose }) {
             sx={{
               "& .MuiInputBase-root": {
                 borderRadius: "0",
+                border: "none",
                 padding: `0 ${relative_width_size_generator(21)}`,
                 ...getDesignSystem(400, 14, 21),
                 "&::placeholder": {
