@@ -363,6 +363,15 @@ export const getDesignTokens = (mode) => ({
     TestimonialPosition: {
       ...getDesignSystem(500, 18, 30.78),
     },
+    AgentProfileName: {
+      ...getDesignSystem(600, 35, 42.36),
+    },
+    AgentProfileEmail: {
+      ...getDesignSystem(400, 20, 24.2),
+    },
+    AgentProfileHeading: {
+      ...getDesignSystem(700, 32, 40),
+    },
     HomeSeventhSection: {
       fontWeight: 600,
       lineHeight: relative_height_size_generator(18),

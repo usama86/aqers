@@ -32,10 +32,7 @@ function App({ Component, pageProps }) {
   if (SELL_PROPERTIES_PROTECTED_PAGES.includes(path)) {
     navBarVariant = "sellProperties";
   }
-  console.log(
-    "using this console log because im expecting a problem at dynamic routes",
-    { path }
-  );
+
   return (
     <>
       <Head>
