@@ -6,7 +6,7 @@ import CollectionCard from "components/Advance/CollectionCard";
 import { styles } from "./style";
 import { cardData, collectionCardData } from "utils/dummy_data";
 
-const PersonalProfiles = ({ heading, heading2 }) => {
+const Booking = ({ heading, heading2 }) => {
   return (
     <BoxComponent sx={styles.pageStyle}>
       <BoxComponent sx={styles.mainBox}>
@@ -54,4 +54,4 @@ const PersonalProfiles = ({ heading, heading2 }) => {
   );
 };
 
-export default PersonalProfiles;
+export default Booking;

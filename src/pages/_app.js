@@ -19,6 +19,7 @@ const SELL_PROPERTIES_PROTECTED_PAGES = [
   "dashboard",
   "profile-listing",
   "profile-listing-collection",
+  "my-booking",
 ];
 
 function App({ Component, pageProps }) {
