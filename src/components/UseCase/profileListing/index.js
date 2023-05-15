@@ -6,7 +6,7 @@ import CollectionCard from "components/Advance/CollectionCard";
 import { styles } from "./style";
 import { cardData, collectionCardData } from "utils/dummy_data";
 
-const PersonalProfiles = () => {
+const PersonalProfiles = ({ heading, heading2 }) => {
   return (
     <BoxComponent sx={styles.pageStyle}>
       <BoxComponent sx={styles.mainBox}>
@@ -15,7 +15,7 @@ const PersonalProfiles = () => {
           variant="profileListing"
           component="h1"
         >
-          Listed Properties
+          {heading}
         </TypographyComponent>
         <BoxComponent sx={styles.cardsBox}>
           {cardData.map((data) => (
@@ -37,7 +37,7 @@ const PersonalProfiles = () => {
             variant="profileListing"
             component="h2"
           >
-            Listed Properties Collections
+            {heading2}
           </TypographyComponent>
           <BoxComponent
             sx={{ display: "flex", gap: "114px", flexWrap: "wrap" }}

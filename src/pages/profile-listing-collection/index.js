@@ -3,7 +3,7 @@ const PersonalProfiles = () => {
   return (
     <>
       <ProfileListing
-        heading={"Listed Properties"}
+        heading={"Listed Properties Collection"}
         heading2={"Listed Properties Collections"}
       />
     </>
