@@ -4,9 +4,9 @@ import { styles } from "./style";
 import TypographyComponent from "components/Base/TypographyComponent";
 import LinkComponent from "components/Base/LinkComponent";
 
-export default function PropertyCard({ data }) {
+export default function PropertyCard({ data, relocateOnClicking }) {
   return (
-    <LinkComponent href="/profile-listing-collection">
+    <LinkComponent href={relocateOnClicking}>
       <BoxComponent sx={styles.mainDiv}>
         <ImageComponent
           height="190px"
@@ -54,3 +54,7 @@ export default function PropertyCard({ data }) {
     </LinkComponent>
   );
 }
+
+PropertyCard.defaultProps = {
+  relocateOnClicking: "/profile-listing-collection",
+};

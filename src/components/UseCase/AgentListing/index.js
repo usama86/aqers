@@ -9,12 +9,24 @@ import {
 import SearchOptions from "./SearchOptions";
 import { AGENT_LISTINGS } from "utils/dummy_data";
 import AgentCard from "./AgentCard";
+import BoxComponent from "components/Base/BoxComponent";
 
 const AgentListingComponent = () => {
   const [searchValue, setSearchValue] = useState("");
   return (
     <>
-      <SearchOptions />
+      <StackCompoent
+        justifyContent="center"
+        sx={{
+          width: `calc(99vw - ${relative_width_size_generator(53.5)})`,
+          marginTop: relative_height_size_generator(44),
+          marginBottom: relative_height_size_generator(100),
+          transform: `translateX(${relative_width_size_generator(53.5)})`,
+          gap: relative_width_size_generator(16),
+        }}
+      >
+        <SearchOptions />
+      </StackCompoent>
       <StackCompoent
         sx={{
           flexWrap: "wrap",

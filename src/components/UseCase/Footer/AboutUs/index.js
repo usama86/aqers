@@ -8,6 +8,7 @@ import {
   relative_width_size_generator,
 } from "utils/helpers";
 import ButtonComponent from "components/Base/ButtonComponent";
+import LinkComponent from "components/Base/LinkComponent";
 
 export default function AboutUs() {
   return (
@@ -81,15 +82,26 @@ export default function AboutUs() {
                 },
               }}
             >
-              <TypographyComponent
-                variant="HomeSeventhSection"
-                component="span"
-                sx={{
-                  fontSize: relative_width_size_generator(18),
+              <LinkComponent
+                linkStyle={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
+                href="/agent-listing"
               >
-                Contact Agent
-              </TypographyComponent>
+                <TypographyComponent
+                  variant="HomeSeventhSection"
+                  component="span"
+                  sx={{
+                    fontSize: relative_width_size_generator(18),
+                  }}
+                >
+                  Contact Agent
+                </TypographyComponent>
+              </LinkComponent>
             </ButtonComponent>
           </Box>
         </Box>
