@@ -58,6 +58,12 @@ const configureFooterProps = (location) => {
         isBackgroundLightDownloadApp: true,
       };
     }
+    case "account-setting": {
+      return {
+        sectionsToShow: ["footer-url"],
+        isBackgroundLightDownloadApp: true,
+      };
+    }
     default: {
       return {};
     }

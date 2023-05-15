@@ -36,7 +36,7 @@ const pages = (variant) => {
       { label: "Listing", route: "profile-listing" },
       // { label: "Listing", route: "profile-listing-collection" },
       { label: "My Booking", route: "my-booking" },
-      { label: "Profile", route: "profile" },
+      { label: "Profile", route: "account-setting" },
       { label: "Aqers +", route: "aqers-plus" },
     ];
   }

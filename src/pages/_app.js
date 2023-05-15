@@ -20,6 +20,7 @@ const SELL_PROPERTIES_PROTECTED_PAGES = [
   "profile-listing",
   "profile-listing-collection",
   "my-booking",
+  "account-setting",
 ];
 
 function App({ Component, pageProps }) {

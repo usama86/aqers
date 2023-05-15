@@ -547,5 +547,11 @@ export const getDesignTokens = (mode) => ({
       textAlign: "left",
       fontFamily: "Inter",
     },
+    Booking: {
+      fontWeight: 600,
+      lineHeight: relative_height_size_generator(72),
+      letterSpacing: "-0.03em",
+      textAlign: "left",
+    },
   },
 });
