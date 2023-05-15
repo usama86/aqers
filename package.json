@@ -20,6 +20,7 @@
     "css-mediaquery": "^0.1.2",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.4",
+    "material-react-table": "^1.11.3",
     "next": "13.3.4",
     "next-redux-wrapper": "^8.1.0",
     "react": "18.2.0",

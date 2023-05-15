@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
-
 import {
   relative_height_size_generator,
   relative_width_size_generator,

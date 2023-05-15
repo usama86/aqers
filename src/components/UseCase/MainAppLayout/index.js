@@ -46,6 +46,24 @@ const configureFooterProps = (location) => {
         isBackgroundLightDownloadApp: true,
       };
     }
+    case "profile-listing-collection": {
+      return {
+        sectionsToShow: ["footer-url"],
+        isBackgroundLightDownloadApp: true,
+      };
+    }
+    case "my-booking": {
+      return {
+        sectionsToShow: ["footer-url"],
+        isBackgroundLightDownloadApp: true,
+      };
+    }
+    case "account-setting": {
+      return {
+        sectionsToShow: ["footer-url"],
+        isBackgroundLightDownloadApp: true,
+      };
+    }
     default: {
       return {};
     }

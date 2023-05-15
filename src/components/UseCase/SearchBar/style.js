@@ -3,6 +3,9 @@ import ButtonComponent from "components/Base/ButtonComponent";
 import SelectComponent from "components/Base/SelectComponent";
 
 export const styles = {
+  dropDownButton: {
+    backgroundColor: "rgba(243, 241, 242, 1)",
+  },
   button: {
     marginLeft: "0px !important",
     borderRadius: "0px",

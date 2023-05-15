@@ -294,8 +294,8 @@ export const getDesignTokens = (mode) => ({
     HomeMedium: {
       fontSize: relative_width_font_size_generator(14),
       fontWeight: 600,
-      lineHeight: relative_height_size_generator(20),
-      letterSpacing: "0.20000000298023224px",
+      lineHeight: relative_height_size_generator(24),
+      // letterSpacing: "0.20000000298023224px",
       textAlign: "left",
     },
     HomeSecondSection: {
@@ -546,6 +546,18 @@ export const getDesignTokens = (mode) => ({
       letterSpacing: "0em",
       textAlign: "left",
       fontFamily: "Inter",
+    },
+    Booking: {
+      fontWeight: 600,
+      lineHeight: relative_height_size_generator(72),
+      letterSpacing: "-0.03em",
+      textAlign: "left",
+    },
+    AccountText: {
+      fontWeight: 600,
+      lineHeight: relative_height_size_generator(18),
+      letterSpacing: "0em",
+      textAlign: "left",
     },
   },
 });

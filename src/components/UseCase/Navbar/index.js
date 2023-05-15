@@ -33,9 +33,10 @@ const pages = (variant) => {
   if (variant === "sellProperties") {
     toRenderPages = [
       { label: "Dashboard", route: "dashboard" },
-      { label: "Listing", route: "listing" },
+      { label: "Listing", route: "profile-listing" },
+      // { label: "Listing", route: "profile-listing-collection" },
       { label: "My Booking", route: "my-booking" },
-      { label: "Profile", route: "profile" },
+      { label: "Profile", route: "account-setting" },
       { label: "Aqers +", route: "aqers-plus" },
     ];
   }
@@ -131,7 +132,11 @@ function ResponsiveAppBar({ componentVariant }) {
                 </MenuItem>
               ))}
               <MenuItem onClick={handleCloseNavMenu}>
-                <ButtonComponent color="primary" fullWidth>
+                <ButtonComponent
+                  color="primary"
+                  sx={{ borderRadius: relative_width_size_generator(14) }}
+                  fullWidth
+                >
                   <LinkComponent
                     linkStyle={{
                       width: "100%",
@@ -237,7 +242,11 @@ function ResponsiveAppBar({ componentVariant }) {
                 <NavbarRightBuyProperties />
               </>
             ) : (
-              <ButtonComponent color="primary" fullWidth>
+              <ButtonComponent
+                color="primary"
+                sx={{ borderRadius: relative_width_size_generator(14) }}
+                fullWidth
+              >
                 <LinkComponent
                   linkStyle={{
                     width: "100%",
