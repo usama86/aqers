@@ -10,4 +10,14 @@ export const styles = {
     gap: "0px",
     p: "10px",
   },
+  shadowStyling: {
+    width: "190px",
+    height: "190px",
+    position: "absolute",
+    background: "rgba(0, 0, 0, 0.5)",
+    top: "0",
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
+  },
 };

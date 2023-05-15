@@ -22,7 +22,7 @@ const Properties = () => {
         sx={{ flexWrap: "wrap", gap: relative_width_size_generator(30) }}
       >
         {FEATURED_PROPERTIES.map((eachProperty) => (
-          <PropertyCard key={eachProperty.id} />
+          <PropertyCard key={eachProperty.id} data={eachProperty} />
         ))}
       </StackCompoent>
     </div>
