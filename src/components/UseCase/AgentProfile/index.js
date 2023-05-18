@@ -47,7 +47,7 @@ const AgentProfileComponent = () => {
             </TypographyComponent>
             <TypographyComponent
               sx={{ backgroundColor: "transparent" }}
-              component="body"
+              component="p"
               variant="AgentProfileEmail"
             >
               johndoe@gmail.com
