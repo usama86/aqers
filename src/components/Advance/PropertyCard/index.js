@@ -8,8 +8,16 @@ import { CardActionArea } from "@mui/material";
 import { styles } from "./style";
 import BoxComponent from "components/Base/BoxComponent";
 import DropDownComponent from "components/Base/DropDownComponent";
+import ButtonComponent from "components/Base/ButtonComponent";
+import LinkComponent from "components/Base/LinkComponent";
+import {
+  relative_height_size_generator,
+  relative_width_font_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
+import WideCardContent from "./WideCardContent";
 
-export default function PropertyCard({ type, data }) {
+export default function PropertyCard({ type, data, isWide }) {
   const propertyDetail = [
     { id: 1, source: "/Common/bed.png", value: data.bed },
     { id: 2, source: "/Common/bathtub.png", value: data.bath },
@@ -20,32 +28,46 @@ export default function PropertyCard({ type, data }) {
     },
   ];
   return (
-    <Card sx={styles.cardDiv}>
+    <Card sx={() => styles({ isWide }).cardDiv}>
       {/* <CardActionArea> */}
       <BoxComponent sx={{ position: "relative" }}>
         <ImageComponent
-          height="236.52px"
-          width="305px"
+          height={relative_height_size_generator(236.52)}
+          width={isWide ? "100%" : relative_width_size_generator(305)}
           position="relative"
           source="/Common/test_image.png"
+          objectFit={"cover"}
         />
         {data.featured && (
           <BoxComponent
             sx={{
               position: "absolute",
-              top: "16.94px",
-              left: "16px",
-              width: "91px",
-              height: "25px",
-              padding: "7px 14px 7px 14px",
+              top: isWide
+                ? relative_width_size_generator(30)
+                : relative_height_size_generator(16.94),
+              left: isWide
+                ? relative_width_size_generator(30)
+                : relative_width_size_generator(16),
+              width: relative_width_size_generator(91),
+              height: relative_height_size_generator(25),
+              padding: `${relative_height_size_generator(
+                7
+              )} ${relative_width_size_generator(14)}`,
               background: "#FFCE32",
-              borderRadius: "4px",
+              borderRadius: relative_width_size_generator(4),
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <TypographyComponent
               variant="CardFeature"
               component="p"
-              sx={{ fontSize: "12px", color: "#002F34" }}
+              sx={{
+                fontSize: relative_width_font_size_generator(12),
+                color: "#002F34",
+                textTransform: "uppercase",
+              }}
             >
               Featured
             </TypographyComponent>
@@ -55,116 +77,151 @@ export default function PropertyCard({ type, data }) {
         <BoxComponent
           sx={{
             position: "absolute",
-            top: "20px",
-            right: "20px",
+            top: relative_height_size_generator(20),
+            right: relative_width_size_generator(20),
             zIndex: 100,
           }}
         >
           {type === "drop" ? (
-            <DropDownComponent iconBtn={true}>
+            <DropDownComponent
+              btnProps={{
+                onClick: (e) => {
+                  e.stopPropagation();
+                },
+              }}
+              iconBtn={true}
+            >
               <ImageComponent
-                width={"24px"}
-                height={"24px"}
+                width={relative_width_size_generator(24)}
+                height={relative_width_size_generator(24)}
                 source="/common/dropDownIcon.png"
               />
             </DropDownComponent>
           ) : (
             type === "like" && (
               <ImageComponent
-                width={"42px"}
-                height={"42px"}
+                onClick={(e) => e.stopPropagation()}
+                style={{ cursor: "pointer" }}
+                width={relative_width_size_generator(42)}
+                height={relative_width_size_generator(42)}
                 source="/common/unlike.png"
               />
             )
           )}
         </BoxComponent>
       </BoxComponent>
-      <CardContent sx={styles.cardContent}>
-        {/* Heading */}
-        <TypographyComponent
-          variant="CardTitle"
-          component="p"
-          sx={{
-            fontSize: "18px",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            whiteSpace: "nowrap",
-            width: "246px",
-          }}
-        >
-          {data.title}
-        </TypographyComponent>
-        {/* proeprty detail */}
-        <BoxComponent sx={styles.iconBox}>
-          {propertyDetail.map((data) => (
-            <BoxComponent sx={styles.iconTextBox} key={data.id}>
+      <CardContent sx={() => styles({ isWide }).cardContent}>
+        {isWide ? (
+          <WideCardContent
+            isWide={isWide}
+            propertyDetail={propertyDetail}
+            data={data}
+          />
+        ) : (
+          <>
+            {/* Heading */}
+            <TypographyComponent
+              variant="CardTitle"
+              component="p"
+              sx={{
+                fontSize: relative_width_font_size_generator(18),
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+                width: relative_width_size_generator(246),
+              }}
+            >
+              {data.title}
+            </TypographyComponent>
+            {/* proeprty detail */}
+            <BoxComponent sx={() => styles({ isWide }).iconBox}>
+              {propertyDetail.map((data) => (
+                <BoxComponent
+                  sx={() => styles({ isWide }).iconTextBox}
+                  key={data.id}
+                >
+                  <ImageComponent
+                    height={relative_height_size_generator(24)}
+                    width={relative_width_size_generator(24)}
+                    position="relative"
+                    source={data.source}
+                  />
+                  <TypographyComponent
+                    sx={{
+                      fontSize: relative_width_font_size_generator(16),
+                      color: "#6D737A",
+                    }}
+                    variant="CardText"
+                    component="p"
+                  >
+                    {data.value}
+                  </TypographyComponent>
+                </BoxComponent>
+              ))}
+            </BoxComponent>
+            {/* City */}
+            <BoxComponent sx={() => styles({ isWide }).cityDiv}>
               <ImageComponent
-                height="24px"
-                width="24px"
+                height={relative_width_size_generator(24)}
+                width={relative_width_size_generator(24)}
                 position="relative"
-                source={data.source}
+                source={"/Common/location.png"}
               />
               <TypographyComponent
                 sx={{
-                  fontSize: "16px",
-                  color: "#6D737A",
+                  fontSize: relative_width_font_size_generator(14),
+                  color: "#121212",
                 }}
-                variant="CardText"
+                variant="CardCityText"
                 component="p"
               >
-                {data.value}
+                {data.location}
               </TypographyComponent>
             </BoxComponent>
-          ))}
-        </BoxComponent>
-        {/* City */}
-        <BoxComponent sx={styles.cityDiv}>
-          <ImageComponent
-            height="24px"
-            width="24px"
-            position="relative"
-            source={"/Common/location.png"}
-          />
-          <TypographyComponent
-            sx={{
-              fontSize: "14px",
-              color: "#121212",
-            }}
-            variant="CardCityText"
-            component="p"
-          >
-            {data.location}
-          </TypographyComponent>
-        </BoxComponent>
-        {/* Detail View */}
-        <BoxComponent sx={styles.lastSection}>
-          <BoxComponent sx={styles.buttonStyle}>View Details</BoxComponent>
+            {/* Detail View */}
+            <BoxComponent sx={() => styles({ isWide }).lastSection}>
+              <ButtonComponent sx={() => styles({ isWide }).buttonStyle}>
+                <LinkComponent
+                  linkStyle={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  href={{ pathname: "/property-details", query: { ...data } }}
+                >
+                  View Details
+                </LinkComponent>
+              </ButtonComponent>
 
-          <ImageComponent
-            height="20px"
-            width="20px"
-            position="relative"
-            source={"/Common/share.png"}
-          />
-          <BoxComponent sx={styles.viewSection}>
-            <ImageComponent
-              height="20px"
-              width="20px"
-              position="relative"
-              source={"/Common/eye.png"}
-            />
-            <TypographyComponent
-              sx={{
-                fontSize: "16px",
-                color: "#6D737A",
-              }}
-              variant="CardText"
-              component="p"
-            >
-              {data.view}
-            </TypographyComponent>
-          </BoxComponent>
-        </BoxComponent>
+              <ImageComponent
+                height={relative_width_size_generator(20)}
+                width={relative_width_size_generator(20)}
+                position="relative"
+                source={"/Common/share.png"}
+              />
+              <BoxComponent sx={() => styles({ isWide }).viewSection}>
+                <ImageComponent
+                  height={relative_width_size_generator(20)}
+                  width={relative_width_size_generator(20)}
+                  position="relative"
+                  source={"/Common/eye.png"}
+                />
+                <TypographyComponent
+                  sx={{
+                    fontSize: relative_width_font_size_generator(16),
+                    color: "#6D737A",
+                  }}
+                  variant="CardText"
+                  component="p"
+                >
+                  {data.view}
+                </TypographyComponent>
+              </BoxComponent>
+            </BoxComponent>
+          </>
+        )}
       </CardContent>
       {/* </CardActionArea> */}
     </Card>
@@ -176,6 +233,7 @@ PropertyCard.propTypes = {
 };
 PropertyCard.defaultProps = {
   type: "like", // drop like
+  isWide: false,
 
   //Sample Data
   //   id: 1,

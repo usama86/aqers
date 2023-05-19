@@ -529,7 +529,7 @@ export const getDesignTokens = (mode) => ({
       fontFamily: "Inter",
     },
     CardText: {
-      fontWeight: 700,
+      fontWeight: 500,
       lineHeight: relative_height_size_generator(24),
       letterSpacing: "0em",
       textAlign: "left",
