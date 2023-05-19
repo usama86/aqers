@@ -5,7 +5,7 @@ import {
 
 export const styles = ({ isWide }) => ({
   cardDiv: {
-    height: isWide ? "auto" : relative_height_size_generator(409),
+    // height: isWide ? "auto" : relative_height_size_generator(409),
     width: isWide
       ? relative_width_size_generator(440)
       : relative_width_size_generator(305),
@@ -28,6 +28,7 @@ export const styles = ({ isWide }) => ({
         )} ${relative_width_size_generator(12)}`,
     flexDirection: "column",
     gap: relative_height_size_generator(13),
+    paddingBottom: "0 !important",
   },
   iconBox: {
     display: "flex",
@@ -72,6 +73,7 @@ export const styles = ({ isWide }) => ({
     display: "flex",
     gap: relative_width_size_generator(15),
     alignItems: "center",
+    mb: relative_height_size_generator(16.53),
   },
   viewSection: {
     display: "flex",

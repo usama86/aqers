@@ -6,13 +6,34 @@ import {
 } from "utils/helpers";
 import PropertySummary from "./PropertySummary";
 import BookATour from "./BookATour";
+import Portion from "./Portion";
+import Location from "./Location";
+import MortgageCalculator from "./MortgageCalculator";
+import RelatedFeaturedProperties from "./RelatedFeaturedProperties";
+import Description from "./Description";
 
 const PropertyDetailsComponent = ({}) => {
   return (
-    <StackCompoent sx={{ p: `0 ${relative_width_size_generator(243)}` }}>
-      <StackCompoent sx={{ gap: relative_width_size_generator(22.17) }}>
+    <StackCompoent
+      direction="column"
+      sx={{
+        p: `0 ${relative_width_size_generator(243)}`,
+        pb: relative_height_size_generator(141),
+      }}
+    >
+      <StackCompoent
+        sx={{
+          gap: relative_width_size_generator(22.17),
+          mb: relative_height_size_generator(34.01),
+        }}
+      >
         <ImageGallery
-          containerStyles={{ width: relative_width_size_generator(959) }}
+          containerStyles={{
+            width: relative_width_size_generator(959),
+            // backgroundColor: "grey",
+            height: relative_height_size_generator(580),
+            border: "1px dashed grey",
+          }}
         />
         <StackCompoent
           direction="column"
@@ -22,13 +43,11 @@ const PropertyDetailsComponent = ({}) => {
           <BookATour />
         </StackCompoent>
       </StackCompoent>
-      {/* Portion */}
-      {/* By dream home */}
-      {/* Divider */}
-      {/* Description */}
-      {/* Location */}
-      {/* Mortgage Calculator */}
-      {/* Related Featured Properties */}
+      <Portion />
+      <Description />
+      <Location />
+      <MortgageCalculator />
+      <RelatedFeaturedProperties />
     </StackCompoent>
   );
 };

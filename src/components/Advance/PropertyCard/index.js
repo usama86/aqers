@@ -236,13 +236,15 @@ PropertyCard.defaultProps = {
   isWide: false,
 
   //Sample Data
-  //   id: 1,
-  //   featured: true,
-  //   title: " 92 ALLIUM PLACE, ORLA...",
-  //   bed: "4",
-  //   bath: "4",
-  //   dimension: "2.096",
-  //   unit: "ft",
-  //   location: "New York, NY",
-  //   view: "5690",
+  data: {
+    id: 1,
+    featured: true,
+    title: " 92 ALLIUM PLACE, ORLA...",
+    bed: "4",
+    bath: "4",
+    dimension: "2.096",
+    unit: "ft",
+    location: "New York, NY",
+    view: "5690",
+  },
 };

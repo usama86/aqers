@@ -87,7 +87,10 @@ const WideCardContent = ({ isWide, data, propertyDetail, ...otherProps }) => {
         ))}
       </BoxComponent>
       {/* City */}
-      <StackCompoent alignItems="center">
+      <StackCompoent
+        sx={() => ({ mb: relative_height_size_generator(29.55) })}
+        alignItems="center"
+      >
         <BoxComponent
           sx={() => ({ ...styles({ isWide }).cityDiv, flexGrow: 1 })}
         >

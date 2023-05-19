@@ -76,6 +76,11 @@ const configureFooterProps = (location) => {
         isBackgroundLightDownloadApp: true,
       };
     }
+    case "property-details": {
+      return {
+        sectionsToShow: ["footer-url"],
+      };
+    }
     default: {
       return {};
     }
