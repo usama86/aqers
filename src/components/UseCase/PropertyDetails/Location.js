@@ -8,6 +8,7 @@ import {
   relative_width_size_generator,
 } from "utils/helpers";
 import { getDesignSystem } from "theme/DesignToken";
+import CustomizedButtonComponent from "components/Advance/CustomizedButton";
 
 const Location = () => {
   return (
@@ -30,18 +31,7 @@ const Location = () => {
         containerWidth="100%"
         parentStyles={{ marginBottom: relative_height_size_generator(22.75) }}
       />
-      <ButtonComponent
-        sx={{
-          ...getDesignSystem(600, 18, 18),
-          textTransform: "capitalize",
-          height: relative_height_size_generator(48),
-          width: relative_width_size_generator(185),
-          borderRadius: relative_width_size_generator(14),
-        }}
-        color="primary"
-      >
-        View Location
-      </ButtonComponent>
+      <CustomizedButtonComponent>View Location</CustomizedButtonComponent>
     </PropertyDetailsCard>
   );
 };

@@ -421,6 +421,9 @@ export const getDesignTokens = (mode) => ({
     PropertyDetailRelatedFeaturedProperties: {
       ...getDesignSystem(700, 32, 40),
     },
+    Label: {
+      ...getDesignSystem(600, 18, 18),
+    },
     HomeSeventhSection: {
       fontWeight: 600,
       lineHeight: relative_height_size_generator(18),

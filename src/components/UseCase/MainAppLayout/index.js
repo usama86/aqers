@@ -87,16 +87,23 @@ const configureFooterProps = (location) => {
   }
 };
 
-const MainAppStyles = ({ path, Component, componentVariant }) => {
+const MainAppStyles = ({ isGrey, path, Component, componentVariant }) => {
   return (
     <main
       style={{
-        backgroundColor:
-          componentVariant === "" ? "#FFFFFF" : "rgba(245, 245, 245, 1)",
+        backgroundColor: isGrey
+          ? "rgba(245, 245, 245, 1)"
+          : componentVariant === ""
+          ? "#FFFFFF"
+          : "rgba(245, 245, 245, 1)",
       }}
     >
       <>
-        <Navbar componentVariant={componentVariant} path={path} />
+        <Navbar
+          isGrey={isGrey}
+          componentVariant={componentVariant}
+          path={path}
+        />
         <CssBaseline />
         {/* <SpacerComponent
         sx={
