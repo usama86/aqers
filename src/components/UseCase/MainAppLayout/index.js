@@ -70,6 +70,17 @@ const configureFooterProps = (location) => {
         isBackgroundLightDownloadApp: true,
       };
     }
+    case "buy-properties": {
+      return {
+        sectionsToShow: [],
+        isBackgroundLightDownloadApp: true,
+      };
+    }
+    case "property-details": {
+      return {
+        sectionsToShow: ["footer-url"],
+      };
+    }
     default: {
       return {};
     }
