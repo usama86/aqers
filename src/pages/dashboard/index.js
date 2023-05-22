@@ -3,6 +3,7 @@ import ButtonComponent from "components/Base/ButtonComponent";
 import PersonalProfile from "components/UseCase/personalProfile";
 import FormDialog from "components/Base/Dialog";
 import { useState } from "react";
+import { useRouter } from "next/router";
 import { Form1 } from "./Form1";
 import { Form2 } from "./Form2";
 import { Form3A } from "./Form3-a";
@@ -11,13 +12,22 @@ import { Form4 } from "./Form4";
 import { Form5 } from "./Form5";
 
 const PersonalProfiles = () => {
+  const router = useRouter();
   const [open, setOpen] = useState([false, false, false, false, false, false]);
   const [type, setType] = useState([true, false]);
+  const [typeProperty, setTypeProperty] = useState([true, false]);
   const onSaveOption = (index) => {
+    if (index === 0 && typeProperty[1]) {
+      router.push("/select-property");
+      return;
+    }
     const copy = [...open];
     copy[index + 1] = true;
     copy[index] = false;
     setOpen(copy);
+    if (index === 4) {
+      //navigate
+    }
   };
   const handleClose = (index) => {
     const copy = [...open];
@@ -36,6 +46,13 @@ const PersonalProfiles = () => {
     else copy[index - 1] = false;
     setType(copy);
   };
+  const onChangeTypeProperty = (event, index) => {
+    const copy = [...typeProperty];
+    copy[index] = event.target.checked;
+    if (index === 0) copy[index + 1] = false;
+    else copy[index - 1] = false;
+    setTypeProperty(copy);
+  };
   return (
     <BoxComponent>
       <ButtonComponent onClick={onClickButton}>Add Post</ButtonComponent>
@@ -47,7 +64,7 @@ const PersonalProfiles = () => {
         handleClose={() => handleClose(0)}
         handleSave={() => onSaveOption(0)}
       >
-        <Form1 />
+        <Form1 type={typeProperty} onChangeType={onChangeTypeProperty} />
       </FormDialog>
 
       <FormDialog
