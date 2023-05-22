@@ -642,5 +642,11 @@ export const getDesignTokens = (mode) => ({
       lineHeight: relative_height_size_generator(18),
       letterSpacing: "0em",
     },
+    RadioIcon: {
+      fontWeight: 400,
+      lineHeight: relative_height_size_generator(26),
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
   },
 });

@@ -18,10 +18,11 @@ export const styles = {
     textAlign: "left",
     color: "#313131",
     fontSize: relative_width_size_generator(36),
+    whiteSpace: "nowrap",
   },
   dialogSubtitle: {
     textAlign: "left",
-    color: "#7A7E8B",
+    color: "#2A3249",
     fontSize: relative_width_size_generator(18),
     whiteSpace: "nowrap",
   },
@@ -32,8 +33,8 @@ export const styles = {
     alignItems: "flex-end",
   },
   saveButton: {
-    height: "48px",
-    width: "488px",
+    height: relative_height_size_generator(48),
+    width: relative_width_size_generator(488),
     borderRadius: "14px",
     // padding: "10px 20px 10px 20px",
     color: "#FFFFFF",

@@ -20,7 +20,13 @@ function FormDialog({
   ...otherProps
 }) {
   return (
-    <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      maxWidth="sm"
+      fullWidth
+      sx={{ border: "1px solid rgba(18, 18, 18, 0.2)", borderRadius: "10px" }}
+    >
       <BoxComponent sx={styles.mainDiv}>
         <BoxComponent
           sx={{
@@ -47,7 +53,9 @@ function FormDialog({
             {subTitle}
           </TypographyComponent>
         </BoxComponent>
-        <DialogContent>{children}</DialogContent>
+        <DialogContent sx={{ p: "0px", overflow: "visible" }}>
+          {children}
+        </DialogContent>
         <DialogActions sx={styles.dialogAction}>
           <BoxComponent sx={styles.buttonBox}>
             <ButtonComponent sx={styles.saveButton} onClick={handleSave}>
@@ -79,5 +87,5 @@ FormDialog.defaultProps = {
   title: "I am title",
   subTitle: "I am Sub Title",
   handleSave: () => {},
-  ButtonText: "Save",
+  ButtonText: "Next",
 };
