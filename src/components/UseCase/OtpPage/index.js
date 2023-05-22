@@ -15,7 +15,7 @@ const LoginPage = () => {
   return (
     <LoginPagesForm heading="OTP Verification">
       <StackCompoent direction="column" style={{ width: "100%" }}>
-        <TypographyComponent variant="h6">Enter OTP</TypographyComponent>
+        {/* <TypographyComponent variant="h6">Enter OTP</TypographyComponent> */}
         <TextFieldComponent
           fullWidth
           variant="outlined"
