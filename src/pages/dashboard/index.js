@@ -21,13 +21,14 @@ const PersonalProfiles = () => {
       router.push("/select-property");
       return;
     }
+    if (index === 4) {
+      //navigate
+      router.push("/preview-property-details");
+    }
     const copy = [...open];
     copy[index + 1] = true;
     copy[index] = false;
     setOpen(copy);
-    if (index === 4) {
-      //navigate
-    }
   };
   const handleClose = (index) => {
     const copy = [...open];

@@ -7,11 +7,13 @@ import { styles } from "./style";
 import { cardData, collectionCardData } from "utils/dummy_data";
 import ButtonComponent from "components/Base/ButtonComponent";
 import LinkComponent from "components/Base/LinkComponent";
+import { useRouter } from "next/router";
 import FormDialog from "components/Base/Dialog";
 import { Form4 } from "pages/dashboard/Form4";
 import { Form5 } from "pages/dashboard/Form5";
 
 const Booking = ({ heading, heading2, isContinue, isPay }) => {
+  const router = useRouter();
   const [open, setOpen] = useState([false, false]);
 
   const onClickButton = () => {
@@ -27,7 +29,7 @@ const Booking = ({ heading, heading2, isContinue, isPay }) => {
   };
   const onSaveOption = (index) => {
     if (index === 1) {
-      //navigate
+      router.push("/preview-property-details");
     }
     const copy = [...open];
     copy[index + 1] = true;

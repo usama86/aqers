@@ -6,6 +6,7 @@ const PreviewPropertyDetails = () => {
     <PropertyDetailsComponent
       showMortgage={false}
       showFeaturedProperties={false}
+      Texts={"Publish"}
     />
   );
 };
