@@ -44,7 +44,7 @@ const pages = (variant) => {
   return toRenderPages;
 };
 
-function ResponsiveAppBar({ componentVariant }) {
+function ResponsiveAppBar({ isGrey, componentVariant }) {
   const { path } = useRouterProps();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -66,7 +66,10 @@ function ResponsiveAppBar({ componentVariant }) {
 
   return (
     <>
-      <AppBar position="fixed" sx={{ ...styles.appBar({ componentVariant }) }}>
+      <AppBar
+        position="fixed"
+        sx={{ ...styles.appBar({ componentVariant, isGrey }) }}
+      >
         {/* <Container maxWidth="xl"> */}
         <Toolbar
           disableGutters
