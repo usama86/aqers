@@ -2,17 +2,24 @@ import { styled } from "@mui/material/styles";
 import TypographyComponent from "../TypographyComponent";
 import TextField from "@mui/material/TextField";
 import OutlinedInput from "@mui/material/OutlinedInput";
+import {
+  relative_height_size_generator,
+  relative_width_font_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
 
 export const TextFieldCustom = styled(OutlinedInput)(
   ({ theme, fullWidth, height }) => ({
     fontWeight: 400,
-    fontSize: "11.64px",
-    lineHeight: "19.8px",
+    fontSize: relative_width_font_size_generator(11.64),
+    lineHeight: relative_height_size_generator(19.8),
     "& .MuiInputBase-root": {
       // height: "80px",
     },
-    padding: "20px 15px",
-    borderRadius: "14px",
+    padding: `${relative_height_size_generator(
+      20
+    )} ${relative_width_size_generator(15)}`,
+    borderRadius: relative_width_size_generator(14),
     "& input": {
       padding: "0",
     },

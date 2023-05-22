@@ -15,6 +15,7 @@ import {
 } from "utils/helpers";
 import { ButtonBase, IconButton } from "@mui/material";
 import IconButtonComponent from "../IconButton";
+import BoxComponent from "../BoxComponent";
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -69,6 +70,7 @@ export default function CustomizedMenus({
   iconBtn,
   children,
   customStyles,
+  containerStyles,
 }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -132,10 +134,10 @@ export default function CustomizedMenus({
   if (transparent)
     return (
       <>
-        <div>
+        <BoxComponent sx={containerStyles}>
           <Button
             {...btnProps}
-            style={{
+            sx={{
               background: "transparent",
               textTransform: "capitalize",
               border: "none",
@@ -145,6 +147,7 @@ export default function CustomizedMenus({
               margin: 0,
               padding: 0,
               justifyContent: "space-between",
+              ...customStyles,
             }}
             id="demo-customized-Button"
             variant="contained"
@@ -182,7 +185,7 @@ export default function CustomizedMenus({
               More
             </MenuItem>
           </StyledMenu>
-        </div>
+        </BoxComponent>
       </>
     );
   return (

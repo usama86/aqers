@@ -6,6 +6,9 @@ import {
   TextFieldStyled,
 } from "./style";
 import FormControl from "@mui/material/FormControl";
+import TypographyComponent from "../TypographyComponent";
+import StackCompoent from "../StackCompoent";
+import { relative_height_size_generator } from "utils/helpers";
 
 export default function TextFieldComponent({
   size,
@@ -24,6 +27,7 @@ export default function TextFieldComponent({
   isError,
   errorMessage,
   borderradius,
+  required,
   ...otherProps
 }) {
   const handleChange = (event) => {
@@ -75,7 +79,20 @@ export default function TextFieldComponent({
     );
   }
   return (
-    <>
+    <StackCompoent
+      direction="column"
+      sx={{ gap: relative_height_size_generator(4) }}
+    >
+      {label ? (
+        <TypographyComponent
+          sx={{ textTransform: "capitalize" }}
+          variant="Label"
+          component="label"
+        >
+          {label}
+          {required ? "*" : ""}
+        </TypographyComponent>
+      ) : null}
       <TextFieldCustom
         height={height}
         fullWidth={fullWidth}
@@ -95,7 +112,7 @@ export default function TextFieldComponent({
           {errorMessage}
         </ErrorTypographyComponent>
       )}
-    </>
+    </StackCompoent>
   );
 }
 
@@ -111,6 +128,7 @@ TextFieldComponent.defaultProps = {
   isLabel: false,
   placeholder: "",
   isAuto: false,
-  height: "48px",
+  height: relative_height_size_generator(48),
   borderradius: "0px",
+  required: false,
 };

@@ -23,6 +23,12 @@ const SELL_PROPERTIES_PROTECTED_PAGES = [
   "account-setting",
 ];
 
+const GREY_PAGES = [
+  ...BUY_PROPERTIES_PROTECTED_PAGES,
+  ...SELL_PROPERTIES_PROTECTED_PAGES,
+  "property-details",
+];
+
 function App({ Component, pageProps }) {
   const { path } = useRouterProps();
   let navBarVariant = "";
@@ -49,6 +55,7 @@ function App({ Component, pageProps }) {
           />
         ) : (
           <MainAppStyles
+            isGrey={GREY_PAGES.includes(path)}
             componentVariant={navBarVariant}
             path={path}
             Component={<Component {...pageProps} />}

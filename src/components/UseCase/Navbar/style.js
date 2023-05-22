@@ -6,20 +6,25 @@ import {
 export const styles = {
   appBar: (params) => {
     let appBarBackGroundColor = "";
-    switch (params.componentVariant) {
-      case "buyProperties": {
-        appBarBackGroundColor = "#F5F5F5";
-        break;
-      }
-      case "sellProperties": {
-        appBarBackGroundColor = "#F5F5F5";
-        break;
-      }
-      default: {
-        appBarBackGroundColor = "#FFFFFF";
-        break;
+    if (params.isGrey) {
+      appBarBackGroundColor = "#F5F5F5";
+    } else {
+      switch (params.componentVariant) {
+        case "buyProperties": {
+          appBarBackGroundColor = "#F5F5F5";
+          break;
+        }
+        case "sellProperties": {
+          appBarBackGroundColor = "#F5F5F5";
+          break;
+        }
+        default: {
+          appBarBackGroundColor = "#FFFFFF";
+          break;
+        }
       }
     }
+
     return {
       backgroundColor: appBarBackGroundColor,
       minHeight: relative_height_size_generator(132),
