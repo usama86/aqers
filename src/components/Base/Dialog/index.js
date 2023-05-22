@@ -47,13 +47,15 @@ function FormDialog({
               {title}
             </TypographyComponent>
           </BoxComponent>
-          <TypographyComponent
-            sx={styles.dialogSubtitle}
-            variant="DialogSubTitle"
-            component="p"
-          >
-            {subTitle}
-          </TypographyComponent>
+          {subTitle && (
+            <TypographyComponent
+              sx={styles.dialogSubtitle}
+              variant="DialogSubTitle"
+              component="p"
+            >
+              {subTitle}
+            </TypographyComponent>
+          )}
         </BoxComponent>
         <DialogContent
           sx={{
@@ -93,7 +95,7 @@ FormDialog.defaultProps = {
   children: <></>,
   handleClose: () => {},
   title: "I am title",
-  subTitle: "I am Sub Title",
+  subTitle: undefined,
   handleSave: () => {},
   ButtonText: "Next",
 };

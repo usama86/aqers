@@ -30,6 +30,7 @@ export default function RadioButtons({
           whiteSpace: "noWrap",
           fontSize: relative_width_font_size_generator(18),
           color: "#333333",
+          cursor: "pointer",
         }}
         component="label"
       >
