@@ -86,7 +86,13 @@ const configureFooterProps = (location) => {
         sectionsToShow: ["footer-url"],
       };
     }
+
     case "selected-property": {
+      return {
+        sectionsToShow: ["footer-url"],
+      };
+    }
+    case "preview-property-details": {
       return {
         sectionsToShow: ["footer-url"],
       };

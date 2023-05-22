@@ -262,6 +262,9 @@ export const getDesignTokens = (mode) => ({
     BookTourModelDates: {
       ...getDesignSystem(500, 18, 27),
     },
+    BookTourLaterModelsTitle: {
+      ...getDesignSystem(600, 36, 54),
+    },
     //Captions 10.4px
     captionNew: {
       fontWeight: "400",

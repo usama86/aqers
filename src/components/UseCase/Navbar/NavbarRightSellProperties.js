@@ -38,6 +38,7 @@ const NavbarRightSellProperties = () => {
             sx={{
               width: relative_width_size_generator(100),
               textAlign: "left",
+              ml: relative_width_size_generator(30),
             }}
           >
             David

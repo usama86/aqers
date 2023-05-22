@@ -15,7 +15,6 @@ const SingleDate = ({
   selectedBGColor,
   selectedTextColor,
 }) => {
-  console.log({ date, day });
   return (
     <StackCompoent
       sx={{
@@ -45,6 +44,7 @@ const RowDatePicker = ({
   selectedDateIndex,
   selectedTextColor,
   selectedBGColor,
+  getSelection,
   ...otherProps
 }) => {
   const { date, month, year } = startingDateWithoutZeroIndex;
@@ -54,6 +54,10 @@ const RowDatePicker = ({
   const [selectedDate, setSelectedDate] = React.useState(
     add(new Date(startDate), { days: selectedDateIndex })
   );
+
+  React.useEffect(() => {
+    getSelection(selectedDate);
+  }, [selectedDate]);
 
   return (
     <StackCompoent
@@ -95,6 +99,9 @@ RowDatePicker.defaultProps = {
   selectedDateIndex: 1,
   selectedTextColor: "#FFFFFF",
   selectedBGColor: "#000000",
+  getSelection: (e) => {
+    return;
+  },
 };
 
 export default RowDatePicker;

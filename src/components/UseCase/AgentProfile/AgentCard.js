@@ -10,7 +10,6 @@ import {
 } from "utils/helpers";
 
 const AgentCard = ({ img, name, email, listedProperties, collections, id }) => {
-  console.log({ img, name, email, listedProperties, collections, id });
   return (
     <UserCardComponent
       style={{
