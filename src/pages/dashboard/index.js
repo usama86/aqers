@@ -7,6 +7,8 @@ import { Form1 } from "./Form1";
 import { Form2 } from "./Form2";
 import { Form3A } from "./Form3-a";
 import { Form3B } from "./Form3-b";
+import { Form4 } from "./Form4";
+import { Form5 } from "./Form5";
 
 const PersonalProfiles = () => {
   const [open, setOpen] = useState([false, false, false, false, false, false]);
@@ -67,8 +69,28 @@ const PersonalProfiles = () => {
             : null
         }
         handleClose={() => handleClose(2)}
+        handleSave={() => onSaveOption(2)}
       >
         {type[0] === true ? <Form3A /> : type[1] === true ? <Form3B /> : null}
+      </FormDialog>
+
+      <FormDialog
+        open={open[3]}
+        title="Connect Card"
+        handleClose={() => handleClose(3)}
+        handleSave={() => onSaveOption(3)}
+      >
+        <Form4 />
+      </FormDialog>
+
+      <FormDialog
+        open={open[4]}
+        title="Add Property"
+        handleClose={() => handleClose(4)}
+        handleSave={() => onSaveOption(4)}
+        ButtonText="Pay"
+      >
+        <Form5 />
       </FormDialog>
     </BoxComponent>
   );
