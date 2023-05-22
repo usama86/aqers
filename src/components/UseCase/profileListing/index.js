@@ -9,8 +9,8 @@ import ButtonComponent from "components/Base/ButtonComponent";
 import LinkComponent from "components/Base/LinkComponent";
 import { useRouter } from "next/router";
 import FormDialog from "components/Base/Dialog";
-import { Form4 } from "pages/dashboard/Form4";
-import { Form5 } from "pages/dashboard/Form5";
+import { Form4 } from "components/UseCase/Navbar/Form4";
+import { Form5 } from "components/UseCase/Navbar/Form5";
 
 const Booking = ({ heading, heading2, isContinue, isPay }) => {
   const router = useRouter();
