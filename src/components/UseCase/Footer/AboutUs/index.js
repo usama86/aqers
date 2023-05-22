@@ -97,6 +97,7 @@ export default function AboutUs() {
                   component="span"
                   sx={{
                     fontSize: relative_width_size_generator(18),
+                    textTransform: "capitalize",
                   }}
                 >
                   Contact Agent

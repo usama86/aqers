@@ -250,6 +250,21 @@ export const getDesignTokens = (mode) => ({
     SelectPurposeText: {
       ...getDesignSystem(500, 30, 45),
     },
+    BookTourModelTitle: {
+      ...getDesignSystem(600, 56, 72),
+    },
+    BookTourModelText: {
+      ...getDesignSystem(500, 20, 30),
+    },
+    BookTourModelTextSmall: {
+      ...getDesignSystem(600, 16, 24),
+    },
+    BookTourModelDates: {
+      ...getDesignSystem(500, 18, 27),
+    },
+    BookTourLaterModelsTitle: {
+      ...getDesignSystem(600, 36, 54),
+    },
     //Captions 10.4px
     captionNew: {
       fontWeight: "400",
@@ -371,6 +386,58 @@ export const getDesignTokens = (mode) => ({
     },
     AgentProfileHeading: {
       ...getDesignSystem(700, 32, 40),
+    },
+    PropertySummaryAmount: {
+      ...getDesignSystem(600, 32, 37),
+    },
+    PropertySummaryViewedBy: {
+      ...getDesignSystem(500, 18, 17),
+    },
+    PropertySummaryLocation: {
+      ...getDesignSystem(400, 16, 24),
+    },
+    PropertySummaryAgentName: {
+      ...getDesignSystem(700, 14, 23.94),
+    },
+    PropertySummaryAgentMemberSince: {
+      ...getDesignSystem(400, 14, 21),
+    },
+    BookATourTitle: {
+      ...getDesignSystem(700, 20, 29.82),
+    },
+    BookATourText: {
+      ...getDesignSystem(400, 18, 22),
+    },
+    PropertyDetailsPortionHeading: {
+      ...getDesignSystem(600, 24, 26),
+    },
+    PropertyDetailsPortionDesc: {
+      ...getDesignSystem(400, 18, 26),
+    },
+    PropertyDetailsPortionByTitle: {
+      ...getDesignSystem(700, 18, 22),
+    },
+
+    PropertyDetailsDescriptionTitle: {
+      ...getDesignSystem(700, 22, 29.82),
+    },
+    PropertyDetailsLocationTitle: {
+      ...getDesignSystem(700, 20, 29.82),
+    },
+    PropertyDetailsMortgageCalculatorTitle: {
+      ...getDesignSystem(600, 56, 72),
+    },
+    PropertyDetailsMortgageCalculatorStatisticsHeading: {
+      ...getDesignSystem(400, 20, 28),
+    },
+    PropertyDetailsMortgageCalculatorStatisticsTitle: {
+      ...getDesignSystem(700, 22, 28),
+    },
+    PropertyDetailRelatedFeaturedProperties: {
+      ...getDesignSystem(700, 32, 40),
+    },
+    Label: {
+      ...getDesignSystem(600, 18, 18),
     },
     HomeSeventhSection: {
       fontWeight: 600,
@@ -529,7 +596,7 @@ export const getDesignTokens = (mode) => ({
       fontFamily: "Inter",
     },
     CardText: {
-      fontWeight: 700,
+      fontWeight: 500,
       lineHeight: relative_height_size_generator(24),
       letterSpacing: "0em",
       textAlign: "left",
@@ -567,6 +634,38 @@ export const getDesignTokens = (mode) => ({
       lineHeight: relative_height_size_generator(18),
       letterSpacing: "0em",
       textAlign: "left",
+    },
+    ModelHeading: {
+      fontWeight: 600,
+      lineHeight: relative_height_size_generator(54),
+      letterSpacing: "0em",
+    },
+    DialogSubtitle: {
+      fontWeight: 600,
+      lineHeight: relative_height_size_generator(18),
+      letterSpacing: "0em",
+    },
+    RadioIcon: {
+      fontWeight: 400,
+      lineHeight: relative_height_size_generator(26),
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
+    AddpropertyPopOver: {
+      fontWeight: 500,
+      lineHeight: relative_height_size_generator(21),
+      letterSpacing: "0.02em",
+      textAlign: "left",
+      fontSize: relative_width_font_size_generator(16),
+      color: "#1C1C1C",
+    },
+    AddpropertyPopOver1: {
+      fontWeight: 500,
+      lineHeight: relative_height_size_generator(13),
+      letterSpacing: "0.02em",
+      textAlign: "right",
+      fontSize: relative_width_font_size_generator(16),
+      color: "#C5BDBD",
     },
   },
 });

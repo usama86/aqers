@@ -8,7 +8,6 @@ import {
 } from "utils/helpers";
 
 const LoginAppStyles = ({ Component, path }) => {
-  console.log({ path });
   return (
     <StackComponent
       alignItems="center"

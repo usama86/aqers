@@ -6,7 +6,6 @@ import useRouterProps from "hooks/useRouterProps";
 
 const LoginPagesForm = ({ heading, children }) => {
   const { path } = useRouterProps();
-  console.log({ path });
   // 1,275.38
   return (
     <StackCompoent

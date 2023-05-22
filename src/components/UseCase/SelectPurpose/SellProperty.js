@@ -13,10 +13,15 @@ const SellProperty = () => {
         height={relative_height_size_generator(80)}
         width={relative_width_size_generator(80)}
         position="relative"
-        source="/select-purpose/buy.png"
+        source="/Common/purpose_sell.png"
       />
       <TypographyComponent
-        sx={{ mt: relative_height_size_generator(29.5) }}
+        sx={{
+          mt: relative_height_size_generator(29.5),
+          "&:hover": {
+            color: "primary.main",
+          },
+        }}
         variant="SelectPurposeText"
         component="span"
       >

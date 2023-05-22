@@ -18,7 +18,12 @@ const BuyProperty = () => {
         source="/select-purpose/buy.png"
       />
       <TypographyComponent
-        sx={{ mt: relative_height_size_generator(29.5) }}
+        sx={{
+          mt: relative_height_size_generator(29.5),
+          "&:hover": {
+            color: "primary.main",
+          },
+        }}
         variant="SelectPurposeText"
         component="span"
       >

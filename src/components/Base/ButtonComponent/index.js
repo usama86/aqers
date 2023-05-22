@@ -53,6 +53,7 @@ const ButtonComponent = forwardRef((props, ref) => {
         width: width,
         height: height,
         pointerEvents: disabled ? "none" : "auto",
+        padding: 0,
       }}
       color={color}
       {...other}

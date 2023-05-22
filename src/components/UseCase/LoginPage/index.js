@@ -13,7 +13,7 @@ const LoginPage = () => {
   return (
     <LoginPagesForm heading="Login to your Account">
       <StackCompoent direction="column" style={{ width: "100%" }}>
-        <TypographyComponent variant="h6">Phone Number</TypographyComponent>
+        {/* <TypographyComponent variant="h6">Phone Number</TypographyComponent> */}
         <TextFieldComponent
           fullWidth
           variant="outlined"

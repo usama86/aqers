@@ -9,6 +9,7 @@ import {
 import SellProperty from "./SellProperty";
 import BuyProperty from "./BuyProperty";
 import LinkComponent from "components/Base/LinkComponent";
+import styled from "@emotion/styled";
 
 const PurposeLayout = ({ children }) => {
   return (

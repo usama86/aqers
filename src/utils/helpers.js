@@ -66,7 +66,6 @@ export function capitalizeFirstLetter(str) {
 }
 
 export function removeCommas(str) {
-  console.log({ str });
   return str.replace(/,/g, "");
 }
 
@@ -76,4 +75,25 @@ export function truncateString(str, maxLength) {
   } else {
     return str;
   }
+}
+
+export function convertTo12HourFormat(time24) {
+  // Split the time string into hours and minutes
+  const [hours, minutes] = time24.split(":");
+
+  // Parse the hours and minutes as integers
+  const parsedHours = parseInt(hours, 10);
+  const parsedMinutes = parseInt(minutes, 10);
+
+  // Determine if it's AM or PM
+  const period = parsedHours >= 12 ? "PM" : "AM";
+
+  // Convert to 12-hour format
+  let convertedHours = parsedHours % 12;
+  convertedHours = convertedHours === 0 ? 12 : convertedHours;
+
+  // Construct the 12-hour time string
+  const time12 = `${convertedHours}:${minutes} ${period}`;
+
+  return time12;
 }

@@ -16,10 +16,12 @@ export default function ImageComponent({
   sizes,
   priority,
   imageStyle,
+  containerStyle,
   ...otherProps
 }) {
   return (
     <CustomBox
+      style={{ ...containerStyle }}
       position={position}
       overflow={overflow}
       width={width}

@@ -70,22 +70,57 @@ const configureFooterProps = (location) => {
         isBackgroundLightDownloadApp: true,
       };
     }
+    case "buy-properties": {
+      return {
+        sectionsToShow: [],
+        isBackgroundLightDownloadApp: true,
+      };
+    }
+    case "property-details": {
+      return {
+        sectionsToShow: ["footer-url"],
+      };
+    }
+    case "select-property": {
+      return {
+        sectionsToShow: ["footer-url"],
+      };
+    }
+
+    case "selected-property": {
+      return {
+        sectionsToShow: ["footer-url"],
+      };
+    }
+    case "preview-property-details": {
+      return {
+        sectionsToShow: ["footer-url"],
+      };
+    }
+
     default: {
       return {};
     }
   }
 };
 
-const MainAppStyles = ({ path, Component, componentVariant }) => {
+const MainAppStyles = ({ isGrey, path, Component, componentVariant }) => {
   return (
     <main
       style={{
-        backgroundColor:
-          componentVariant === "" ? "#FFFFFF" : "rgba(245, 245, 245, 1)",
+        backgroundColor: isGrey
+          ? "rgba(245, 245, 245, 1)"
+          : componentVariant === ""
+          ? "#FFFFFF"
+          : "rgba(245, 245, 245, 1)",
       }}
     >
       <>
-        <Navbar componentVariant={componentVariant} path={path} />
+        <Navbar
+          isGrey={isGrey}
+          componentVariant={componentVariant}
+          path={path}
+        />
         <CssBaseline />
         {/* <SpacerComponent
         sx={
