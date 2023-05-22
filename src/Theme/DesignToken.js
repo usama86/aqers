@@ -617,5 +617,15 @@ export const getDesignTokens = (mode) => ({
       letterSpacing: "0em",
       textAlign: "left",
     },
+    ModelHeading: {
+      fontWeight: 600,
+      lineHeight: relative_height_size_generator(54),
+      letterSpacing: "0em",
+    },
+    DialogSubtitle: {
+      fontWeight: 600,
+      lineHeight: relative_height_size_generator(18),
+      letterSpacing: "0em",
+    },
   },
 });
