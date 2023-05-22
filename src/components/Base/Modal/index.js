@@ -1,8 +1,9 @@
 import React from "react";
 import { Modal, Box, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import styled from "@emotion/styled";
 
-const styles = {
+const styles = ({ width }) => ({
   modal: {
     display: "flex",
     alignItems: "center",
@@ -12,28 +13,28 @@ const styles = {
     position: "relative",
     backgroundColor: (theme) => theme.palette.background.paper,
     border: "2px solid #000",
-    width: "400px",
+    width,
     boxShadow: (theme) => theme.shadows[5],
     borderRadius: "10px",
-    padding: (theme) => theme.spacing(2, 4, 3),
+    // padding: (theme) => theme.spacing(2, 4, 3),
     "& .MuiIconButton-root": {
       position: "absolute",
       top: (theme) => theme.spacing(1),
       right: (theme) => theme.spacing(1),
     },
   },
-};
+});
 
-const MyModal = ({ open, handleClose, children }) => {
+const MyModal = ({ open, handleClose, children, width }) => {
   return (
     <Modal
       open={open}
       onClose={handleClose}
       aria-labelledby="modal-title"
       aria-describedby="modal-description"
-      sx={{ ...styles.modal }}
+      sx={{ ...styles({ width }).modal }}
     >
-      <Box sx={styles.paper}>
+      <Box sx={styles({ width }).paper}>
         <IconButton onClick={handleClose}>
           <CloseIcon />
         </IconButton>
@@ -41,6 +42,10 @@ const MyModal = ({ open, handleClose, children }) => {
       </Box>
     </Modal>
   );
+};
+
+MyModal.defaultProps = {
+  width: "400px",
 };
 
 export default MyModal;

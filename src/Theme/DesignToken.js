@@ -250,6 +250,18 @@ export const getDesignTokens = (mode) => ({
     SelectPurposeText: {
       ...getDesignSystem(500, 30, 45),
     },
+    BookTourModelTitle: {
+      ...getDesignSystem(600, 56, 72),
+    },
+    BookTourModelText: {
+      ...getDesignSystem(500, 20, 30),
+    },
+    BookTourModelTextSmall: {
+      ...getDesignSystem(600, 16, 24),
+    },
+    BookTourModelDates: {
+      ...getDesignSystem(500, 18, 27),
+    },
     //Captions 10.4px
     captionNew: {
       fontWeight: "400",
