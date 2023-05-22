@@ -65,11 +65,11 @@ function FormDialog({
           {children}
         </DialogContent>
         <DialogActions sx={styles.dialogAction}>
-          <BoxComponent sx={styles.buttonBox}>
-            <ButtonComponent sx={styles.saveButton} onClick={handleSave}>
-              {ButtonText}
-            </ButtonComponent>
-          </BoxComponent>
+          {/* <BoxComponent sx={styles.buttonBox}> */}
+          <ButtonComponent sx={styles.saveButton} onClick={handleSave}>
+            {ButtonText}
+          </ButtonComponent>
+          {/* </BoxComponent> */}
         </DialogActions>
       </BoxComponent>
     </Dialog>
