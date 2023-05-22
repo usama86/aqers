@@ -4,10 +4,7 @@ import { DEFAULT_IMAGES } from "./default_data";
 
 const ImageGalleryComponent = ({ images, containerStyles, ...otherProps }) => {
   return (
-    <div style={containerStyles}>
-      Image Gallery Component Comes Here
-      {/* <ImageGallery items={images} /> */}
-    </div>
+    <div style={containerStyles}> <ImageGallery items={images} /> </div>
   );
 };
 ImageGalleryComponent.defaultProps = {

@@ -17,7 +17,6 @@ const BookTourFlow = ({
   nextPageHandler,
   isDisabledNextBtn,
 }) => {
-  console.log({ heading, children, finalStateBtnLabel, currentPage, maxPage });
   return (
     <StackCompoent
       direction="column"
@@ -34,7 +33,7 @@ const BookTourFlow = ({
       >
         {heading}
       </TypographyComponent>
-      <BoxComponent>{children}</BoxComponent>
+      <BoxComponent sx={{ p: 0 }}>{children}</BoxComponent>
       <ButtonComponent
         onClick={() => nextPageHandler()}
         color="primary"
@@ -43,6 +42,7 @@ const BookTourFlow = ({
           textTransform: "capitalize",
           mb: relative_height_size_generator(40),
         }}
+        disabled={isDisabledNextBtn}
       >
         {currentPage === maxPage ? finalStateBtnLabel : "Next"}
       </ButtonComponent>

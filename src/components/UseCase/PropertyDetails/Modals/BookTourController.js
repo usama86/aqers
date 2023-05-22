@@ -7,6 +7,10 @@ import useBookForm from "../hooks/useBookForm";
 import Page0 from "./Page0";
 import BookTourFlow from "../Layouts/BookTourFlow";
 import PersonalInfo from "./PersonalInfo";
+import WhenLookingToBuy from "./WhenLookingToBuy";
+import { WHEN_LOOKING_TO_BUY_TIMEFRAMES } from "config/static";
+import WorkingWithRealtor from "./WorkingWithRealtor";
+import PreQualifiedForLoan from "./PreQualifiedForLoan";
 
 const BookTourController = ({
   selectedModel,
@@ -25,8 +29,9 @@ const BookTourController = ({
     email: "",
     phoneNumber: "",
     firstTimeBuyer: true,
-    bookingUrgency: "0-3",
+    bookingUrgency: WHEN_LOOKING_TO_BUY_TIMEFRAMES[0].value,
     currentlyWorkingWithEstateAgent: true,
+    prequalified: false,
   });
 
   useEffect(() => {
@@ -94,7 +99,7 @@ const BookTourController = ({
             isDisabledNextBtn={
               formData.name === "" ||
               formData.email === "" ||
-              formData.phoneNumber
+              formData.phoneNumber === ""
             }
             {...tourFlowContainerProps("1")}
           >
@@ -111,6 +116,13 @@ const BookTourController = ({
               updatePhoneNumber={(val) =>
                 setFormData((prevState) => ({ ...prevState, phoneNumber: val }))
               }
+              firstTimeBuyer={formData.firstTimeBuyer}
+              updateFirstTimeBuyer={(val) =>
+                setFormData((prevState) => ({
+                  ...prevState,
+                  firstTimeBuyer: val,
+                }))
+              }
             />
           </BookTourFlow>
         </>
@@ -120,7 +132,15 @@ const BookTourController = ({
       return (
         <>
           <BookTourFlow {...tourFlowContainerProps("2")}>
-            <div>Page 2</div>
+            <WhenLookingToBuy
+              selectedValue={formData.bookingUrgency}
+              updateSelection={(val) =>
+                setFormData((prevState) => ({
+                  ...prevState,
+                  bookingUrgency: val,
+                }))
+              }
+            />
           </BookTourFlow>
         </>
       );
@@ -129,7 +149,15 @@ const BookTourController = ({
       return (
         <>
           <BookTourFlow {...tourFlowContainerProps("3")}>
-            <div>Page 3</div>
+            <WorkingWithRealtor
+              workingWithAgent={formData.currentlyWorkingWithEstateAgent}
+              updateWorkingWithAgent={(val) =>
+                setFormData((prevState) => ({
+                  ...prevState,
+                  currentlyWorkingWithEstateAgent: val,
+                }))
+              }
+            />
           </BookTourFlow>
         </>
       );
@@ -138,7 +166,15 @@ const BookTourController = ({
       return (
         <>
           <BookTourFlow {...tourFlowContainerProps("4")}>
-            <div>Page 4</div>
+            <PreQualifiedForLoan
+              prequalified={formData.prequalified}
+              updatePrequalified={(val) =>
+                setFormData((prevState) => ({
+                  ...prevState,
+                  prequalified: val,
+                }))
+              }
+            />
           </BookTourFlow>
         </>
       );

@@ -21,9 +21,15 @@ const Statistics = () => {
         p: `${relative_height_size_generator(
           34.7
         )} ${relative_width_size_generator(35.88)}`,
+        width: relative_width_size_generator(480),
       }}
     >
-      <StackCompoent direction="column">
+      <StackCompoent
+        direction="column"
+        sx={{
+          width: "100%",
+        }}
+      >
         <StackCompoent sx={{ mb: relative_height_size_generator(26.22) }}>
           <StackCompoent sx={{ flexGrow: 1 }} direction="column">
             <TypographyComponent
@@ -75,9 +81,9 @@ const Statistics = () => {
         </StackCompoent>
         <DividerComponent />
         <PieChart
+          // width="100%"
           width="100%"
-          // width={relative_width_size_generator(480)}
-          // height={relative_height_size_generator(176.28)}
+          // height="120px"
         />
       </StackCompoent>
     </BoxComponent>

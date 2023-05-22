@@ -1,16 +1,28 @@
+import styled from "@emotion/styled";
+import RadioGroupComponent from "components/Base/RadioGroupComponent";
 import StackCompoent from "components/Base/StackCompoent";
 import TextFieldComponent from "components/Base/TextFieldComponent";
 import TypographyComponent from "components/Base/TypographyComponent";
 import React from "react";
 import { relative_height_size_generator } from "utils/helpers";
 
+export const StyledRadioGroupComponent = styled(RadioGroupComponent)(
+  ({ theme }) => ({
+    "& .MuiFormControlLabel-root": {
+      flexGrow: 1,
+    },
+  })
+);
+
 const PersonalInfo = ({
   name,
   email,
   phoneNumber,
+  firstTimeBuyer,
   updateName,
   updateEmail,
   updatePhoneNumber,
+  updateFirstTimeBuyer,
 }) => {
   return (
     <StackCompoent
@@ -38,14 +50,26 @@ const PersonalInfo = ({
         }}
         value={phoneNumber}
       />
-      <TypographyComponent
-        sx={{ textTransform: "capitalize" }}
-        variant="Label"
-        component="label"
+      <StackCompoent
+        direction="column"
+        sx={{ mb: relative_height_size_generator(49.33) }}
       >
-        Are you a first time buyer?
-      </TypographyComponent>
-      <div>radio buttons</div>
+        <TypographyComponent
+          sx={{ textTransform: "capitalize" }}
+          variant="Label"
+          component="label"
+        >
+          Are you a first time buyer?
+        </TypographyComponent>
+        <StyledRadioGroupComponent
+          value={firstTimeBuyer}
+          setValue={updateFirstTimeBuyer}
+          options={[
+            { value: true, label: "Yes" },
+            { value: false, label: "No" },
+          ]}
+        />
+      </StackCompoent>
     </StackCompoent>
   );
 };

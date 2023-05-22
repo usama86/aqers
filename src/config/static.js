@@ -106,3 +106,22 @@ export const BOOKING_AVAILABLE_TIMINGS = [
     endTime: "21:00",
   },
 ];
+
+export const WHEN_LOOKING_TO_BUY_TIMEFRAMES = [
+  {
+    value: "0-3",
+    label: "0-3 Months",
+  },
+  {
+    value: "3-6",
+    label: "3-6 Months",
+  },
+  {
+    value: "6-12",
+    label: "6-12 Months",
+  },
+  {
+    value: "12+",
+    label: "Year +",
+  },
+];

@@ -12,7 +12,7 @@ import MortgageCalculator from "./MortgageCalculator";
 import RelatedFeaturedProperties from "./RelatedFeaturedProperties";
 import Description from "./Description";
 
-const PropertyDetailsComponent = ({}) => {
+const PropertyDetailsComponent = ({ showMortgage, showFeaturedProperties }) => {
   return (
     <StackCompoent
       direction="column"
@@ -46,10 +46,15 @@ const PropertyDetailsComponent = ({}) => {
       <Portion />
       <Description />
       <Location />
-      <MortgageCalculator />
-      <RelatedFeaturedProperties />
+      {showMortgage ? <MortgageCalculator /> : null}
+      {showFeaturedProperties ? <RelatedFeaturedProperties /> : null}
     </StackCompoent>
   );
+};
+
+PropertyDetailsComponent.defaultProps = {
+  showMortgage: true,
+  showFeaturedProperties: true,
 };
 
 export default PropertyDetailsComponent;

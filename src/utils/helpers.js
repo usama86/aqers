@@ -66,7 +66,6 @@ export function capitalizeFirstLetter(str) {
 }
 
 export function removeCommas(str) {
-  console.log({ str });
   return str.replace(/,/g, "");
 }
 

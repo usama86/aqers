@@ -29,9 +29,7 @@ const StyledDateRowPicker = styled(RowDatePicker)(({ theme }) => ({
 const Page0 = ({ choice, handleGoToPageOne, getDateSelection }) => {
   const startingDate = new Date();
   const [selectedAvailableSlot, setSelectedAvailableSlot] = useState(null);
-  React.useEffect(() => {
-    console.log({ selectedAvailableSlot });
-  }, [selectedAvailableSlot]);
+
   return (
     <StackCompoent
       sx={{
