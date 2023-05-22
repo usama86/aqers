@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import ImageGallery from "react-image-gallery";
 import { DEFAULT_IMAGES } from "./default_data";
+import BoxComponent from "../BoxComponent";
 
 const ImageGalleryComponent = ({ images, containerStyles, ...otherProps }) => {
   return (
-    <div style={containerStyles}> <ImageGallery items={images} /> </div>
+    <BoxComponent sx={{ ...containerStyles }}>
+      <ImageGallery items={images} />
+    </BoxComponent>
   );
 };
 ImageGalleryComponent.defaultProps = {

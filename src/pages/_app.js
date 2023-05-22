@@ -22,6 +22,7 @@ const SELL_PROPERTIES_PROTECTED_PAGES = [
   "profile-listing-collection",
   "my-booking",
   "account-setting",
+  "preview-property-details",
 ];
 
 const GREY_PAGES = [
