@@ -6,7 +6,6 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
 });
 
 const ChartComponent = ({ chartType, width, height }) => {
-  console.log({ width });
   const series = [44, 55, 13, 43];
   const options = {
     chart: {
@@ -43,7 +42,7 @@ const ChartComponent = ({ chartType, width, height }) => {
 };
 
 ChartComponent.defaultProps = {
-  width: 380,
+  width: "100%",
 };
 
 export default ChartComponent;

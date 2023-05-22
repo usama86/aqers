@@ -25,7 +25,7 @@ const styles = ({ width }) => ({
   },
 });
 
-const MyModal = ({ open, handleClose, children, width }) => {
+const MyModal = ({ open, handleClose, children, width, ...otherProps }) => {
   return (
     <Modal
       open={open}
@@ -33,6 +33,7 @@ const MyModal = ({ open, handleClose, children, width }) => {
       aria-labelledby="modal-title"
       aria-describedby="modal-description"
       sx={{ ...styles({ width }).modal }}
+      {...otherProps}
     >
       <Box sx={styles({ width }).paper}>
         <IconButton onClick={handleClose}>

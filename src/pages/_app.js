@@ -1,6 +1,7 @@
 import "styles/globals.css";
 import "styles/SelectPurpose.css";
 import "styles/Footer.css";
+import "react-image-gallery/styles/css/image-gallery.css";
 import Head from "next/head";
 import Theme from "../Theme";
 import LoginAppStyles from "components/UseCase/LoginPagesStyles";
@@ -21,6 +22,9 @@ const SELL_PROPERTIES_PROTECTED_PAGES = [
   "profile-listing-collection",
   "my-booking",
   "account-setting",
+  "select-property",
+  "selected-property",
+  "preview-property-details",
 ];
 
 const GREY_PAGES = [

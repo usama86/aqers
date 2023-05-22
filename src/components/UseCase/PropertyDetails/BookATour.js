@@ -20,6 +20,8 @@ const btnStyles = ({ color }) => ({
   ...getDesignSystem(700, 16, 19),
 });
 
+const MAX_PAGES_WITH_0_INDEX = 4;
+
 const BookATour = () => {
   const {
     modelState,
@@ -28,8 +30,9 @@ const BookATour = () => {
     handleOpenOnlineModal,
     handleOpenOnSiteModal,
     handleCloseModel,
+    incrementPage,
   } = useBookTour({
-    maxPagesWith0Index: 4,
+    maxPagesWith0Index: MAX_PAGES_WITH_0_INDEX,
   });
 
   return (
@@ -76,7 +79,12 @@ const BookATour = () => {
         handleClose={handleCloseModel}
         open={modelState}
       >
-        <BookTour selectedModel={selectedModel} currentPage={currentPage} />
+        <BookTour
+          incrementPage={incrementPage}
+          selectedModel={selectedModel}
+          currentPage={currentPage}
+          maxPage={MAX_PAGES_WITH_0_INDEX}
+        />
       </ModalComponent>
     </>
   );

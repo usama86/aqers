@@ -10,7 +10,7 @@ import {
 import { getDesignSystem } from "theme/DesignToken";
 import CustomizedButtonComponent from "components/Advance/CustomizedButton";
 
-const Location = () => {
+const Location = ({ Texts }) => {
   return (
     <PropertyDetailsCard
       otherStyles={{ mb: relative_height_size_generator(120) }}
@@ -31,7 +31,10 @@ const Location = () => {
         containerWidth="100%"
         parentStyles={{ marginBottom: relative_height_size_generator(22.75) }}
       />
-      <CustomizedButtonComponent>View Location</CustomizedButtonComponent>
+      <CustomizedButtonComponent>
+        {" "}
+        {Texts ? Texts : "Location"}
+      </CustomizedButtonComponent>
     </PropertyDetailsCard>
   );
 };

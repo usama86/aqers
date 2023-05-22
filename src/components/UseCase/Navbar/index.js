@@ -242,7 +242,7 @@ function ResponsiveAppBar({ isGrey, componentVariant }) {
               </>
             ) : componentVariant === "sellProperties" ? (
               <>
-                <NavbarRightBuyProperties />
+                <NavbarRightSellProperties />
               </>
             ) : (
               <ButtonComponent

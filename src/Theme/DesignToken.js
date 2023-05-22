@@ -262,6 +262,9 @@ export const getDesignTokens = (mode) => ({
     BookTourModelDates: {
       ...getDesignSystem(500, 18, 27),
     },
+    BookTourLaterModelsTitle: {
+      ...getDesignSystem(600, 36, 54),
+    },
     //Captions 10.4px
     captionNew: {
       fontWeight: "400",
@@ -631,6 +634,38 @@ export const getDesignTokens = (mode) => ({
       lineHeight: relative_height_size_generator(18),
       letterSpacing: "0em",
       textAlign: "left",
+    },
+    ModelHeading: {
+      fontWeight: 600,
+      lineHeight: relative_height_size_generator(54),
+      letterSpacing: "0em",
+    },
+    DialogSubtitle: {
+      fontWeight: 600,
+      lineHeight: relative_height_size_generator(18),
+      letterSpacing: "0em",
+    },
+    RadioIcon: {
+      fontWeight: 400,
+      lineHeight: relative_height_size_generator(26),
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
+    AddpropertyPopOver: {
+      fontWeight: 500,
+      lineHeight: relative_height_size_generator(21),
+      letterSpacing: "0.02em",
+      textAlign: "left",
+      fontSize: relative_width_font_size_generator(16),
+      color: "#1C1C1C",
+    },
+    AddpropertyPopOver1: {
+      fontWeight: 500,
+      lineHeight: relative_height_size_generator(13),
+      letterSpacing: "0.02em",
+      textAlign: "right",
+      fontSize: relative_width_font_size_generator(16),
+      color: "#C5BDBD",
     },
   },
 });

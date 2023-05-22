@@ -29,7 +29,6 @@ const MortgageForm = () => {
     <StackCompoent
       onSubmit={(e) => {
         e.preventDefault();
-        console.log({ mortgageFormValues });
         setMortgageFormValues(INITIAL_FORM_STATE);
       }}
       component="form"
