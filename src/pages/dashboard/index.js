@@ -25,7 +25,10 @@ const PersonalProfiles = () => {
           sx={{
             display: "flex",
             gap: relative_width_font_size_generator(14),
-            height: relative_height_size_generator(172),
+            "& > div": {
+              flexGrow: 1,
+            },
+            // height: relative_height_size_generator(172),
           }}
         >
           <RadioButtons label="New Property" sx={{ pl: "0px" }} />

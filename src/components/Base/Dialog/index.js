@@ -8,6 +8,7 @@ import TypographyComponent from "../TypographyComponent";
 import DividerComponent from "../DividerComponent";
 import ButtonComponent from "../ButtonComponent";
 import { styles } from "./style";
+import { relative_height_size_generator } from "utils/helpers";
 
 function FormDialog({
   open,
@@ -32,8 +33,9 @@ function FormDialog({
           sx={{
             display: "flex",
             flexDirection: "column",
-            gap: "1.81px",
-            flexWrap: "wrap",
+            gap: relative_height_size_generator(1.81),
+            // flexWrap: "wrap",
+            mb: relative_height_size_generator(49),
           }}
         >
           <BoxComponent sx={styles.headerDiv}>
@@ -53,7 +55,13 @@ function FormDialog({
             {subTitle}
           </TypographyComponent>
         </BoxComponent>
-        <DialogContent sx={{ p: "0px", overflow: "visible" }}>
+        <DialogContent
+          sx={{
+            p: "0px",
+            overflow: "visible",
+            mb: relative_height_size_generator(76),
+          }}
+        >
           {children}
         </DialogContent>
         <DialogActions sx={styles.dialogAction}>

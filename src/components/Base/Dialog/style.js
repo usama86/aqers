@@ -6,7 +6,11 @@ import {
 export const styles = {
   mainDiv: {
     display: "flex",
-    p: "89px 140px 86px 140px",
+    p: `${relative_height_size_generator(89)} ${relative_width_size_generator(
+      140
+    )} ${relative_height_size_generator(86)} ${relative_width_size_generator(
+      140
+    )}`,
     flexDirection: "column",
   },
   headerDiv: {
@@ -19,12 +23,16 @@ export const styles = {
     color: "#313131",
     fontSize: relative_width_size_generator(36),
     whiteSpace: "nowrap",
+    fontWeight: 600,
+    lineHeight: relative_height_size_generator(54),
   },
   dialogSubtitle: {
     textAlign: "left",
     color: "#2A3249",
     fontSize: relative_width_size_generator(18),
-    whiteSpace: "nowrap",
+    // whiteSpace: "nowrap",
+    fontWeight: 600,
+    lineHeight: relative_height_size_generator(18),
   },
   dialogAction: {
     display: "flex",
