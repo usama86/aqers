@@ -73,3 +73,36 @@ export const FEATURED_PROPERTIES = {
     },
   ],
 };
+
+export const BOOKING_AVAILABLE_TIMINGS = [
+  {
+    id: 0,
+    startTime: "09:00",
+    endTime: "11:00",
+  },
+  {
+    id: 1,
+    startTime: "11:00",
+    endTime: "13:00",
+  },
+  {
+    id: 2,
+    startTime: "13:00",
+    endTime: "15:00",
+  },
+  {
+    id: 3,
+    startTime: "15:00",
+    endTime: "17:00",
+  },
+  {
+    id: 4,
+    startTime: "17:00",
+    endTime: "19:00",
+  },
+  {
+    id: 5,
+    startTime: "19:00",
+    endTime: "21:00",
+  },
+];

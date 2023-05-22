@@ -26,12 +26,7 @@ const GraphsPage = () => {
         }}
         id="chart"
       >
-        <ReactApexChart
-          options={chartState.options}
-          series={chartState.series}
-          type="line"
-          height={350}
-        />
+        <LineChart />
       </BoxComponent>
       <BoxComponent
         sx={{
