@@ -31,8 +31,8 @@ const PropertyDetailsComponent = ({ showMortgage, showFeaturedProperties }) => {
           containerStyles={{
             width: relative_width_size_generator(959),
             // backgroundColor: "grey",
-            height: relative_height_size_generator(580),
-            border: "1px dashed grey",
+            // height: relative_height_size_generator(580),
+            // border: "1px dashed grey",
           }}
         />
         <StackCompoent
