@@ -34,10 +34,12 @@ const SelectPurpose = () => {
         <LinkComponent href="/dashboard">
           <CardComponent
             id="purpose-buy-property"
-            cardStyles={{
-              height: relative_height_size_generator(267.42),
-              width: relative_width_size_generator(607.49),
-            }}
+            cardStyles={
+              {
+                // height: relative_height_size_generator(267.42),
+                // width: relative_width_size_generator(607.49),
+              }
+            }
           >
             <PurposeLayout>
               <SellProperty />
@@ -47,10 +49,12 @@ const SelectPurpose = () => {
         <LinkComponent href="/">
           <CardComponent
             id="purpose-sell-property"
-            cardStyles={{
-              height: relative_height_size_generator(267.42),
-              width: relative_width_size_generator(607.49),
-            }}
+            cardStyles={
+              {
+                // height: relative_height_size_generator(267.42),
+                // width: relative_width_size_generator(607.49),
+              }
+            }
           >
             <PurposeLayout>
               <BuyProperty />
