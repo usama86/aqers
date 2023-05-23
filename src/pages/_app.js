@@ -13,7 +13,8 @@ const LOGIN_ROUTES = ["login", "otp", "select-purpose"];
 const BUY_PROPERTIES_PROTECTED_PAGES = [
   "agent-listing",
   "agent-profile",
-  "buy-properties",
+  "buy",
+  "rent",
   "featured-properties",
 ];
 const SELL_PROPERTIES_PROTECTED_PAGES = [

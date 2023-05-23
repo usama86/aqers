@@ -70,7 +70,13 @@ const configureFooterProps = (location) => {
         isBackgroundLightDownloadApp: true,
       };
     }
-    case "buy-properties": {
+    case "buy": {
+      return {
+        sectionsToShow: [],
+        isBackgroundLightDownloadApp: true,
+      };
+    }
+    case "rent": {
       return {
         sectionsToShow: [],
         isBackgroundLightDownloadApp: true,

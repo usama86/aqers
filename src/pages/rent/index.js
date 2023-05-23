@@ -4,7 +4,7 @@ import React from "react";
 const BuyProperties = () => {
   return (
     <>
-      <BuyPropertiesComponent />
+      <BuyPropertiesComponent purpose="rent" />
     </>
   );
 };
