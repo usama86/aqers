@@ -24,6 +24,9 @@ export const styles = {
     ...flexStyle,
     flexDirection: "column",
     gap: "40px",
+    background: "white",
+    p: "44px 47px 44px 47px",
+    borderRadius: "10px",
   },
   cardsBox: {
     ...flexStyle,
