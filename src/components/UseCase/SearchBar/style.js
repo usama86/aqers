@@ -11,7 +11,7 @@ export const styles = {
     backgroundColor: "rgba(243, 241, 242, 1)",
     borderRadius: "0px",
     height: relative_height_size_generator(50),
-    width: "130px",
+    // width: "130px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

@@ -27,9 +27,13 @@ const PinStyled = styled(ImageComponent)(({ theme }) => ({
   minHeight: "16px",
 }));
 
-const DropDownWrapper = styled(DropdownComponent)(({ theme }) => ({
+const DropDownWrapper = styled(ButtonComponent)(({ theme }) => ({
   width: "23.59932088285229%",
+  backgroundColor: "rgba(243, 241, 242, 1)",
   height: relative_height_size_generator(50),
+  "&:hover": {
+    backgroundColor: "rgba(243, 241, 242, 1)",
+  },
   "@media (max-width: 1250px)": {
     width: "auto",
     "& .MuiButtonBase-root": {
@@ -67,6 +71,7 @@ export default function SearchBar({ purpose }) {
             width: relative_width_size_generator(589),
             margin: "0 auto",
             minWidth: "530px",
+            backgroundColor: "rgba(243, 241, 242, 1)",
             "@media (max-width: 650px)": {
               minWidth: "90%",
               // width: "auto",
@@ -85,6 +90,7 @@ export default function SearchBar({ purpose }) {
               color="primary"
               sx={{
                 ...styles.dropDownButton,
+                backgroundColor: "rgba(243, 241, 242, 1) !important",
                 borderRadius: "0px",
                 height: relative_height_size_generator(50),
 
