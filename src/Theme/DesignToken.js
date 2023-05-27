@@ -265,6 +265,12 @@ export const getDesignTokens = (mode) => ({
     BookTourLaterModelsTitle: {
       ...getDesignSystem(600, 36, 54),
     },
+    BookingModelHeading: {
+      ...getDesignSystem(600, 18, 28),
+    },
+    BookingModelText: {
+      ...getDesignSystem(400, 18, 20),
+    },
     //Captions 10.4px
     captionNew: {
       fontWeight: "400",
@@ -666,6 +672,31 @@ export const getDesignTokens = (mode) => ({
       textAlign: "right",
       fontSize: relative_width_font_size_generator(16),
       color: "#C5BDBD",
+    },
+    AddpropertyPopOver1: {
+      fontWeight: 500,
+      lineHeight: relative_height_size_generator(13),
+      letterSpacing: "0.02em",
+      textAlign: "right",
+      fontSize: relative_width_font_size_generator(16),
+      color: "#C5BDBD",
+    },
+    TableText: {
+      fontWeight: 400,
+      lineHeight: relative_height_size_generator(18),
+      letterSpacing: "0.05em",
+      textAlign: "left",
+      color: "#4482FF",
+    },
+    EditBox: {
+      //styleName: Text sm / Medium;
+      fontWeight: 500,
+      lineHeight: relative_height_size_generator(20),
+      letterSpacing: "0em",
+      textAlign: "left",
+      fontFamily: "Inter",
+      fontSize: relative_width_font_size_generator(14),
+      color: "#344054",
     },
   },
 });

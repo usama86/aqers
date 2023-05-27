@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import EditIcon from "@mui/icons-material/Edit";
+import Delete from "@mui/icons-material/Delete";
 import Divider from "@mui/material/Divider";
 import ArchiveIcon from "@mui/icons-material/Archive";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
@@ -114,17 +115,8 @@ export default function CustomizedMenus({
               Edit
             </MenuItem>
             <MenuItem onClick={handleClose} disableRipple>
-              <FileCopyIcon />
-              Duplicate
-            </MenuItem>
-            <Divider sx={{ my: 0.5 }} />
-            <MenuItem onClick={handleClose} disableRipple>
-              <ArchiveIcon />
-              Archive
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <MoreHorizIcon />
-              More
+              <Delete />
+              Delete
             </MenuItem>
           </StyledMenu>
         </div>
@@ -172,17 +164,8 @@ export default function CustomizedMenus({
               Edit
             </MenuItem>
             <MenuItem onClick={handleClose} disableRipple>
-              <FileCopyIcon />
-              Duplicate
-            </MenuItem>
-            <Divider sx={{ my: 0.5 }} />
-            <MenuItem onClick={handleClose} disableRipple>
-              <ArchiveIcon />
-              Archive
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <MoreHorizIcon />
-              More
+              <Delete />
+              Delete
             </MenuItem>
           </StyledMenu>
         </BoxComponent>
@@ -238,17 +221,8 @@ export default function CustomizedMenus({
           Edit
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          <FileCopyIcon />
-          Duplicate
-        </MenuItem>
-        <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={handleClose} disableRipple>
-          <ArchiveIcon />
-          Archive
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <MoreHorizIcon />
-          More
+          <Delete />
+          Delete
         </MenuItem>
       </StyledMenu>
     </div>
