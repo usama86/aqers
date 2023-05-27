@@ -71,6 +71,7 @@ export default function CustomizedMenus({
   children,
   customStyles,
   containerStyles,
+  ...otherProps
 }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -134,7 +135,7 @@ export default function CustomizedMenus({
   if (transparent)
     return (
       <>
-        <BoxComponent sx={containerStyles}>
+        <BoxComponent {...otherProps} sx={containerStyles}>
           <Button
             {...btnProps}
             sx={{
