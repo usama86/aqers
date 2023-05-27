@@ -12,6 +12,10 @@ export const styles = ({ isWide }) => ({
     borderRadius: relative_width_size_generator(10),
     // maxWidth: 345,
     boxShadow: "0px 0px 12px 1px #0000001F",
+    "&:hover": {
+      boxShadow: "0px 0px 12px 16px #0000001F",
+      cursor: "pointer",
+    },
   },
   cardContent: {
     display: "flex",

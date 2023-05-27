@@ -120,7 +120,7 @@ TextFieldComponent.defaultProps = {
   fullWidth: true,
   select: false,
   size: "normal",
-  label: "Hello World",
+  label: "",
   variant: "standard",
   message: "",
   onInputChange: () => {},

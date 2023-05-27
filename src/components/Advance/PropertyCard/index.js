@@ -189,7 +189,7 @@ export default function PropertyCard({ type, data, isWide }) {
                     alignItems: "center",
                     justifyContent: "center",
                   }}
-                  href={{ pathname: "/property-details", query: { ...data } }}
+                  href={{ pathname: "/property-details" }}
                 >
                   View Details
                 </LinkComponent>
