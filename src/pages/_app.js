@@ -28,6 +28,7 @@ const SELL_PROPERTIES_PROTECTED_PAGES = [
   "select-property",
   "selected-property",
   "preview-property-details",
+  "aqers-plus",
 ];
 
 const GREY_PAGES = [

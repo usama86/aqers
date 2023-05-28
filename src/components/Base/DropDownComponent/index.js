@@ -72,6 +72,7 @@ export default function CustomizedMenus({
   children,
   customStyles,
   containerStyles,
+  options,
   ...otherProps
 }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -111,14 +112,19 @@ export default function CustomizedMenus({
             open={open}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose} disableRipple>
-              <EditIcon />
-              Edit
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <Delete />
-              Delete
-            </MenuItem>
+            {options.map((eachOption, index) => (
+              <MenuItem
+                key={index}
+                onClick={() => {
+                  eachOption.clickAction(eachOption);
+                  handleClose();
+                }}
+                disableRipple
+              >
+                <EditIcon />
+                {eachOption.label}
+              </MenuItem>
+            ))}
           </StyledMenu>
         </div>
       </>
@@ -160,14 +166,19 @@ export default function CustomizedMenus({
             open={open}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose} disableRipple>
-              <EditIcon />
-              Edit
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <Delete />
-              Delete
-            </MenuItem>
+            {options.map((eachOption, index) => (
+              <MenuItem
+                key={index}
+                onClick={() => {
+                  eachOption.clickAction(eachOption);
+                  handleClose();
+                }}
+                disableRipple
+              >
+                <EditIcon />
+                {eachOption.label}
+              </MenuItem>
+            ))}
           </StyledMenu>
         </BoxComponent>
       </>
@@ -217,14 +228,19 @@ export default function CustomizedMenus({
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
-          <EditIcon />
-          Edit
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <Delete />
-          Delete
-        </MenuItem>
+        {options.map((eachOption, index) => (
+          <MenuItem
+            key={index}
+            onClick={() => {
+              eachOption.clickAction(eachOption);
+              handleClose();
+            }}
+            disableRipple
+          >
+            <EditIcon />
+            {eachOption.label}
+          </MenuItem>
+        ))}
       </StyledMenu>
     </div>
   );
@@ -236,4 +252,20 @@ CustomizedMenus.defaultProps = {
   rigidWidth: false,
   manuallyBuildBtn: false,
   withIconBtn: false,
+  options: [
+    {
+      value: "edit",
+      label: "Edit",
+      clickAction: (e) => {
+        return;
+      },
+    },
+    {
+      value: "delete",
+      label: "Delete",
+      clickAction: (e) => {
+        return;
+      },
+    },
+  ],
 };

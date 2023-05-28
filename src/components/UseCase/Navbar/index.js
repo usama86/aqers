@@ -20,6 +20,16 @@ import { styles } from "./style";
 import useRouterProps from "hooks/useRouterProps";
 import NavbarRightBuyProperties from "./NavbarRightBuyProperties";
 import NavbarRightSellProperties from "./NavbarRightSellProperties";
+import MyModal from "components/Base/Modal";
+import BoxComponent from "components/Base/BoxComponent";
+import StackCompoent from "components/Base/StackCompoent";
+import TypographyComponent from "components/Base/TypographyComponent";
+import TextFieldComponent from "components/Base/TextFieldComponent";
+import SelectComponent from "components/Base/SelectComponent";
+import RadioGroupComponent from "components/Base/RadioGroupComponent";
+import CustomizedButtonComponent from "components/Advance/CustomizedButton";
+import { useRouter } from "next/router";
+import AqersPlusModal from "./AqersPlusModal";
 
 const pages = (variant) => {
   let toRenderPages = [
@@ -45,9 +55,11 @@ const pages = (variant) => {
 };
 
 function ResponsiveAppBar({ isGrey, componentVariant }) {
+  const router = useRouter();
   const { path } = useRouterProps();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [aqersPlusModal, setAqersPlusModal] = React.useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -187,42 +199,85 @@ function ResponsiveAppBar({ isGrey, componentVariant }) {
             }}
           >
             {pages(componentVariant).map((eachPage) => (
-              <Button
-                key={eachPage.label}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "#616569",
-                  display: "block",
-                  // minWidth: relative_width_size_generator(111),
-                  minWidth: relative_width_size_generator(55),
-                }}
-              >
-                <LinkComponent
-                  linkStyle={{
-                    width: "100%",
-                    height: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                  href={`/${eachPage.route}`}
-                >
-                  <Typography
+              <>
+                {eachPage.route !== "aqers-plus" ? (
+                  <Button
+                    key={eachPage.label}
+                    onClick={handleCloseNavMenu}
                     sx={{
-                      color:
-                        path === eachPage.route ? "primary.main" : "inherit",
-                      textTransform: "capitalize",
+                      my: 2,
+                      color: "#616569",
+                      display: "block",
+                      // minWidth: relative_width_size_generator(111),
+                      minWidth: relative_width_size_generator(55),
                     }}
-                    variant={
-                      path === eachPage.route ? "NavStyleSelected" : "NavStyle"
-                    }
-                    component="span"
                   >
-                    {eachPage.label}
-                  </Typography>
-                </LinkComponent>
-              </Button>
+                    <LinkComponent
+                      linkStyle={{
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                      href={`/${eachPage.route}`}
+                    >
+                      <Typography
+                        sx={{
+                          color:
+                            path === eachPage.route
+                              ? "primary.main"
+                              : "inherit",
+                          textTransform: "capitalize",
+                        }}
+                        variant={
+                          path === eachPage.route
+                            ? "NavStyleSelected"
+                            : "NavStyle"
+                        }
+                        component="span"
+                      >
+                        {eachPage.label}
+                      </Typography>
+                    </LinkComponent>
+                  </Button>
+                ) : (
+                  <>
+                    <Button
+                      key={eachPage.label}
+                      onClick={() => {
+                        setAqersPlusModal(true);
+                        handleCloseNavMenu();
+                      }}
+                      sx={{
+                        my: 2,
+                        color: "#616569",
+                        display: "block",
+                        // minWidth: relative_width_size_generator(111),
+                        minWidth: relative_width_size_generator(55),
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          color:
+                            path === eachPage.route
+                              ? "primary.main"
+                              : "inherit",
+                          textTransform: "capitalize",
+                        }}
+                        variant={
+                          path === eachPage.route
+                            ? "NavStyleSelected"
+                            : "NavStyle"
+                        }
+                        component="span"
+                      >
+                        {eachPage.label}
+                      </Typography>
+                    </Button>
+                  </>
+                )}
+              </>
             ))}
           </Box>
 
@@ -268,6 +323,13 @@ function ResponsiveAppBar({ isGrey, componentVariant }) {
         </Toolbar>
         {/* </Container> */}
       </AppBar>
+      <MyModal
+        width={relative_width_size_generator(768)}
+        open={aqersPlusModal}
+        handleClose={() => setAqersPlusModal(false)}
+      >
+        <AqersPlusModal setAqersPlusModal={setAqersPlusModal} />
+      </MyModal>
       <div style={{ height: relative_height_size_generator(132) }} />
     </>
   );
