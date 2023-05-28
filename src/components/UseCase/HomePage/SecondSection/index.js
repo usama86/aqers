@@ -15,7 +15,7 @@ const ImgBox = styled(Box)(({ theme }) => ({
     width: "100%",
     alignItems: "center",
     "& > div": {
-      width: "70%",
+      width: "100%",
       height: relative_height_size_generator(510.92),
     },
   },

@@ -23,6 +23,7 @@ export const relative_height_size_generator = (
   pixelValue,
   totalFrameHeightInPixels
 ) => {
+  // return `${+pixelValue}px`;
   try {
     let height;
     if (!totalFrameHeightInPixels) {
@@ -44,21 +45,22 @@ export const relative_width_font_size_generator = (
   pixelValue,
   totalFrameWidthInPixels
 ) => {
-  try {
-    let width;
-    if (!totalFrameWidthInPixels) {
-      width = 1920;
-    } else {
-      width = totalFrameWidthInPixels;
-    }
-    if (+pixelValue === NaN) {
-      return 0;
-    }
+  // try {
+  //   let width;
+  //   if (!totalFrameWidthInPixels) {
+  //     width = 1920;
+  //   } else {
+  //     width = totalFrameWidthInPixels;
+  //   }
+  //   if (+pixelValue === NaN) {
+  //     return 0;
+  //   }
 
-    return `${(+pixelValue * 100) / width}vw`;
-  } catch (err) {
-    return 0;
-  }
+  //   return `${(+pixelValue * 100) / width}vw`;
+  // } catch (err) {
+  //   return 0;
+  // }
+  return `${pixelValue}px`;
 };
 
 export function capitalizeFirstLetter(str) {

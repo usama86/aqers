@@ -11,7 +11,7 @@ export const styles = {
     backgroundColor: "rgba(243, 241, 242, 1)",
     borderRadius: "0px",
     height: relative_height_size_generator(50),
-    width: relative_width_size_generator(139),
+    // width: "130px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -22,14 +22,24 @@ export const styles = {
   button: {
     marginLeft: "0px !important",
     borderRadius: "0px",
-    height: "50px",
-    width: "133px",
+    height: relative_height_size_generator(50),
     // position: "absolute",
     // bottom: "0px",
     // right: "0px",
-    "@media (max-width: 600px)": {
-      height: "50px",
+    "@media (max-width: 900px)": {
+      height: relative_height_size_generator(50),
       borderRadius: "0px",
+      width: "4rem",
+      "& .MuiTypography-root": {
+        display: "none",
+        fontSize: "12px",
+      },
+      "& a": {
+        justifyContent: "center",
+      },
+      "& .css-4nxehu": {
+        marginRight: "0 !important",
+      },
     },
   },
   searchBar: {

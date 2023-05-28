@@ -20,6 +20,30 @@ import { getDesignSystem } from "theme/DesignToken";
 import LinkComponent from "components/Base/LinkComponent";
 import DropdownComponent from "components/Base/DropDownComponent";
 import BoxComponent from "components/Base/BoxComponent";
+import styled from "@emotion/styled";
+
+const PinStyled = styled(ImageComponent)(({ theme }) => ({
+  minWidth: "16px",
+  minHeight: "16px",
+}));
+
+const DropDownWrapper = styled(ButtonComponent)(({ theme }) => ({
+  width: "23.59932088285229%",
+  backgroundColor: "rgba(243, 241, 242, 1)",
+  height: relative_height_size_generator(50),
+  "&:hover": {
+    backgroundColor: "rgba(243, 241, 242, 1)",
+  },
+  "@media (max-width: 1250px)": {
+    width: "auto",
+    "& .MuiButtonBase-root": {
+      width: "4rem",
+    },
+    "& .MuiTypography-root": {
+      display: "none",
+    },
+  },
+}));
 
 export default function SearchBar({ purpose }) {
   const [areas, setAreas] = useState([]);
@@ -39,21 +63,34 @@ export default function SearchBar({ purpose }) {
   return (
     <>
       <ClickAwayListener onClickAway={() => onFocusDisplay(false)}>
-        <div
-          style={{
+        <BoxComponent
+          sx={{
             display: "flex",
             borderRadius: relative_width_size_generator(5),
             overflow: "hidden",
             width: relative_width_size_generator(589),
             margin: "0 auto",
+            minWidth: "530px",
+            backgroundColor: "rgba(243, 241, 242, 1)",
+            "@media (max-width: 650px)": {
+              minWidth: "90%",
+              // width: "auto",
+              // "& .MuiButtonBase-root": {
+              //   width: "4rem",
+              // },
+              // "& .MuiTypography-root": {
+              //   display: "none",
+              // },
+            },
           }}
         >
-          <DropdownComponent transparent>
+          <DropDownWrapper transparent>
             <BoxComponent
               variant="contained"
               color="primary"
               sx={{
                 ...styles.dropDownButton,
+                backgroundColor: "rgba(243, 241, 242, 1) !important",
                 borderRadius: "0px",
                 height: relative_height_size_generator(50),
 
@@ -63,7 +100,7 @@ export default function SearchBar({ purpose }) {
               }}
               onClick={handleSearch}
             >
-              <ImageComponent
+              <PinStyled
                 width={relative_width_size_generator(17)}
                 height={relative_height_size_generator(17)}
                 style={{ marginRight: relative_width_size_generator(9.15) }}
@@ -86,7 +123,7 @@ export default function SearchBar({ purpose }) {
                 height={relative_width_size_generator(4.5)}
               />
             </BoxComponent>
-          </DropdownComponent>
+          </DropDownWrapper>
           <TextFieldComponent
             placeholder="Find Property"
             onChange={handleChange}
@@ -99,6 +136,7 @@ export default function SearchBar({ purpose }) {
             sx={{
               "& .MuiInputBase-root": {
                 borderRadius: "0",
+                height: relative_height_size_generator(50),
                 border: "none",
                 padding: `0 ${relative_width_size_generator(21)}`,
                 ...getDesignSystem(400, 14, 21),
@@ -119,8 +157,8 @@ export default function SearchBar({ purpose }) {
               ...styles.button,
               borderRadius: "0px",
               height: relative_height_size_generator(50),
-              minWidth: "auto",
               padding: `0 ${relative_width_size_generator(24)}`,
+              minWidth: "auto",
             }}
             onClick={handleSearch}
           >
@@ -145,14 +183,18 @@ export default function SearchBar({ purpose }) {
                 width={relative_width_size_generator(14)}
                 height={relative_width_size_generator(14)}
                 alt="Search Icon"
-                style={{ marginRight: relative_width_size_generator(12) }}
+                style={{
+                  marginRight: relative_width_size_generator(12),
+                  minWidth: "12px",
+                  minHeight: "12px",
+                }}
               />
               <TypographyComponent variant="HomeMedium" component="span">
                 Search
               </TypographyComponent>
             </LinkComponent>
           </ButtonComponent>
-        </div>
+        </BoxComponent>
       </ClickAwayListener>
     </>
   );

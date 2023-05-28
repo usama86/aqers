@@ -298,7 +298,7 @@ export const getDesignTokens = (mode) => ({
       textAlign: "left",
     },
     HomeBold: {
-      fontSize: relative_width_size_generator(52),
+      fontSize: relative_width_font_size_generator(52),
       fontWeight: "700",
       lineHeight: relative_height_size_generator(72),
       letterSpacing: "0em",
@@ -306,7 +306,7 @@ export const getDesignTokens = (mode) => ({
     },
 
     HomeLight: {
-      fontSize: relative_width_size_generator(20),
+      fontSize: relative_width_font_size_generator(20),
       fontWeight: 400,
       lineHeight: relative_height_size_generator(28),
       letterSpacing: "0em",
