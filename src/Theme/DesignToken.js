@@ -19,7 +19,7 @@ export function getDesignSystem(fontWeight, fontSize, lineHeight) {
   return {
     fontWeight,
     fontSize: relative_width_font_size_generator(fontSize),
-    lineHeight: relative_height_size_generator(lineHeight),
+    lineHeight: `${lineHeight}px`,
   };
 }
 

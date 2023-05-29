@@ -7,19 +7,40 @@ import {
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ButtonComponent from "components/Base/ButtonComponent";
 import BoxComponent from "components/Base/BoxComponent";
-import { ClickAwayListener, Paper } from "@mui/material";
+import {
+  ClickAwayListener,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Paper,
+} from "@mui/material";
 import { useState } from "react";
 
-const AdvancedDropdown = ({ label, dropdownComponent }) => {
-  const [opendropdown, setOpendropdown] = useState(false);
+const AdvancedDropdown = ({
+  label,
+  dropdownComponent,
+  open,
+  setOpen,
+  dropDownWidth,
+  btnStyles,
+  options,
+  selectVariant,
+  defaultValue,
+  ...props
+}) => {
+  const [selected, setSelected] = useState(
+    defaultValue ? "" : options[0].value
+  );
   const handleClose = () => {
-    setOpendropdown(false);
+    setOpen(false);
   };
   return (
-    <BoxComponent sx={{ position: "relative" }}>
+    <BoxComponent {...props} sx={{ position: "relative" }}>
       <ButtonComponent
         onClick={() => {
-          setOpendropdown((prevState) => !prevState);
+          setOpen((prevState) => !prevState);
         }}
         sx={{
           backgroundColor: "#FFFFFF",
@@ -34,22 +55,46 @@ const AdvancedDropdown = ({ label, dropdownComponent }) => {
           "&:hover": {
             backgroundColor: "#ededed",
           },
+
+          ...btnStyles,
         }}
         alignItems="center"
         justifyContent="space-between"
       >
-        <span>{label}</span>
+        <span style={{ flexGrow: 1, textAlign: "left" }}>
+          &nbsp;
+          {selectVariant ? (selected === "" ? defaultValue : selected) : label}
+        </span>
         <KeyboardArrowDownIcon />
       </ButtonComponent>
-      {opendropdown ? (
+      {open ? (
         <ClickAwayListener onClickAway={() => handleClose()}>
           <Paper
             sx={{
               zIndex: 1000000,
               position: "absolute",
+              borderRadius: relative_width_size_generator(10),
+              width: dropDownWidth,
             }}
           >
-            {dropdownComponent}
+            {dropdownComponent ? (
+              dropdownComponent
+            ) : (
+              <List>
+                {options.map((eachOption) => (
+                  <ListItem key={eachOption.value} disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        setSelected(eachOption.value);
+                        handleClose();
+                      }}
+                    >
+                      <ListItemText primary={eachOption.label} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            )}
           </Paper>
         </ClickAwayListener>
       ) : null}
@@ -58,7 +103,14 @@ const AdvancedDropdown = ({ label, dropdownComponent }) => {
 };
 
 AdvancedDropdown.defaultProps = {
-  dropdownComponent: <>COMPONENT</>,
+  dropDownWidth: "100%",
+  selectVariant: false,
+  defaultValue: "",
+  options: [
+    { value: "any", label: "Any" },
+    { value: "first", label: "First" },
+    { value: "second", label: "Second" },
+  ],
 };
 
 export default AdvancedDropdown;
