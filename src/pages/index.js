@@ -23,7 +23,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Search />
+      <BoxComponent sx={{ position: "relative" }}>
+        <Search />
+      </BoxComponent>
       <BoxComponent
         sx={{
           p: `${relative_height_size_generator(
@@ -33,9 +35,9 @@ export default function Home() {
           )} 0px ${relative_width_size_generator(243)}`,
         }}
       >
-        <SecondSection />
+        {/* <SecondSection /> */}
       </BoxComponent>
-      <ThirdSecion />
+      {/* <ThirdSecion /> */}
     </>
   );
 }

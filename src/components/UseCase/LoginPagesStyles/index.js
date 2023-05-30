@@ -6,6 +6,7 @@ import {
   relative_height_size_generator,
   relative_width_size_generator,
 } from "utils/helpers";
+import BoxComponent from "components/Base/BoxComponent";
 
 const LoginAppStyles = ({ Component, path }) => {
   return (
@@ -16,12 +17,25 @@ const LoginAppStyles = ({ Component, path }) => {
     >
       {Component}
       {path === "select-purpose" ? null : (
-        <ImageComponent
-          width={relative_width_size_generator(727)}
-          position="relative"
-          source="/login/Frame.png"
-          alt="login-img"
-        />
+        <BoxComponent
+          sx={{
+            height: "100%",
+            width: relative_width_size_generator(727),
+            "@media (min-width: 1101px) and (max-width: 1400px)": {
+              width: relative_width_size_generator(484),
+            },
+            "@media (max-width: 1100px)": {
+              display: "none",
+            },
+          }}
+        >
+          <ImageComponent
+            width={"100%"}
+            position="relative"
+            source="/login/Frame.png"
+            alt="login-img"
+          />
+        </BoxComponent>
       )}
     </StackComponent>
   );

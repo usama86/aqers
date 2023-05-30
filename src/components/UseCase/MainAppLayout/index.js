@@ -141,7 +141,7 @@ const MainAppStyles = ({ isGrey, path, Component, componentVariant }) => {
         }
       /> */}
         {Component}
-        <Footer {...configureFooterProps(path)} />
+        {/* <Footer {...configureFooterProps(path)} /> */}
       </>
     </main>
   );

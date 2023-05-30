@@ -87,10 +87,7 @@ function ResponsiveAppBar({ isGrey, componentVariant }) {
           disableGutters
           sx={{
             justifyContent: "space-between",
-            padding: {
-              xs: `0 ${relative_width_size_generator(30)}`,
-              md: `0 ${relative_width_size_generator(243)}`,
-            },
+            ...styles.toolbarStyle,
           }}
         >
           {/* logo */}

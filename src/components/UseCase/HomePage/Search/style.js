@@ -1,5 +1,6 @@
 import {
   relative_height_size_generator,
+  relative_width_font_size_generator,
   relative_width_size_generator,
 } from "utils/helpers";
 
@@ -9,18 +10,19 @@ export const styles = {
     alignItems: "center",
     justifyContent: "center",
     height: relative_height_size_generator(758),
-    position: "relative",
+    maxWidth: "1980px",
     // padding: "50px",
-    width: relative_width_size_generator(1820),
-    margin: "0 auto",
+    // width: relative_width_size_generator(1820),
+    // margin: "0 auto",
     // marginTop: "144px",
-    "@media (max-width: 600px)": {
-      display: "block",
-      height: relative_height_size_generator(317),
-      width: "100%",
-      padding: "50px",
-      borderRadius: "44px",
-    },
+    // "@media (max-width: 600px)": {
+    //   display: "block",
+    //   height: relative_height_size_generator(317),
+    width: "100%",
+    position: "relative",
+    //   padding: "50px",
+    //   borderRadius: "44px",
+    // },
   },
   titleContainer: {
     display: "flex",
@@ -34,27 +36,24 @@ export const styles = {
     zIndex: 10,
     // position: "absolute",
     // top: "50%",
-    width: relative_width_size_generator(843),
+    // width: relative_width_size_generator(843),
     margin: "0px auto",
-    width: relative_width_size_generator(1440),
-    "@media (max-width: 900px)": {
-      width: "92%",
+    "@media (max-width: 800px)": {
+      overflow: "hidden",
     },
-    "@media (max-width: 600px)": {
-      width: "92%",
-      left: 0,
-      right: 0,
-    },
+    // width: relative_width_size_generator(1440),
   },
   headerTextWeb: {
     color: "#ffffff",
     whiteSpace: "nowrap",
     marginBottom: relative_height_size_generator(20),
-    width: relative_width_size_generator(843),
+    // width: relative_width_size_generator(843),
     textShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
-    "@media (max-width: 600px)": {
-      display: "none",
-      textShadow: "0px 0px 5px rgba(0, 0, 0, 0.75)",
+    fontSize: relative_width_font_size_generator(52),
+    "@media (max-width: 900px)": {
+      // textShadow: "0px 0px 5px rgba(0, 0, 0, 0.75)",
+      fontSize: relative_width_font_size_generator(35),
+      whiteSpace: "inherit",
     },
   },
   headerlightWeb: {
@@ -62,7 +61,7 @@ export const styles = {
     width: relative_width_size_generator(696),
     textAlign: "center",
     textShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
-    "@media (max-width: 600px)": {
+    "@media (max-width: 700px)": {
       display: "none",
       textShadow: "0px 0px 5px rgba(0, 0, 0, 0.75)",
     },
