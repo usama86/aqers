@@ -64,12 +64,11 @@ export default function SecondSection() {
           }}
         >
           {ImagesBox.map((data) => (
-            <BoxComponent sx={{}}>
+            <BoxComponent key={data.id}>
               <ImageComponent
                 source={data.source}
                 width={"100%"}
                 height={data.height}
-                key={data.id}
                 objectFit={"cover"}
               />
             </BoxComponent>

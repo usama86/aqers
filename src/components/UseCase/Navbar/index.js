@@ -79,7 +79,7 @@ function ResponsiveAppBar({ isGrey, componentVariant }) {
   return (
     <>
       <AppBar
-        position="relative"
+        position="fixed"
         sx={{ ...styles.appBar({ componentVariant, isGrey }) }}
       >
         {/* <Container maxWidth="xl"> */}

@@ -35,7 +35,7 @@ export default function ThirdSecion() {
         },
 
         "@media (max-width: 849px)": {
-          pl: "50px",
+          p: "0px 0px 0px 50px",
           height: "1540px",
         },
 
@@ -53,6 +53,9 @@ export default function ThirdSecion() {
             xs: relative_width_size_generator(20),
           },
           flexDirection: "column",
+          "@media (max-width: 550px)": {
+            flexDirection: "row",
+          },
         }}
       >
         {ImagesBox.map((data) => (
@@ -63,7 +66,7 @@ export default function ThirdSecion() {
               width: relative_width_size_generator(270),
               borderRadius: relative_width_size_generator(20),
               padding: relative_width_size_generator(28),
-              background: "#FFFFFF",
+              background: "yellow",
               display: "flex",
               flexDirection: "column",
               gap: relative_height_size_generator(20),
