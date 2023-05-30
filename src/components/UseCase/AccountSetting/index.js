@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import BoxComponent from "components/Base/BoxComponent";
 import TypographyComponent from "components/Base/TypographyComponent";
 import { styles } from "./style";
 import TextFieldComponent from "components/Base/TextFieldComponent";
 import ButtonComponent from "components/Base/ButtonComponent";
+import RadioGroupComponent from "components/Base/RadioGroupComponent";
+import styled from "@emotion/styled";
+import {
+  relative_height_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
+
+const StyledRadioGroupComponent = styled(RadioGroupComponent)(({ theme }) => ({
+  width: "100%",
+  marginLeft: relative_width_size_generator(32),
+  marginTop: relative_height_size_generator(41),
+  gap: relative_height_size_generator(21),
+  "& .MuiFormControlLabel-root": {
+    marginRight: relative_width_size_generator(132),
+  },
+}));
 
 const AccountSetting = () => {
+  const [gender, setGender] = useState("male");
+
   return (
     <BoxComponent sx={styles.pageStyle}>
       <BoxComponent sx={styles.paddingStyle}>
@@ -107,6 +125,25 @@ const AccountSetting = () => {
                   <RadioButton></RadioButton>
                 </BoxComponent>
         </BoxComponent> */}
+        <StyledRadioGroupComponent
+          value={gender}
+          setValue={(val) => setGender(val)}
+          groupLabel="Select Gender"
+          options={[
+            {
+              value: "male",
+              label: "Male",
+            },
+            {
+              value: "female",
+              label: "Female",
+            },
+            {
+              value: "other",
+              label: "Other",
+            },
+          ]}
+        />
 
         <ButtonComponent
           sx={{

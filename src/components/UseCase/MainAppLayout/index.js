@@ -103,6 +103,11 @@ const configureFooterProps = (location) => {
         sectionsToShow: ["footer-url"],
       };
     }
+    case "aqers-plus": {
+      return {
+        sectionsToShow: [],
+      };
+    }
 
     default: {
       return {};

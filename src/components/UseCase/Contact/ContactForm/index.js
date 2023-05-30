@@ -27,7 +27,7 @@ const ContactForm = () => {
     },
     {
       name: "lastName",
-      label: "First Name",
+      label: "Last Name",
       props: {
         value: lastName,
         onInputChange: (input) => setLastName(input),
@@ -35,7 +35,7 @@ const ContactForm = () => {
     },
     {
       name: "email",
-      label: "First Name",
+      label: "Email",
       props: {
         value: email,
         onInputChange: (input) => setEmail(input),
@@ -43,7 +43,7 @@ const ContactForm = () => {
     },
     {
       name: "description",
-      label: "First Name",
+      label: "Description",
       props: {
         value: description,
         onInputChange: (input) => setDescription(input),

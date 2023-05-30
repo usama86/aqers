@@ -23,6 +23,7 @@ export const relative_height_size_generator = (
   pixelValue,
   totalFrameHeightInPixels
 ) => {
+  // return `${+pixelValue}px`;
   try {
     let height;
     if (!totalFrameHeightInPixels) {
@@ -59,6 +60,7 @@ export const relative_width_font_size_generator = (
   } catch (err) {
     return 0;
   }
+  // return `${pixelValue}px`;
 };
 
 export function capitalizeFirstLetter(str) {

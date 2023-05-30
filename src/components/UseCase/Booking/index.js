@@ -5,6 +5,7 @@ import { styles } from "./style";
 import DividerComponent from "components/Base/DividerComponent";
 import TypographyComponent from "components/Base/TypographyComponent";
 import Table from "./Table";
+import { relative_width_font_size_generator } from "utils/helpers";
 
 const Booking = () => {
   return (
@@ -15,7 +16,10 @@ const Booking = () => {
 
         <BoxComponent sx={{ pt: "40px" }}>
           <TypographyComponent
-            sx={{ fontSize: "44px", color: "#1D3444" }}
+            sx={{
+              fontSize: relative_width_font_size_generator(44),
+              color: "#1D3444",
+            }}
             variant="Booking"
             component="h1"
           >

@@ -225,6 +225,42 @@ export const cardData = [
   },
 ];
 
+export const cardDatas = [
+  {
+    id: 1,
+    featured: true,
+    title: " 92 ALLIUM PLACE, ORLA...",
+    bed: "4",
+    bath: "4",
+    dimension: "2.096",
+    unit: "ft",
+    location: "New York, NY",
+    view: "5690",
+  },
+  {
+    id: 2,
+    featured: true,
+    title: "1000 BROADWAY, NEW YORK, NY",
+    bed: "3",
+    bath: "2",
+    dimension: "1.500",
+    unit: "ft",
+    location: "New York, NY",
+    view: "4567",
+  },
+  {
+    id: 3,
+    featured: false,
+    title: "2000 MADISON AVENUE, NEW YORK, NY",
+    bed: "5",
+    bath: "4",
+    dimension: "3.000",
+    unit: "ft",
+    location: "New York, NY",
+    view: "3456",
+  },
+];
+
 export const collectionCardData = [
   {
     id: 1,

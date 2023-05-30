@@ -41,7 +41,10 @@ const LoginPage = () => {
       <ButtonComponent
         color="primary"
         fullWidth
-        style={{ marginTop: relative_width_size_generator(68) }}
+        style={{
+          marginTop: relative_width_size_generator(68),
+          borderRadius: "14px",
+        }}
       >
         <LinkComponent
           linkStyle={{

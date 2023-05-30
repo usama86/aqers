@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import EditIcon from "@mui/icons-material/Edit";
+import Delete from "@mui/icons-material/Delete";
 import Divider from "@mui/material/Divider";
 import ArchiveIcon from "@mui/icons-material/Archive";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
@@ -71,6 +72,8 @@ export default function CustomizedMenus({
   children,
   customStyles,
   containerStyles,
+  options,
+  ...otherProps
 }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -109,23 +112,19 @@ export default function CustomizedMenus({
             open={open}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose} disableRipple>
-              <EditIcon />
-              Edit
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <FileCopyIcon />
-              Duplicate
-            </MenuItem>
-            <Divider sx={{ my: 0.5 }} />
-            <MenuItem onClick={handleClose} disableRipple>
-              <ArchiveIcon />
-              Archive
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <MoreHorizIcon />
-              More
-            </MenuItem>
+            {options.map((eachOption, index) => (
+              <MenuItem
+                key={index}
+                onClick={() => {
+                  eachOption.clickAction(eachOption);
+                  handleClose();
+                }}
+                disableRipple
+              >
+                <EditIcon />
+                {eachOption.label}
+              </MenuItem>
+            ))}
           </StyledMenu>
         </div>
       </>
@@ -134,7 +133,7 @@ export default function CustomizedMenus({
   if (transparent)
     return (
       <>
-        <BoxComponent sx={containerStyles}>
+        <BoxComponent {...otherProps} sx={containerStyles}>
           <Button
             {...btnProps}
             sx={{
@@ -167,23 +166,19 @@ export default function CustomizedMenus({
             open={open}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose} disableRipple>
-              <EditIcon />
-              Edit
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <FileCopyIcon />
-              Duplicate
-            </MenuItem>
-            <Divider sx={{ my: 0.5 }} />
-            <MenuItem onClick={handleClose} disableRipple>
-              <ArchiveIcon />
-              Archive
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <MoreHorizIcon />
-              More
-            </MenuItem>
+            {options.map((eachOption, index) => (
+              <MenuItem
+                key={index}
+                onClick={() => {
+                  eachOption.clickAction(eachOption);
+                  handleClose();
+                }}
+                disableRipple
+              >
+                <EditIcon />
+                {eachOption.label}
+              </MenuItem>
+            ))}
           </StyledMenu>
         </BoxComponent>
       </>
@@ -233,23 +228,19 @@ export default function CustomizedMenus({
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
-          <EditIcon />
-          Edit
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <FileCopyIcon />
-          Duplicate
-        </MenuItem>
-        <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={handleClose} disableRipple>
-          <ArchiveIcon />
-          Archive
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <MoreHorizIcon />
-          More
-        </MenuItem>
+        {options.map((eachOption, index) => (
+          <MenuItem
+            key={index}
+            onClick={() => {
+              eachOption.clickAction(eachOption);
+              handleClose();
+            }}
+            disableRipple
+          >
+            <EditIcon />
+            {eachOption.label}
+          </MenuItem>
+        ))}
       </StyledMenu>
     </div>
   );
@@ -261,4 +252,20 @@ CustomizedMenus.defaultProps = {
   rigidWidth: false,
   manuallyBuildBtn: false,
   withIconBtn: false,
+  options: [
+    {
+      value: "edit",
+      label: "Edit",
+      clickAction: (e) => {
+        return;
+      },
+    },
+    {
+      value: "delete",
+      label: "Delete",
+      clickAction: (e) => {
+        return;
+      },
+    },
+  ],
 };

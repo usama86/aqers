@@ -9,9 +9,13 @@ export const styles = ({ isWide }) => ({
     width: isWide
       ? relative_width_size_generator(440)
       : relative_width_size_generator(305),
-    borderRadius: relative_width_size_generator(10),
+    borderRadius: "10px",
     // maxWidth: 345,
     boxShadow: "0px 0px 12px 1px #0000001F",
+    cursor: "pointer",
+    "&:hover": {
+      boxShadow: "0px 0px 12px 16px #0000001F",
+    },
   },
   cardContent: {
     display: "flex",

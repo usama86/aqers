@@ -2,6 +2,8 @@ import "styles/globals.css";
 import "styles/SelectPurpose.css";
 import "styles/Footer.css";
 import "react-image-gallery/styles/css/image-gallery.css";
+import "@wojtekmaj/react-timerange-picker/dist/TimeRangePicker.css";
+import "react-clock/dist/Clock.css";
 import Head from "next/head";
 import Theme from "../Theme";
 import LoginAppStyles from "components/UseCase/LoginPagesStyles";
@@ -26,6 +28,7 @@ const SELL_PROPERTIES_PROTECTED_PAGES = [
   "select-property",
   "selected-property",
   "preview-property-details",
+  "aqers-plus",
 ];
 
 const GREY_PAGES = [
