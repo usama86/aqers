@@ -28,14 +28,17 @@ export default function Home() {
       </BoxComponent>
       <BoxComponent
         sx={{
-          p: `${relative_height_size_generator(
-            110
-          )} ${relative_width_size_generator(
-            243
-          )} 0px ${relative_width_size_generator(243)}`,
+          maxWidth: "1980px",
+          "@media (min-width: 1600px)": {
+            p: `${relative_height_size_generator(
+              110
+            )} ${relative_width_size_generator(
+              243
+            )} 0px ${relative_width_size_generator(243)}`,
+          },
         }}
       >
-        {/* <SecondSection /> */}
+        <SecondSection />
       </BoxComponent>
       {/* <ThirdSecion /> */}
     </>
