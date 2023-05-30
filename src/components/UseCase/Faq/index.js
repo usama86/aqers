@@ -5,6 +5,7 @@ import InfoPagesLayout from "components/Layouts/InfoPagesLayout";
 import {
   relative_height_size_generator,
   relative_width_size_generator,
+  updated_width_generator,
 } from "utils/helpers";
 import Question from "./Question";
 import AnswerBox from "./AnswerBox";
@@ -37,13 +38,27 @@ const Faq = () => {
             component="div"
             sx={{
               marginTop: relative_height_size_generator(273),
-              marginLeft: relative_width_size_generator(360),
+              marginLeft: updated_width_generator(360),
               width: relative_width_size_generator(640),
               position: "relative",
+              "@media (max-width: 1550px)": {
+                width: "600px",
+              },
+              "@media (max-width: 1350px)": {
+                width: "500px",
+              },
+              "@media (max-width: 1000px)": {
+                display: "flex",
+                flexDirection: "column",
+              },
+              "@media (max-width: 800px)": {
+                margin: "273px auto 273px auto",
+              },
             }}
           >
-            <ul
-              style={{
+            <BoxComponent
+              component="ul"
+              sx={{
                 position: "relative",
                 padding: 0,
                 margin: 0,
@@ -62,7 +77,7 @@ const Faq = () => {
                   key={eachQuestion.id}
                 />
               ))}
-            </ul>
+            </BoxComponent>
             {selectedQuestionData.answer &&
             selectedQuestionData.answer !== "" ? (
               <AnswerBox {...selectedQuestionData} />

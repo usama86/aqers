@@ -19,6 +19,26 @@ export const relative_width_size_generator = (
   // }
   return `${pixelValue}px`;
 };
+export const updated_width_generator = (
+  pixelValue,
+  totalFrameWidthInPixels
+) => {
+  try {
+    let width;
+    if (!totalFrameWidthInPixels) {
+      width = 1920;
+    } else {
+      width = totalFrameWidthInPixels;
+    }
+    if (+pixelValue === NaN) {
+      return 0;
+    }
+
+    return `${(+pixelValue * 100) / width}vw`;
+  } catch (err) {
+    return 0;
+  }
+};
 
 export const relative_height_size_generator = (
   pixelValue,
