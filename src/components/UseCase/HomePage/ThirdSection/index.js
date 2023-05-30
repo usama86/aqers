@@ -22,6 +22,22 @@ export default function ThirdSecion() {
             243
           )} 0px ${relative_width_size_generator(243)}`,
         },
+        pt: "110px",
+        pl: "20px",
+        "@media (max-width: 1380px)": {
+          flexDirection: "column",
+          p: `${relative_height_size_generator(
+            60
+          )} ${relative_width_size_generator(
+            243
+          )} 0px ${relative_width_size_generator(243)}`,
+          height: "1344px",
+        },
+
+        "@media (max-width: 849px)": {
+          pl: "50px",
+          height: "1540px",
+        },
 
         maxWidth: "1980px",
       }}
@@ -89,7 +105,12 @@ export default function ThirdSecion() {
       >
         <Box>
           <TypographyComponent
-            sx={{ fontSize: relative_width_size_generator(56) }}
+            sx={{
+              fontSize: relative_width_size_generator(56),
+              "@media (max-width: 850px)": {
+                fontSize: "37.3333333333px",
+              },
+            }}
             variant="HomeSecondSection"
             component="h2"
           >
