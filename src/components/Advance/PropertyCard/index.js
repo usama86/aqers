@@ -16,8 +16,14 @@ import {
   relative_width_size_generator,
 } from "utils/helpers";
 import WideCardContent from "./WideCardContent";
+import MyModal from "components/Base/Modal";
+import { useState } from "react";
+import StackCompoent from "components/Base/StackCompoent";
+import CustomizedButtonComponent from "../CustomizedButton";
+import { getDesignSystem } from "theme/DesignToken";
 
 export default function PropertyCard({ type, data, isWide }) {
+  const [deleteModal, setDeleteModal] = useState(false);
   const propertyDetail = [
     { id: 1, source: "/Common/bed.png", value: data.bed },
     { id: 2, source: "/Common/bathtub.png", value: data.bath },
@@ -89,6 +95,25 @@ export default function PropertyCard({ type, data, isWide }) {
                   e.stopPropagation();
                 },
               }}
+              options={[
+                {
+                  value: "edit",
+                  label: "Edit",
+                  clickAction: (e) => {
+                    console.log("EDIT");
+                    return;
+                  },
+                },
+                {
+                  value: "delete",
+                  label: "Delete",
+                  clickAction: (e) => {
+                    console.log("DELETE");
+                    setDeleteModal(true);
+                    return;
+                  },
+                },
+              ]}
               iconBtn={true}
             >
               <ImageComponent
@@ -224,6 +249,58 @@ export default function PropertyCard({ type, data, isWide }) {
         )}
       </CardContent>
       {/* </CardActionArea> */}
+      <MyModal
+        open={deleteModal}
+        width={relative_width_size_generator(495)}
+        handleClose={() => setDeleteModal(false)}
+      >
+        <StackCompoent
+          sx={{
+            p: `${relative_height_size_generator(24)}`,
+            gap: relative_height_size_generator(26),
+          }}
+          direction="column"
+          alignItems="center"
+        >
+          <TypographyComponent component="h3" variant="BookingModelHeading">
+            Confirm Delete
+          </TypographyComponent>
+          <TypographyComponent component="p" variant="BookingModelText">
+            Are you sure you want to delete this Property?
+          </TypographyComponent>
+          <StackCompoent
+            sx={{
+              width: "100%",
+              gap: relative_width_size_generator(12),
+              "& > button": {
+                flexGrow: 1,
+              },
+            }}
+          >
+            <CustomizedButtonComponent
+              sx={{
+                width: "100%",
+                ...getDesignSystem(600, 16, 24),
+                textTransform: "capitalize",
+              }}
+              variant="outlined"
+              onClick={() => setDeleteModal(false)}
+            >
+              Cancel
+            </CustomizedButtonComponent>
+            <CustomizedButtonComponent
+              sx={{
+                width: "100%",
+                ...getDesignSystem(600, 16, 24),
+                textTransform: "capitalize",
+              }}
+              onClick={() => setDeleteModal(false)}
+            >
+              Confirm
+            </CustomizedButtonComponent>
+          </StackCompoent>
+        </StackCompoent>
+      </MyModal>
     </Card>
   );
 }

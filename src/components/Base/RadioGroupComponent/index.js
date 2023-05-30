@@ -20,12 +20,13 @@ export default function RadioGroupComponent({
   };
 
   return (
-    <FormControl>
+    <FormControl {...otherProps}>
       {groupLabel ? (
-        <FormLabel id="demo-controlled-radio-buttons-group">Gender</FormLabel>
+        <FormLabel id="demo-controlled-radio-buttons-group">
+          {groupLabel}
+        </FormLabel>
       ) : null}
       <RadioGroup
-        {...otherProps}
         aria-labelledby="demo-controlled-radio-buttons-group"
         name="controlled-radio-buttons-group"
         value={value}

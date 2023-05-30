@@ -85,7 +85,14 @@ const NavbarRightSellProperties = () => {
         >
           Add Post
         </ButtonComponent>
-        <DropDownComponent transparent={true}>
+        <DropDownComponent
+          containerStyles={{
+            "& .MuiButtonBase-root:hover": {
+              background: "transparent",
+            },
+          }}
+          transparent={true}
+        >
           <TypographyComponent
             component="span"
             color="black"
