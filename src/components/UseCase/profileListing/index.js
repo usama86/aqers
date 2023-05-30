@@ -13,7 +13,10 @@ import { useRouter } from "next/router";
 import FormDialog from "components/Base/Dialog";
 import { Form4 } from "components/UseCase/Navbar/Form4";
 import { Form5 } from "components/UseCase/Navbar/Form5";
-import { relative_width_font_size_generator } from "utils/helpers";
+import {
+  relative_width_font_size_generator,
+  relative_width_size_generator,
+} from "utils/helpers";
 
 import { addDays, format } from "date-fns";
 import { DateRange, DayPicker } from "react-day-picker";
@@ -66,7 +69,16 @@ const StyledDatePicker = styled(DayPicker)(({ theme, selected, ...params }) => {
   };
 });
 
-const Booking = ({ heading, heading2, isContinue, isPay, cardData }) => {
+const Booking = ({
+  heading,
+  heading2,
+  isContinue,
+  isPay,
+  cardData,
+  selectedCard,
+  setCard,
+  handleClick,
+}) => {
   const router = useRouter();
   const [open, setOpen] = useState([false, false]);
 
@@ -128,45 +140,60 @@ const Booking = ({ heading, heading2, isContinue, isPay, cardData }) => {
         </TypographyComponent>
         <BoxComponent sx={styles.cardsBox}>
           {cardData.map((data) => (
-            <React.Fragment key={data.id}>
+            <BoxComponent
+              key={data.id}
+              onClick={() => {
+                if (setCard) setCard(data, data.id);
+              }}
+              sx={{
+                border: selectedCard?.find((ind) => ind.id === data.id)
+                  ? "2px solid rgb(102, 17, 98)"
+                  : "none",
+                borderRadius: "10px",
+                cursor: "pointer",
+              }}
+            >
               <PropertyCard data={data} type="drop" />
-            </React.Fragment>
+            </BoxComponent>
           ))}
         </BoxComponent>
-        <BoxComponent
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "11px",
-          }}
-        >
-          <TypographyComponent
-            sx={{ fontSize: relative_width_font_size_generator(32) }}
-            variant="profileListing"
-            component="h1"
-          >
-            Duration Of Collection Properties
-          </TypographyComponent>
+        {isContinue && (
           <BoxComponent
             sx={{
-              height: "341px",
-              width: "max-content",
-              borderRadius: "14px",
-              background: "white",
-              boxShadow: "0px 4px 24px 0px #00000014",
+              display: "flex",
+              flexDirection: "column",
+              gap: "11px",
             }}
           >
-            <StyledDatePicker
-              id="test"
-              mode="range"
-              defaultMonth={pastMonth}
-              selected={range}
-              footer={footer}
-              onSelect={setRangeFunc}
-              style={{ width: "100%" }}
-            />
+            <TypographyComponent
+              sx={{ fontSize: relative_width_font_size_generator(32) }}
+              variant="profileListing"
+              component="h1"
+            >
+              Duration Of Collection Properties
+            </TypographyComponent>
+
+            <BoxComponent
+              sx={{
+                height: "341px",
+                width: "max-content",
+                borderRadius: "14px",
+                background: "white",
+                boxShadow: "0px 4px 24px 0px #00000014",
+              }}
+            >
+              <StyledDatePicker
+                id="test"
+                mode="range"
+                defaultMonth={pastMonth}
+                selected={range}
+                footer={footer}
+                onSelect={setRangeFunc}
+                style={{ width: "100%" }}
+              />
+            </BoxComponent>
           </BoxComponent>
-        </BoxComponent>
+        )}
         {heading2 && (
           <BoxComponent
             sx={{
@@ -196,7 +223,14 @@ const Booking = ({ heading, heading2, isContinue, isPay, cardData }) => {
         )}
         {isContinue && (
           <BoxComponent sx={{ width: "100%", height: "100%", pt: "20px" }}>
-            <LinkComponent href="/selected-property">
+            <LinkComponent
+              onClick={() => {
+                if (handleClick) handleClick();
+              }}
+              href={{
+                pathname: "/selected-property",
+              }}
+            >
               <ButtonComponent
                 sx={{
                   height: "48px",
@@ -212,6 +246,7 @@ const Booking = ({ heading, heading2, isContinue, isPay, cardData }) => {
                     background: "#92198C",
                   },
                 }}
+                disabled={selectedCard?.length === 0}
               >
                 Continue
               </ButtonComponent>
