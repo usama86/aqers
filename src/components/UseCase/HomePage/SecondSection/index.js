@@ -30,6 +30,9 @@ export default function SecondSection() {
         "@media (max-width: 1000px)": {
           pt: "110px",
         },
+        "@media (max-width: 850px)": {
+          height: "3800px",
+        },
       }}
     >
       <Box sx={{ display: "flex", flexGrow: "1", justifyContent: "center" }}>

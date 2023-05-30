@@ -15,11 +15,15 @@ export default function ThirdSecion() {
         height: relative_height_size_generator(938),
         display: "flex",
         background: "#F9F9FD",
-        p: `${relative_height_size_generator(
-          110
-        )} ${relative_width_size_generator(
-          243
-        )} 0px ${relative_width_size_generator(243)}`,
+        "@media (min-width: 1820px)": {
+          p: `${relative_height_size_generator(
+            110
+          )} ${relative_width_size_generator(
+            243
+          )} 0px ${relative_width_size_generator(243)}`,
+        },
+
+        maxWidth: "1980px",
       }}
     >
       <Box
