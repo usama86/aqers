@@ -10,10 +10,15 @@ import {
 const SingleTestimonial = () => {
   return (
     <StackCompoent
-      spacing={relative_width_size_generator(41)}
       direction="row"
       alignItems="center"
       justifyContent="stretch"
+      sx={{
+        gap: relative_width_size_generator(41),
+        "@media (max-width:1200px)": {
+          flexDirection: "column",
+        },
+      }}
     >
       <StackCompoent direction="column" sx={{ width: "100%" }}>
         <TypographyComponent
@@ -22,6 +27,9 @@ const SingleTestimonial = () => {
           sx={{
             width: relative_width_size_generator(550),
             mb: relative_height_size_generator(24),
+            "@media (max-width:1200px)": {
+              width: "auto",
+            },
           }}
         >
           Finsweet was a dream to work with
@@ -33,13 +41,23 @@ const SingleTestimonial = () => {
             width: relative_width_size_generator(550),
             mb: relative_height_size_generator(40),
             color: "rgba(91, 91, 91, 1)",
+            "@media (max-width:1200px)": {
+              width: "auto",
+            },
           }}
         >
           Maecenas efficitur scelerisque lorem, et varius lacus tincidunt vel.
           Pellentesque a arcu vitae diam dapibus mattis vel vel orci. Vivamus
           eleifend nec felis vel auctor.
         </TypographyComponent>
-        <StackCompoent direction="row">
+        <StackCompoent
+          direction="row"
+          sx={{
+            "@media (max-width:1200px)": {
+              alignSelf: "center",
+            },
+          }}
+        >
           <ImageComponent
             width={relative_width_size_generator(80)}
             height={relative_width_size_generator(80)}
@@ -61,6 +79,24 @@ const SingleTestimonial = () => {
         </StackCompoent>
       </StackCompoent>
       <ImageComponent
+        imageSxStyle={{
+          "@media (max-width:1700px)": {
+            height: "300px",
+          },
+          "@media (max-width:1500px)": {
+            height: "200px",
+          },
+          "@media (max-width:1400px)": {
+            height: "400px",
+          },
+          "@media (max-width:1200px)": {
+            height: "400px",
+          },
+          "@media (max-width:600px)": {
+            width: "200px",
+            height: "200px",
+          },
+        }}
         // width={relative_width_size_generator(620)}
 
         height={relative_height_size_generator(501)}

@@ -50,12 +50,11 @@ const TeamMember = ({ image_source, role, name, description }) => {
     <Wrapper>
       &nbsp;
       <ImageComponent
-        // objectFit="contain"
         // width={relative_width_size_generator(289)}
         height={relative_height_size_generator(521)}
         source={image_source}
         alt="team_mate"
-        style={{ borderRadius: "20px" }}
+        style={{ borderRadius: "20px", objectFit: "cover" }}
       />
       {isContentProvided ? (
         <Information

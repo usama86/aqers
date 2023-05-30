@@ -24,13 +24,24 @@ const RightImgContainer = styled(BoxComponent)(({ theme }) => ({
     backgroundColor: "#92198C",
     mixBlendMode: "multiply",
   },
+
+  "@media (max-width: 1400px)": {
+    "&::before": {
+      display: "none",
+    },
+  },
 }));
 
 const SingleImage = () => {
   return (
     <StackCompoent
       alignItems="center"
-      spacing={relative_width_size_generator(78)}
+      sx={{
+        gap: relative_width_size_generator(78),
+        "@media (max-width: 1000px)": {
+          flexDirection: "column",
+        },
+      }}
     >
       <StackCompoent
         direction="column"
@@ -53,7 +64,18 @@ const SingleImage = () => {
             width={relative_width_size_generator(620)}
             height={relative_height_size_generator(667)}
             objectFit="cover"
-            sx={{ borderRadius: "20px" }}
+            sx={{
+              borderRadius: "20px",
+              "@media (max-width: 1700px)": {
+                maxWidth: "350px",
+                maxHeight: "350px",
+              },
+
+              "@media (max-width: 1400px)": {
+                // maxWidth: "150px",
+                // maxHeight: "150px",
+              },
+            }}
           />
         </RightImgContainer>
       </BoxComponent>

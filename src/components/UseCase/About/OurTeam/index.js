@@ -47,6 +47,9 @@ const OurTeam = () => {
         sx={{
           mb: relative_height_size_generator(27),
           width: relative_width_size_generator(577),
+          "@media (max-width:900px)": {
+            width: "auto",
+          },
         }}
         variant="AboutSingleImageHeading"
       >
@@ -56,6 +59,9 @@ const OurTeam = () => {
         sx={{
           mb: relative_height_size_generator(64),
           width: relative_width_size_generator(721),
+          "@media (max-width:900px)": {
+            width: "auto",
+          },
         }}
         variant="ContactBody"
         component="p"
@@ -65,8 +71,15 @@ const OurTeam = () => {
         suscipit tellus et pellentesque.
       </TypographyComponent>
       <StackCompoent
-        spacing={relative_width_size_generator(41)}
         justifyContent="space-between"
+        sx={{
+          gap: relative_width_size_generator(41),
+          "@media (max-width:800px)": {
+            width: "50%",
+            margin: "0 auto",
+            flexWrap: "wrap",
+          },
+        }}
       >
         {OUR_TEAM.map((eachMember) => (
           <TeamMember key={eachMember.id} {...eachMember} />

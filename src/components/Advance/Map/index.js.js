@@ -1,6 +1,7 @@
 import React from "react";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 import { googleMapApiKey } from "config/index.js";
+import BoxComponent from "components/Base/BoxComponent";
 
 const containerStyle = {
   width: "400px",
@@ -16,8 +17,8 @@ function MapComponent({
   ...otherProps
 }) {
   return (
-    <div
-      style={{
+    <BoxComponent
+      sx={{
         width: containerWidth,
         height: containerHeight,
         ...parentStyles,
@@ -34,7 +35,7 @@ function MapComponent({
           <>PIN</>
         </GoogleMap>
       </LoadScript>
-    </div>
+    </BoxComponent>
   );
 }
 
