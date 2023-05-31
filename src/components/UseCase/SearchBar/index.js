@@ -68,18 +68,20 @@ export default function SearchBar({ purpose }) {
             display: "flex",
             borderRadius: relative_width_size_generator(5),
             overflow: "hidden",
-            width: relative_width_size_generator(589),
+            // width: relative_width_size_generator(589),
+            justifyContent: "center",
             margin: "0 auto",
-            minWidth: "530px",
-            "@media (max-width: 650px)": {
-              minWidth: "90%",
-            },
-            "@media (max-width: 900px) and (min-width:734px)": {
-              marginLeft: "184px",
-            },
-            "@media (max-width: 733px) and (min-width:570px)": {
-              marginLeft: "100px",
-            },
+            // minWidth: "530px",
+            // "@media (max-width: 650px)": {
+            //   // minWidth: "90%",
+            //   justifyContent: "center",
+            // },
+            // "@media (max-width: 900px) and (min-width:734px)": {
+            //   justifyContent: "center",
+            // },
+            // "@media (max-width: 733px) and (min-width:570px)": {
+            //   justifyContent: "center",
+            // },
           }}
         >
           <DropDownWrapper transparent>
