@@ -15,11 +15,31 @@ export default function ThirdSecion() {
         height: relative_height_size_generator(938),
         display: "flex",
         background: "#F9F9FD",
-        p: `${relative_height_size_generator(
-          110
-        )} ${relative_width_size_generator(
-          243
-        )} 0px ${relative_width_size_generator(243)}`,
+        "@media (min-width: 1820px)": {
+          p: `${relative_height_size_generator(
+            110
+          )} ${relative_width_size_generator(
+            243
+          )} 0px ${relative_width_size_generator(243)}`,
+        },
+        pt: "110px",
+        pl: "20px",
+        "@media (max-width: 1380px)": {
+          flexDirection: "column",
+          p: `${relative_height_size_generator(
+            60
+          )} ${relative_width_size_generator(
+            243
+          )} 0px ${relative_width_size_generator(243)}`,
+          height: "fit-content",
+        },
+
+        "@media (max-width: 849px)": {
+          p: "0px 0px 0px 50px",
+          height: "fit-content",
+        },
+
+        maxWidth: "1980px",
       }}
     >
       <Box
@@ -33,6 +53,12 @@ export default function ThirdSecion() {
             xs: relative_width_size_generator(20),
           },
           flexDirection: "column",
+          "@media (max-width: 650px)": {
+            // flexDirection: "row",
+            alignItems: "center",
+            flexWrap: "nowrap",
+            height: "auto",
+          },
         }}
       >
         {ImagesBox.map((data) => (
@@ -43,7 +69,7 @@ export default function ThirdSecion() {
               width: relative_width_size_generator(270),
               borderRadius: relative_width_size_generator(20),
               padding: relative_width_size_generator(28),
-              background: "#FFFFFF",
+              background: "#ffffff",
               display: "flex",
               flexDirection: "column",
               gap: relative_height_size_generator(20),
@@ -80,12 +106,20 @@ export default function ThirdSecion() {
           gap: relative_width_size_generator(35),
           flexDirection: "column",
           p: `${relative_height_size_generator(78)} 0px`,
+          "@media (max-width: 1350px)": {
+            height: "fit-content",
+          },
         }}
         className="hello"
       >
         <Box>
           <TypographyComponent
-            sx={{ fontSize: relative_width_size_generator(56) }}
+            sx={{
+              fontSize: relative_width_size_generator(56),
+              "@media (max-width: 850px)": {
+                fontSize: "37.3333333333px",
+              },
+            }}
             variant="HomeSecondSection"
             component="h2"
           >

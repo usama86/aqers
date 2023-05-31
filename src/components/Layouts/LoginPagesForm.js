@@ -16,7 +16,7 @@ const LoginPagesForm = ({ heading, children }) => {
           path === "select-purpose"
             ? relative_width_size_generator(1275.38)
             : relative_width_size_generator(398),
-        minWidth: path === "select-purpose" ? "531.53px" : "385px",
+        // minWidth: path === "select-purpose" ? "531.53px" : "385px",
       }}
     >
       <ImageComponent

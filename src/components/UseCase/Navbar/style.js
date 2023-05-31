@@ -32,11 +32,27 @@ export const styles = {
       boxShadow: "none",
       display: "flex",
       justifyContent: "center",
-      zIndex: 1000000000,
+      zIndex: 1000,
     };
   },
   aqersLogo: {
     display: { xs: "none", md: "flex" },
     mr: 1,
+  },
+  toolbarStyle: {
+    maxWidth: "1980px",
+    padding: {
+      xs: `0 ${relative_width_size_generator(30)}`,
+      // md: `0 ${relative_width_size_generator(243)}`,
+    },
+    "@media (min-width: 1800px)": {
+      p: `0 ${relative_width_size_generator(243)}`,
+    },
+    "@media (min-width: 1500px)": {
+      p: `0 ${relative_width_size_generator(162)}`,
+    },
+    "@media (min-width: 1000px)": {
+      p: `0 ${relative_width_size_generator(108)}`,
+    },
   },
 };

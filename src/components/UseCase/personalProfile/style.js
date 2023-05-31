@@ -19,6 +19,9 @@ export const styles = {
     )} ${relative_height_size_generator(60)} ${relative_width_size_generator(
       243
     )}`,
+    "@media (max-width:1200px)": {
+      padding: "40px 4rem",
+    },
   },
   paddingStyle: {
     height: "100%",

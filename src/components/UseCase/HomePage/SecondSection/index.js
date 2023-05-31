@@ -8,6 +8,7 @@ import {
   relative_width_size_generator,
 } from "utils/helpers";
 import styled from "@emotion/styled";
+import BoxComponent from "components/Base/BoxComponent";
 
 const ImgBox = styled(Box)(({ theme }) => ({
   "@media (max-width: 850px)": {
@@ -23,7 +24,17 @@ const ImgBox = styled(Box)(({ theme }) => ({
 
 export default function SecondSection() {
   return (
-    <Box sx={{ height: relative_height_size_generator(1520) }}>
+    <Box
+      sx={{
+        height: relative_height_size_generator(1520),
+        "@media (max-width: 1000px)": {
+          pt: "110px",
+        },
+        "@media (max-width: 850px)": {
+          height: "3800px",
+        },
+      }}
+    >
       <Box sx={{ display: "flex", flexGrow: "1", justifyContent: "center" }}>
         <TypographyComponent
           variant="HomeSecondSection"
@@ -47,18 +58,20 @@ export default function SecondSection() {
             display: "flex",
             flexDirection: "column",
             gap: relative_height_size_generator(37.04),
+            width: "100%",
             height: "inherit",
             flexWrap: "wrap",
           }}
         >
           {ImagesBox.map((data) => (
-            <ImageComponent
-              source={data.source}
-              width={relative_width_size_generator(450.89)}
-              height={data.height}
-              key={data.id}
-              objectFit={"cover"}
-            />
+            <BoxComponent key={data.id}>
+              <ImageComponent
+                source={data.source}
+                width={"100%"}
+                height={data.height}
+                objectFit={"cover"}
+              />
+            </BoxComponent>
           ))}
         </ImgBox>
       </Box>

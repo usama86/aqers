@@ -40,6 +40,9 @@ const GraphsPage = () => {
           sx={{
             fontSize: "50px",
             color: "primary.main",
+            "@media (max-width:500px)": {
+              fontSize: `${(50 * 2) / 3}px`,
+            },
           }}
           variant="SellDownSection2"
           component="p"
@@ -50,6 +53,9 @@ const GraphsPage = () => {
           sx={{
             fontSize: "27px",
             color: "#696969",
+            "@media (max-width:500px)": {
+              fontSize: `${(27 * 2) / 3}px`,
+            },
           }}
           variant="SellDownSubSection2"
           component="p"

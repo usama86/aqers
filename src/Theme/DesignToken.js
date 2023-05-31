@@ -63,6 +63,9 @@ export const getDesignTokens = (mode) => ({
       fontWeight: "600",
       fontSize: relative_width_size_generator(50),
     },
+    homePageHeading: {
+      fontWeight: "600",
+    },
     h2: {
       fontWeight: "600",
       fontSize: "36px",
@@ -298,7 +301,6 @@ export const getDesignTokens = (mode) => ({
       textAlign: "left",
     },
     HomeBold: {
-      fontSize: relative_width_font_size_generator(52),
       fontWeight: "700",
       lineHeight: relative_height_size_generator(72),
       letterSpacing: "0em",

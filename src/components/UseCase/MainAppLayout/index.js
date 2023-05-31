@@ -133,13 +133,6 @@ const MainAppStyles = ({ isGrey, path, Component, componentVariant }) => {
           path={path}
         />
         <CssBaseline />
-        {/* <SpacerComponent
-        sx={
-          router.asPath == "/"
-            ? styles.spacerStyleNavHome
-            : styles.spacerStyleNav
-        }
-      /> */}
         {Component}
         <Footer {...configureFooterProps(path)} />
       </>

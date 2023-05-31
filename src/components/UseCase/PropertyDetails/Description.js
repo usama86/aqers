@@ -5,7 +5,21 @@ import { relative_height_size_generator } from "utils/helpers";
 
 const Description = () => {
   return (
-    <StackCompoent direction="column">
+    <StackCompoent
+      direction="column"
+      sx={{
+        width: "100%",
+        "@media (max-width: 1800px)": {
+          padding: "1rem 4rem",
+        },
+        "@media (max-width: 900px)": {
+          padding: "1rem 4rem",
+        },
+        "@media (max-width: 500px)": {
+          alignItems: "center",
+        },
+      }}
+    >
       <TypographyComponent
         component="h2"
         sx={{ mb: relative_height_size_generator(22) }}

@@ -71,16 +71,14 @@ export default function SearchBar({ purpose }) {
             width: relative_width_size_generator(589),
             margin: "0 auto",
             minWidth: "530px",
-            backgroundColor: "rgba(243, 241, 242, 1)",
             "@media (max-width: 650px)": {
               minWidth: "90%",
-              // width: "auto",
-              // "& .MuiButtonBase-root": {
-              //   width: "4rem",
-              // },
-              // "& .MuiTypography-root": {
-              //   display: "none",
-              // },
+            },
+            "@media (max-width: 900px) and (min-width:734px)": {
+              marginLeft: "184px",
+            },
+            "@media (max-width: 733px) and (min-width:570px)": {
+              marginLeft: "100px",
             },
           }}
         >
@@ -126,6 +124,7 @@ export default function SearchBar({ purpose }) {
           </DropDownWrapper>
           <TextFieldComponent
             placeholder="Find Property"
+            fullWidth={false}
             onChange={handleChange}
             value={inputValue}
             onFocus={() => onFocusDisplay(true)}

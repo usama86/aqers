@@ -16,6 +16,10 @@ export const styles = ({ isWide }) => ({
     "&:hover": {
       boxShadow: "0px 0px 12px 16px #0000001F",
     },
+    "@media (max-width: 500px)": {
+      width: 300,
+      margin: "0 auto",
+    },
   },
   cardContent: {
     display: "flex",

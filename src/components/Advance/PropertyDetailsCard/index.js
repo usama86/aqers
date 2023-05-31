@@ -20,6 +20,9 @@ const PropertyDetailsCard = ({ padding, width, children, otherStyles }) => {
         backgroundColor: "#FFFFFF",
         width: width ? width : "max-content",
         ...otherStyles,
+        "@media (max-width: 500px)": {
+          width: "350px",
+        },
       }}
     >
       {children}

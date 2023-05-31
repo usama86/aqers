@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import MapComponent from "components/Advance/Map/index.js";
+import BoxComponent from "components/Base/BoxComponent";
 import ImageComponent from "components/Base/ImageComponent";
 import TypographyComponent from "components/Base/TypographyComponent";
 import React from "react";
@@ -13,16 +15,29 @@ const Header = styled(TypographyComponent)(({ theme }) => ({
 
 const Map = () => {
   return (
-    <div
-      style={{
+    <BoxComponent
+      sx={{
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         width: relative_width_size_generator(620),
+        "@media (max-width:700px)": {
+          width: "auto",
+        },
       }}
     >
-      <div style={{ display: "flex" }}>
-        <div style={{ flexGrow: 1 }}>
+      <BoxComponent
+        sx={{
+          display: "flex",
+          "@media (max-width: 700px)": {
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "2rem",
+            marginBottom: "2rem",
+          },
+        }}
+      >
+        <BoxComponent sx={{ flexGrow: 1, width: "300px" }}>
           <Header variant="ContactHeading2" component="h3">
             Location
           </Header>
@@ -32,8 +47,8 @@ const Map = () => {
           <TypographyComponent variant="ContactBody">
             USA, 10001
           </TypographyComponent>
-        </div>
-        <div style={{ flexGrow: 1 }}>
+        </BoxComponent>
+        <BoxComponent sx={{ flexGrow: 1, width: "300px" }}>
           <Header variant="ContactHeading2" component="h3">
             Contact Us
           </Header>
@@ -43,15 +58,21 @@ const Map = () => {
           <TypographyComponent variant="ContactBody">
             info@aqers.com
           </TypographyComponent>
-        </div>
-      </div>
-      <ImageComponent
-        width={"100%"}
-        objectFit={"fill"}
-        height={relative_height_size_generator(467)}
-        source="/contact/Map.png"
+        </BoxComponent>
+      </BoxComponent>
+
+      <MapComponent
+        parentStyles={{
+          "@media (max-width:600px)": {
+            width: "300px",
+            height: "300px",
+            margin: "0 auto",
+          },
+        }}
+        containerWidth={"100%"}
+        containerHeight={relative_height_size_generator(467)}
       />
-    </div>
+    </BoxComponent>
   );
 };
 

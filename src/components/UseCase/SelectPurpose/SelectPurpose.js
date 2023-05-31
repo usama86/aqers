@@ -30,7 +30,24 @@ const PurposeLayout = ({ children }) => {
 const SelectPurpose = () => {
   return (
     <LoginPagesForm heading="Thank you for being part of us!">
-      <StackCompoent spacing={relative_width_size_generator(60.4)}>
+      <StackCompoent
+        spacing={relative_width_size_generator(60.4)}
+        // sx={{
+        //   "@media (max-width: 800px)": {
+        //     // flexDirection: "column",
+        //     gap: "60.4px",
+        //     // "& > a": {
+        //     //   margin: "0px !important",
+        //     // },
+        //   },
+
+        // }}
+        direction={{
+          xs: "column",
+          md: "row",
+        }}
+        // direction={"column"}
+      >
         <LinkComponent href="/dashboard">
           <CardComponent
             id="purpose-buy-property"

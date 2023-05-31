@@ -75,6 +75,13 @@ const AdvancedDropdown = ({
               position: "absolute",
               borderRadius: relative_width_size_generator(10),
               width: dropDownWidth,
+              "@media (max-width: 950px)": {
+                right: 0,
+              },
+              "@media (max-width: 500px)": {
+                right: 0,
+                width: "250px",
+              },
             }}
           >
             {dropdownComponent ? (

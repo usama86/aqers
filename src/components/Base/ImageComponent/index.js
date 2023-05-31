@@ -17,6 +17,7 @@ export default function ImageComponent({
   priority,
   imageStyle,
   containerStyle,
+  imageSxStyle,
   ...otherProps
 }) {
   return (
@@ -26,6 +27,7 @@ export default function ImageComponent({
       overflow={overflow}
       width={width}
       height={height}
+      sx={imageSxStyle}
       {...otherProps}
     >
       <Image
@@ -52,6 +54,7 @@ ImageComponent.propTypes = {
   position: PropTypes.string,
   overflow: PropTypes.string,
   imageStyle: PropTypes.object,
+  imageSxStyle: PropTypes.object,
 };
 ImageComponent.defaultProps = {
   source: "",
@@ -64,4 +67,5 @@ ImageComponent.defaultProps = {
   imageClassName: "",
   sizes: "33vw",
   imageStyle: {},
+  imageSxStyle: {},
 };

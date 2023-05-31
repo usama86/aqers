@@ -34,7 +34,19 @@ const STATIC_ACHIEVEMENTS = [
 const Achievements = () => {
   return (
     <>
-      <StackCompoent>
+      <StackCompoent
+        sx={{
+          "@media (max-width: 1600px)": {
+            // padding: "10rem",
+            gap: "2rem",
+          },
+          "@media (max-width: 1000px)": {
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          },
+        }}
+      >
         <TypographyComponent
           sx={{ flexGrow: 1, width: "50%" }}
           component="h2"
@@ -54,7 +66,15 @@ const Achievements = () => {
       </StackCompoent>
       <StackCompoent
         // spacing={relative_width_size_generator(66)}
-        sx={{ width: "100%", justifyContent: "space-between" }}
+        sx={{
+          width: "100%",
+          justifyContent: "space-between",
+          "@media (max-width: 1000px)": {
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          },
+        }}
       >
         {STATIC_ACHIEVEMENTS.map((eachAchievement) => (
           <EachAchievement {...eachAchievement} key={eachAchievement.id} />

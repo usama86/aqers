@@ -15,6 +15,11 @@ const StyledDropDown = styled(AdvancedDropdown)(({ theme }) => ({
     backgroundColor: "rgba(245, 245, 245, 1)",
     border: "1px solid rgba(190, 200, 212, 1)",
     borderRadius: "5px",
+    "@media (max-width: 400px)": {
+      "& .MuiPaper-root": {
+        width: "150px",
+      },
+    },
   },
 }));
 const GreyVariantDropDown = ({ label, parentStyles, ...props }) => {

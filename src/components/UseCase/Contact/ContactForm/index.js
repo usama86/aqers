@@ -52,7 +52,15 @@ const ContactForm = () => {
   ];
 
   return (
-    <div style={{ width: relative_width_size_generator(531) }}>
+    <BoxComponent
+      component="div"
+      sx={{
+        width: relative_width_size_generator(531),
+        "@media (max-width:700px)": {
+          width: "300px",
+        },
+      }}
+    >
       <TypographyComponent
         variant="ContactHeading1"
         component="h1"
@@ -90,7 +98,7 @@ const ContactForm = () => {
           Submit
         </ButtonComponent>
       </form>
-    </div>
+    </BoxComponent>
   );
 };
 

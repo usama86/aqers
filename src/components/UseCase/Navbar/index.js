@@ -87,10 +87,7 @@ function ResponsiveAppBar({ isGrey, componentVariant }) {
           disableGutters
           sx={{
             justifyContent: "space-between",
-            padding: {
-              xs: `0 ${relative_width_size_generator(30)}`,
-              md: `0 ${relative_width_size_generator(243)}`,
-            },
+            ...styles.toolbarStyle,
           }}
         >
           {/* logo */}
@@ -135,15 +132,26 @@ function ResponsiveAppBar({ isGrey, componentVariant }) {
                 display: {
                   xs: "block",
                   md: "none",
-                  zIndex: 100000000000000000,
+                  zIndex: 1000,
                 },
               }}
             >
               {pages(componentVariant).map((eachPage) => (
                 <MenuItem key={eachPage.route} onClick={handleCloseNavMenu}>
-                  <Typography variant={"NavStyle"} textAlign="center">
-                    {eachPage.label}
-                  </Typography>
+                  <LinkComponent
+                    linkStyle={{
+                      width: "100%",
+                      height: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                    href={`/${eachPage.route}`}
+                  >
+                    <Typography variant={"NavStyle"} textAlign="center">
+                      {eachPage.label}
+                    </Typography>
+                  </LinkComponent>
                 </MenuItem>
               ))}
               <MenuItem onClick={handleCloseNavMenu}>

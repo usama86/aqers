@@ -78,6 +78,31 @@ const BookATour = () => {
         width={relative_width_size_generator(768)}
         handleClose={handleCloseModel}
         open={modelState}
+        modelStylesOverrides={{
+          "@media (max-width: 850px)": {
+            width: "600px",
+            "& .css-uzov0x-MuiStack-root": { padding: "10px 10px" },
+          },
+          "@media (max-width: 650px)": {
+            "& .css-7bhki3-MuiStack-root": {
+              flexDirection: "column",
+              height: "200px",
+              flexWrap: "wrap",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              marginBottom: "0px",
+            },
+
+            "& .css-ujtyd4-MuiGrid2-root": {
+              marginBottom: "0px",
+            },
+            "& .css-sptymy-MuiGrid2-root": {
+              padding: 0,
+            },
+            // width: "600px",
+            // "& .css-uzov0x-MuiStack-root": { padding: "10px 10px" },
+          },
+        }}
       >
         <BookTour
           incrementPage={incrementPage}
