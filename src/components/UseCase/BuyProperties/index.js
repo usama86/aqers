@@ -11,11 +11,12 @@ import TypographyComponent from "components/Base/TypographyComponent";
 import PropertyCard from "components/Advance/PropertyCard";
 import { FEATURED_PROPERTIES, collectionCardData } from "utils/dummy_data";
 import LinkComponent from "components/Base/LinkComponent";
+import BoxComponent from "components/Base/BoxComponent";
 
 const BuyPropertiesComponent = ({ purpose }) => {
   const { lat, lng } = useGetUserLocation();
   return (
-    <div>
+    <BoxComponent>
       <StackCompoent
         justifyContent="center"
         sx={{
@@ -28,43 +29,70 @@ const BuyPropertiesComponent = ({ purpose }) => {
           marginBottom: relative_height_size_generator(100),
           // transform: `translateX(${relative_width_size_generator(53.5)})`,
           gap: relative_width_size_generator(16),
+          flexWrap: "wrap",
         }}
       >
         <SearchOptions />
       </StackCompoent>
-      <div
-        style={{
+      <BoxComponent
+        sx={{
           display: "flex",
           gap: relative_width_size_generator(30),
           position: "relative",
+          "@media (max-width: 1000px)": {
+            flexDirection: "column",
+            alignItems: "center",
+          },
         }}
       >
-        {/* style={{ width: relative_width_size_generator(960) }} */}
-        <div style={{ position: "sticky" }}>
+        <BoxComponent style={{ position: "sticky" }}>
           <MapComponent
             parentStyles={{
               position: "sticky",
               top: relative_height_size_generator(132),
+              "@media (max-width: 1600px)": {
+                width: "800px",
+                height: "800px",
+              },
+              "@media (max-width: 1350px)": {
+                width: "500px",
+                height: "500px",
+              },
+              "@media (max-width: 500px)": {
+                width: "350px",
+                height: "350px",
+                margin: "0 auto",
+              },
             }}
             containerWidth={relative_width_size_generator(960)}
             containerHeight={relative_height_size_generator(1080)}
             lat={lat}
             lng={lng}
           />
-        </div>
-        <div>
+        </BoxComponent>
+        <BoxComponent>
           <TypographyComponent
             variant="AgentProfileHeading"
             sx={{
               textTransform: "capitalize",
               mb: relative_height_size_generator(30),
+              "@media (max-width: 900px)": {
+                textAlign: "center",
+              },
             }}
             component="h2"
           >
             Featured Properties for {purpose}
           </TypographyComponent>
           <StackCompoent
-            sx={{ flexWrap: "wrap", gap: relative_width_size_generator(20) }}
+            sx={{
+              flexWrap: "wrap",
+              gap: relative_width_size_generator(20),
+              "@media (max-width: 900px)": {
+                flexDirection: "column !important",
+                margin: "0 auto",
+              },
+            }}
           >
             {FEATURED_PROPERTIES.map((eachProperty) => (
               <LinkComponent
@@ -75,9 +103,9 @@ const BuyPropertiesComponent = ({ purpose }) => {
               </LinkComponent>
             ))}
           </StackCompoent>
-        </div>
-      </div>
-    </div>
+        </BoxComponent>
+      </BoxComponent>
+    </BoxComponent>
   );
 };
 

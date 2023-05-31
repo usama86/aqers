@@ -20,7 +20,15 @@ const InfoPagesLayout = ({ heading, children, fullWidth }) => {
         }}
         component="section"
       >
-        <TypographyComponent variant="InfoPageHeading" component="h1">
+        <TypographyComponent
+          sx={{
+            "@media (max-width: 1000px)": {
+              textAlign: "center",
+            },
+          }}
+          variant="InfoPageHeading"
+          component="h1"
+        >
           {heading}
         </TypographyComponent>
       </BoxComponent>

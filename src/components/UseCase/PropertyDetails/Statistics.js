@@ -22,6 +22,9 @@ const Statistics = () => {
           34.7
         )} ${relative_width_size_generator(35.88)}`,
         width: relative_width_size_generator(480),
+        "@media (max-width: 600px)": {
+          width: "100%",
+        },
       }}
     >
       <StackCompoent
@@ -30,7 +33,11 @@ const Statistics = () => {
           width: "100%",
         }}
       >
-        <StackCompoent sx={{ mb: relative_height_size_generator(26.22) }}>
+        <StackCompoent
+          sx={{
+            mb: relative_height_size_generator(26.22),
+          }}
+        >
           <StackCompoent sx={{ flexGrow: 1 }} direction="column">
             <TypographyComponent
               sx={{

@@ -26,6 +26,7 @@ const MortgageCalculator = () => {
         Mortgage Calculator
       </TypographyComponent>
       <StackCompoent
+        direction={{ sm: "column", md: "row" }}
         sx={{
           gap: relative_width_size_generator(104),
           "& > *": {

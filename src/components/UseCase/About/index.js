@@ -11,17 +11,29 @@ import OurTeam from "./OurTeam";
 import SingleTestimonial from "./SingleTestimonial";
 import StackCompoent from "components/Base/StackCompoent";
 
-export const AboutPageLayout = styled(StackCompoent)(({ theme }) => ({
-  padding: `${relative_height_size_generator(
-    52
-  )} ${relative_width_size_generator(320)} ${relative_height_size_generator(
-    144
-  )} ${relative_width_size_generator(320)}`,
-}));
-
 const About = () => {
   return (
-    <AboutPageLayout
+    <StackCompoent
+      sx={{
+        padding: `${relative_height_size_generator(
+          52
+        )} ${relative_width_size_generator(
+          320
+        )} ${relative_height_size_generator(
+          144
+        )} ${relative_width_size_generator(320)}`,
+        "@media (max-width:1400px)": {
+          padding: "52px 100px",
+        },
+        "@media (max-width:700px)": {
+          padding: "52px 2rem",
+        },
+        "@media (max-width: 1000px)": {
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+        },
+      }}
       spacing={relative_height_size_generator(128)}
       direction={"column"}
     >
@@ -29,7 +41,7 @@ const About = () => {
       <SingleImage />
       <OurTeam />
       <SingleTestimonial />
-    </AboutPageLayout>
+    </StackCompoent>
   );
 };
 

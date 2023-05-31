@@ -9,20 +9,25 @@ import {
 import ContactForm from "./ContactForm";
 import Map from "./Map";
 
-export const Wrapper = styled("section")(({ theme }) => ({
-  display: "flex",
-  justifyContent: "center",
-  gap: relative_width_size_generator(55),
-  marginTop: relative_height_size_generator(53),
-  paddingBottom: relative_height_size_generator(120),
-}));
-
 const Contact = () => {
   return (
-    <Wrapper>
+    <BoxComponent
+      component="section"
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        gap: relative_width_size_generator(55),
+        marginTop: relative_height_size_generator(53),
+        paddingBottom: relative_height_size_generator(120),
+        "@media (max-width: 1200px)": {
+          flexDirection: "column",
+          alignItems: "center",
+        },
+      }}
+    >
       <ContactForm />
       <Map />
-    </Wrapper>
+    </BoxComponent>
   );
 };
 

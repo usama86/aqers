@@ -26,7 +26,7 @@ const Price = ({ handleClose }) => {
     )}`,
   };
   return (
-    <StackCompoent direction="column">
+    <StackCompoent direction="column" sx={{ flexWrap: "wrap" }}>
       <DropDownHeading
         styleOverrides={{
           ...baseMargin,
@@ -42,6 +42,7 @@ const Price = ({ handleClose }) => {
         }}
       >
         <StackCompoent
+          direction={{ xs: "column", md: "row" }}
           sx={{
             width: "100%",
             gap: relative_width_size_generator(15),
