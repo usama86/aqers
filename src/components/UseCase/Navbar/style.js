@@ -32,7 +32,7 @@ export const styles = {
       boxShadow: "none",
       display: "flex",
       justifyContent: "center",
-      zIndex: 1000000000,
+      zIndex: 1000,
     };
   },
   aqersLogo: {

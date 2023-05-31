@@ -8,20 +8,32 @@ import {
   relative_width_size_generator,
   relative_height_size_generator,
 } from "utils/helpers";
+import { LAPTOP_SCREEN_PADDING } from "./../../../../config";
 
 export default function FooterUrls() {
   return (
     <Box
       sx={{
-        height: relative_height_size_generator(465.44),
+        // height: relative_height_size_generator(465.44),
         display: "flex",
         backgroundColor: "primary.main",
         p: `${relative_height_size_generator(
           76
         )} ${relative_width_size_generator(
           243
-        )} 0px ${relative_width_size_generator(243)}`,
+        )} 76px ${relative_width_size_generator(243)}`,
         gap: relative_width_size_generator(156.52),
+        "@media (max-width: 1400px)": {
+          padding: `76px ${LAPTOP_SCREEN_PADDING}`,
+          gap: "4rem",
+        },
+        "@media (max-width: 800px)": {
+          flexDirection: "column",
+          alignItems: "center",
+          "& *": {
+            textAlign: "center",
+          },
+        },
       }}
     >
       {/* Section 1 */}
@@ -31,6 +43,9 @@ export default function FooterUrls() {
           flexDirection: "column",
           gap: relative_height_size_generator(36),
           width: relative_width_size_generator(367.95),
+          "@media (max-width: 1200px)": {
+            alignItems: "center",
+          },
         }}
       >
         <ImageComponent
@@ -42,14 +57,28 @@ export default function FooterUrls() {
         <TypographyComponent
           variant="HomeNineScreen"
           component="span"
-          sx={{ color: "#FFFFFF", fontSize: relative_width_size_generator(18) }}
+          sx={{
+            color: "#FFFFFF",
+            fontSize: relative_width_size_generator(18),
+            "@media (max-width: 1400px)": {
+              fontSize: (18 * 2) / 3,
+              maxWidth: "200px",
+              textAlign: "center",
+            },
+          }}
         >
           You get alot from us: Manage your application, your portfolio and
           digitize many of the processes that go with it.
         </TypographyComponent>
 
         <Box
-          sx={{ display: "flex", gap: relative_width_size_generator(27.31) }}
+          sx={{
+            display: "flex",
+            gap: relative_width_size_generator(27.31),
+            "@media (max-width: 1200px)": {
+              alignItems: "center",
+            },
+          }}
         >
           <ImageComponent
             source="/Footer/facebook.png"
@@ -79,12 +108,21 @@ export default function FooterUrls() {
           flexDirection: "column",
           gap: relative_height_size_generator(44.95),
           width: relative_width_size_generator(367.95),
+          "@media (max-width: 1200px)": {
+            alignItems: "center",
+          },
         }}
       >
         <TypographyComponent
           variant="HomeNineScreen"
           component="span"
-          sx={{ color: "#FFFFFF", fontSize: relative_width_size_generator(28) }}
+          sx={{
+            color: "#FFFFFF",
+            fontSize: relative_width_size_generator(28),
+            "@media (max-width: 1400px)": {
+              fontSize: (28 * 2) / 3,
+            },
+          }}
         >
           Quick Links
         </TypographyComponent>
@@ -93,6 +131,9 @@ export default function FooterUrls() {
             display: "flex",
             flexDirection: "column",
             gap: relative_height_size_generator(20.33),
+            "@media (max-width: 1200px)": {
+              alignItems: "center",
+            },
           }}
         >
           {quickLinks.map((data) => (
@@ -102,6 +143,12 @@ export default function FooterUrls() {
               sx={{
                 color: "#FFFFFF",
                 fontSize: relative_width_size_generator(18),
+                "@media (max-width: 1400px)": {
+                  fontSize: (18 * 2) / 3,
+                },
+                "@media (max-width: 1200px)": {
+                  textAlign: "center",
+                },
               }}
               key={data.id}
             >
@@ -118,12 +165,21 @@ export default function FooterUrls() {
           flexDirection: "column",
           gap: relative_height_size_generator(39.9),
           width: relative_width_size_generator(367.95),
+          "@media (max-width: 1200px)": {
+            alignItems: "center",
+          },
         }}
       >
         <TypographyComponent
           variant="HomeNineScreen"
           component="span"
-          sx={{ color: "#FFFFFF", fontSize: relative_width_size_generator(28) }}
+          sx={{
+            color: "#FFFFFF",
+            fontSize: relative_width_size_generator(28),
+            "@media (max-width: 1400px)": {
+              fontSize: (28 * 2) / 3,
+            },
+          }}
         >
           Get App
         </TypographyComponent>
@@ -141,6 +197,12 @@ export default function FooterUrls() {
               height={relative_height_size_generator(42.98)}
               key={data.id}
               sx={{ cursor: "pointer" }}
+              imageSxStyle={{
+                "@media (max-width: 1400px)": {
+                  width: (152.86 * 2) / 3,
+                  height: (42.98 * 2) / 3,
+                },
+              }}
             />
           ))}
         </Box>
@@ -168,6 +230,10 @@ export default function FooterUrls() {
               sx={{
                 display: "flex",
                 gap: relative_width_size_generator(20.71),
+                "@media (max-width: 1200px)": {
+                  flexDirection: "column",
+                  alignItems: "center",
+                },
               }}
             >
               <ImageComponent
@@ -196,6 +262,12 @@ export default function FooterUrls() {
                     sx={{
                       color: "#FFFFFF",
                       fontSize: relative_width_size_generator(28),
+                      "@media (max-width: 1400px)": {
+                        fontSize: (28 * 2) / 3,
+                      },
+                      "@media (max-width: 1200px)": {
+                        textAlign: "center",
+                      },
                     }}
                   >
                     {data.title}
@@ -206,6 +278,12 @@ export default function FooterUrls() {
                     sx={{
                       color: "#FFFFFF",
                       fontSize: relative_width_size_generator(14),
+                      "@media (max-width: 1400px)": {
+                        fontSize: (14 * 2) / 3,
+                      },
+                      "@media (max-width: 1200px)": {
+                        textAlign: "center",
+                      },
                     }}
                   >
                     {data.content}

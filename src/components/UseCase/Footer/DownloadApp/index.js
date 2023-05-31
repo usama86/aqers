@@ -9,6 +9,7 @@ import {
   relative_width_size_generator,
 } from "utils/helpers";
 import ButtonComponent from "components/Base/ButtonComponent";
+import { LAPTOP_SCREEN_PADDING } from "./../../../../config";
 
 export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
   return (
@@ -25,10 +26,36 @@ export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
           243
         )} 0px ${relative_width_size_generator(243)}`,
         gap: relative_width_size_generator(37),
+        "@media (max-width: 1700px)": {
+          p: `70px ${LAPTOP_SCREEN_PADDING}`,
+        },
+        "@media (max-width: 1000px)": {
+          // display: "none",
+          display: "flex",
+          flexDirection: "column-reverse",
+          alignItems: "center",
+          height: "fit-content",
+        },
       }}
     >
-      <Box>
+      <Box
+        sx={{
+          "@media (max-width: 600px)": {
+            display: "none",
+          },
+        }}
+      >
         <ImageComponent
+          imageSxStyle={{
+            "@media (max-width: 1550px)": {
+              width: 550,
+              height: "550px",
+              borderRadius: "20px",
+              "& img": {
+                objectFit: "cover",
+              },
+            },
+          }}
           source={"/Footer/DownloadImage.png"}
           width={relative_width_size_generator(695)}
           height={relative_height_size_generator(580)}
@@ -39,6 +66,9 @@ export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
           display: "flex",
           flexDirection: "column",
           gap: relative_height_size_generator(35),
+          "@media (max-width: 1000px)": {
+            alignItems: "center",
+          },
         }}
       >
         <ImageComponent
@@ -50,12 +80,24 @@ export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
             borderRadius: "14px",
             background: "#2A3249",
           }}
+          imageSxStyle={{
+            "@media (max-width: 1550px)": {
+              width: "125px",
+              height: "125px",
+              "& img": {
+                objectFit: "fill",
+              },
+            },
+          }}
         />
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             gap: relative_height_size_generator(32),
+            "@media (max-width: 1000px)": {
+              alignItems: "center",
+            },
           }}
         >
           <Box>
@@ -64,6 +106,9 @@ export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
               sx={{
                 color: isBackgroundLightDownloadApp ? "000000" : "#FFFFFF",
                 fontSize: relative_width_size_generator(52),
+                "@media (max-width: 1550px)": {
+                  fontSize: "34.67px",
+                },
               }}
               component="h2"
             >
@@ -78,6 +123,9 @@ export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
               sx={{
                 color: isBackgroundLightDownloadApp ? "000000" : "#EDEFF6",
                 fontSize: relative_width_size_generator(20),
+                "@media (max-width: 1550px)": {
+                  fontSize: "13.33px",
+                },
               }}
             >
               Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
@@ -107,6 +155,9 @@ export default function ThirdSecion({ isBackgroundLightDownloadApp }) {
                 component="span"
                 sx={{
                   fontSize: relative_width_font_size_generator(18),
+                  "@media (max-width: 1550px)": {
+                    fontSize: "12px",
+                  },
                 }}
               >
                 Download

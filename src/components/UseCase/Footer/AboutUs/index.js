@@ -9,6 +9,7 @@ import {
 } from "utils/helpers";
 import ButtonComponent from "components/Base/ButtonComponent";
 import LinkComponent from "components/Base/LinkComponent";
+import { LAPTOP_SCREEN_PADDING } from "./../../../../config";
 
 export default function AboutUs() {
   return (
@@ -23,6 +24,15 @@ export default function AboutUs() {
           243
         )} 0px ${relative_width_size_generator(243)}`,
         gap: relative_width_size_generator(81.8),
+        "@media (max-width: 1750px)": {
+          height: "fit-content",
+          p: `${(113 * 2) / 3}px ${LAPTOP_SCREEN_PADDING}`,
+        },
+        "@media (max-width: 1000px)": {
+          flexDirection: "column",
+          alignItems: "center",
+          height: "fit-content",
+        },
       }}
     >
       <Box
@@ -39,7 +49,14 @@ export default function AboutUs() {
             gap: relative_height_size_generator(20),
           }}
         >
-          <Box sx={{ pt: relative_height_size_generator(38) }}>
+          <Box
+            sx={{
+              pt: relative_height_size_generator(38),
+              "@media (max-width: 1650px)": {
+                pt: 0,
+              },
+            }}
+          >
             <TypographyComponent
               variant="HomeEightSection"
               sx={{
@@ -112,6 +129,16 @@ export default function AboutUs() {
           source={"/Footer/pool.png"}
           width={relative_width_size_generator(719.43)}
           height={relative_height_size_generator(521.73)}
+          imageSxStyle={{
+            "@media (max-width: 1650px)": {
+              height: (521 * 2) / 3,
+              width: (719.43 * 2) / 3,
+            },
+            "@media (max-width: 1650px)": {
+              height: (521 * 1) / 3,
+              width: (719.43 * 1) / 3,
+            },
+          }}
         />
       </Box>
     </Box>

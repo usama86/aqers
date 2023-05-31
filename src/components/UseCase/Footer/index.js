@@ -6,6 +6,7 @@ function Footer({ sectionsToShow, isBackgroundLightDownloadApp }) {
   const toShowSection = (sectionName) => {
     return sectionsToShow.includes(sectionName);
   };
+
   return (
     <>
       {toShowSection("download-app") && (

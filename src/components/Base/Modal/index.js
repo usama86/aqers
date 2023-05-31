@@ -25,7 +25,14 @@ const styles = ({ width }) => ({
   },
 });
 
-const MyModal = ({ open, handleClose, children, width, ...otherProps }) => {
+const MyModal = ({
+  open,
+  handleClose,
+  children,
+  width,
+  modelStylesOverrides,
+  ...otherProps
+}) => {
   return (
     <Modal
       open={open}
@@ -35,7 +42,7 @@ const MyModal = ({ open, handleClose, children, width, ...otherProps }) => {
       sx={{ ...styles({ width }).modal }}
       {...otherProps}
     >
-      <Box sx={styles({ width }).paper}>
+      <Box sx={{ ...styles({ width }).paper, ...modelStylesOverrides }}>
         <IconButton onClick={handleClose}>
           <CloseIcon />
         </IconButton>

@@ -132,7 +132,7 @@ function ResponsiveAppBar({ isGrey, componentVariant }) {
                 display: {
                   xs: "block",
                   md: "none",
-                  zIndex: 100000000000000000,
+                  zIndex: 1000,
                 },
               }}
             >

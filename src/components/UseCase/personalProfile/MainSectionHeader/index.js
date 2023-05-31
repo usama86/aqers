@@ -23,6 +23,7 @@ const MainSectionHeader = () => {
           gap: "4px",
           flexGrow: "0.5",
           flexWrap: "wrap",
+          maxWidth: "100%",
         }}
       >
         <TypographyComponent
@@ -46,12 +47,18 @@ const MainSectionHeader = () => {
             display: "flex",
             justifyContent: "space-between",
             flexWrap: "wrap",
+            "@media (max-width:700px)": {
+              width: "auto",
+            },
           }}
         >
           <TypographyComponent
             sx={{
               fontSize: "16px",
               color: "#2A3249",
+              "@media (max-width:500px)": {
+                fontSize: "11.25px",
+              },
             }}
             variant="SellDownSection"
             component="p"
@@ -78,6 +85,9 @@ const MainSectionHeader = () => {
           sx={{
             fontSize: "50px",
             color: "#2A3249",
+            "@media (max-width:500px)": {
+              fontSize: `${(50 * 2) / 3}px`,
+            },
           }}
           variant="SellDownSection2"
           component="p"
@@ -88,6 +98,9 @@ const MainSectionHeader = () => {
           sx={{
             fontSize: "27px",
             color: "#696969",
+            "@media (max-width:500px)": {
+              fontSize: `${(27 * 2) / 3}px`,
+            },
           }}
           variant="SellDownSubSection2"
           component="p"
